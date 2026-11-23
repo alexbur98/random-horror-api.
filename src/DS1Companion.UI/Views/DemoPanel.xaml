@@ -18,15 +18,22 @@
                 <Button Style="{StaticResource DemoButton}" Command="{Binding PickUncommonCommand}" Content="Необычный" Foreground="#22C55E" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding PickRareCommand}" Content="Редкий" Foreground="#3B82F6" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding PickVeryRareCommand}" Content="Очень редкий" Foreground="#A855F7" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding PickLegendaryCommand}" Content="Балдерский прямой меч" Foreground="#F59E0B" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickLegendaryCommand}" Content="{Binding LegendaryLabel}" Foreground="#F59E0B" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding PickKeyCommand}" Content="Ключ" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding AddSoulsCommand}" Content="+2 500 душ" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding LevelUpCommand}" Content="Уровень +1" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding AddSoulsCommand}" Content="{Binding AddSoulsLabel}" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding LevelUpCommand}" Content="Уровень +1"
+                        Visibility="{Binding HasLevels, Converter={StaticResource BoolToVis}}" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding DieCommand}" Content="Смерть" Foreground="#E07A7C" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding RecoverCommand}" Content="Вернуть души" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding DamageWeaponCommand}" Content="Износ оружия" Foreground="#E3B341" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding RepairWeaponCommand}" Content="Починить" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding UpgradeWeaponCommand}" Content="Заточка +1" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RecoverCommand}" Content="{Binding RecoverLabel}"
+                        Visibility="{Binding HasBloodstain, Converter={StaticResource BoolToVis}}" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RestoreHumanityCommand}" Content="Чучело человека"
+                        Visibility="{Binding HasHollowing, Converter={StaticResource BoolToVis}}" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding DamageWeaponCommand}" Content="Износ оружия" Foreground="#E3B341"
+                        Visibility="{Binding HasDurability, Converter={StaticResource BoolToVis}}" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RepairWeaponCommand}" Content="Починить"
+                        Visibility="{Binding HasDurability, Converter={StaticResource BoolToVis}}" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding UpgradeWeaponCommand}" Content="Заточка +1"
+                        Visibility="{Binding HasWeaponUpgrades, Converter={StaticResource BoolToVis}}" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding NextLocationCommand}" Content="Сменить локацию" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding StartBossCommand}" Content="Бой с боссом" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding WinBossCommand}" Content="Победа" />

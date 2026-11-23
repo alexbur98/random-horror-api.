@@ -63,6 +63,26 @@ public class IconResolverTests
     }
 
     [Fact]
+    public void GameSubfolder_IsPreferred_OverSharedFolder()
+    {
+        var item = TestData.Item("estus_flask");
+        item.IconFolder = "ds2";
+        var files = new HashSet<string> { Path.Combine("icons", "ds2", "estus_flask.png"), Path.Combine("icons", "estus_flask.png") };
+        var src = new IconResolver(new[] { "icons" }, files.Contains).Resolve(item, out _);
+        Assert.Equal(Path.Combine("icons", "ds2", "estus_flask.png"), src.FilePath);
+
+        item.IconFolder = "ds1";
+        Assert.Equal(Path.Combine("icons", "estus_flask.png"), new IconResolver(new[] { "icons" }, files.Contains).Resolve(item, out _).FilePath);
+    }
+
+    [Fact]
+    public void LoadedItems_KnowTheirGameFolder()
+    {
+        Assert.All(TestData.Knowledge.Items, i => Assert.Equal("ds1", i.IconFolder));
+        Assert.All(TestData.Ds2.Items, i => Assert.Equal("ds2", i.IconFolder));
+    }
+
+    [Fact]
     public void Sanitize_StripsPathTraversal()
     {
         var name = IconResolver.Sanitize("../../evil/name");
@@ -116,7 +136,7 @@ public class CachingIconProviderTests
         Assert.Equal(new[] { "drake_sword" }, updated);
         var second = provider.Resolve(item);
         Assert.True(second.HasImage);
-        Assert.Equal(Path.Combine(dir.Path, "drake_sword.png"), second.FilePath);
+        Assert.Equal(Path.Combine(dir.Path, "drake_sword.png"), second.FilePath); // у тестового предмета нет папки игры
     }
 
     [Fact]

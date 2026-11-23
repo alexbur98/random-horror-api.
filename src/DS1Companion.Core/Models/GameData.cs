@@ -5,7 +5,7 @@ public sealed record LocationInfo
     public required string Id { get; init; }
     public required string NameRu { get; init; }
     public required string NameEn { get; init; }
-    /// <summary>Номер области карты (mAA_BB → AA).</summary>
+    /// <summary>Номер области карты (mAA_BB → AA); 0 — локация распознаётся только по id.</summary>
     public int Area { get; init; }
     /// <summary>Номер блока карты (mAA_BB → BB).</summary>
     public int Block { get; init; }
@@ -45,7 +45,7 @@ public sealed record UpgradePath
 
 public sealed record WeaponUpgradeInfo
 {
-    /// <summary>Совпадает с id предмета в items_ds1.json.</summary>
+    /// <summary>Совпадает с id предмета в items.json.</summary>
     public required string ItemId { get; init; }
     public int GameId { get; init; }
     public required string PathId { get; init; }

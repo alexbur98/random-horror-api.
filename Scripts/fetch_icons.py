@@ -2,7 +2,7 @@
 """
 Подготовка оригинальных иконок предметов для DS1 Companion.
 
-Приложение ищет PNG в Assets/Icons/{icon_key}.png, затем {id}.png (поля из Data/items_ds1.json).
+Приложение ищет PNG в Assets/Icons/{игра}/{icon_key}.png, затем {id}.png (поля из Data/{игра}/items.json).
 Иконки игры не распространяются вместе с приложением — этот скрипт помогает разложить
 ВАШИ собственные файлы (распакованные из вашей копии игры) или скачать их по шаблону URL.
 
@@ -17,12 +17,13 @@
      Подстановки: {id} {icon_key} {name_en} {name_en_slug}
 
   2б) Оригинальные иконки со страниц вики Dark Souls (Fextralife), запускать на своём ПК:
-       python Scripts/fetch_icons.py --wiki
+       python Scripts/fetch_icons.py --wiki              (Dark Souls)
+       python Scripts/fetch_icons.py --game ds2 --wiki   (Dark Souls II)
      Для каждого предмета открывается страница вики по name_en, берётся картинка предмета
      (og:image или первая картинка инфобокса). Неудачные предметы перечисляются в конце —
      для них можно задать название страницы вручную: --wiki-titles titles.csv (item_id,Название страницы).
 
-  3) Прописать icon_url в items_ds1.json, чтобы приложение само докачивало иконки в фоне:
+  3) Прописать icon_url в items.json, чтобы приложение само докачивало иконки в фоне:
        python Scripts/fetch_icons.py --write-icon-urls "https://example.org/icons/{name_en_slug}.png"
 
   Дополнительно: --list-missing — показать предметы без иконки; --size 128 — размер при конвертации.
@@ -42,8 +43,18 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ITEMS = ROOT / "Data" / "items_ds1.json"
-DEFAULT_OUT = ROOT / "src" / "DS1Companion.UI" / "Assets" / "Icons"
+ICONS_ROOT = ROOT / "src" / "DS1Companion.UI" / "Assets" / "Icons"
+# Вики Fextralife для каждой игры: адрес сайта и папка картинок.
+WIKIS = {
+    "ds1": ("https://darksouls.wiki.fextralife.com", "Dark-Souls"),
+    "ds2": ("https://darksouls2.wiki.fextralife.com", "Dark-Souls-2"),
+    "ds3": ("https://darksouls3.wiki.fextralife.com", "Dark-Souls-3"),
+    "sekiro": ("https://sekiroshadowsdietwice.wiki.fextralife.com", "Sekiro"),
+    "eldenring": ("https://eldenring.wiki.fextralife.com", "Elden-Ring"),
+}
+GAME = "ds1"
+ITEMS = ROOT / "Data" / GAME / "items.json"
+DEFAULT_OUT = ICONS_ROOT / GAME
 PNG_MAGIC = b"\x89PNG"
 CONVERTIBLE = {".dds", ".tga", ".webp", ".jpg", ".jpeg", ".bmp"}
 MAX_BYTES = 2 * 1024 * 1024
@@ -145,8 +156,8 @@ def download(template: str, out: Path, delay: float, overwrite: bool) -> int:
     return ok
 
 
-WIKI_BASE = "https://darksouls.wiki.fextralife.com"
-WIKI_IMG = re.compile(r'(?:src|data-src)="((?:https?://darksouls\.wiki\.fextralife\.com)?/file/Dark-Souls/[^"?#]+\.(?:png|jpe?g|webp))"', re.I)
+WIKI_BASE, WIKI_FOLDER = WIKIS["ds1"]
+WIKI_IMG = re.compile(r'(?:src|data-src)="((?:https?://[a-z0-9.]+\.fextralife\.com)?/file/[A-Za-z0-9-]+/[^"?#]+\.(?:png|jpe?g|webp))"', re.I)
 OG_IMG = re.compile(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', re.I)
 SKIP_IMG = re.compile(r"logo|banner|icon_s|souls_wiki|fextralife|favicon|_map|map_", re.I)
 
@@ -160,7 +171,7 @@ def extract_wiki_image(html: str) -> str | None:
     def absolute(u: str) -> str:
         return u if u.startswith("http") else WIKI_BASE + u
     m = OG_IMG.search(html)
-    if m and "/file/Dark-Souls/" in m.group(1) and not SKIP_IMG.search(m.group(1).rsplit("/", 1)[-1]):
+    if m and f"/file/{WIKI_FOLDER}/" in m.group(1) and not SKIP_IMG.search(m.group(1).rsplit("/", 1)[-1]):
         return absolute(m.group(1))
     start = max(html.find("infobox"), 0)
     for chunk in (html[start:], html):
@@ -237,6 +248,7 @@ def write_icon_urls(template: str) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--game", default="ds1", choices=sorted(WIKIS), help="игра: папка в Data/ (ds1, ds2, …)")
     ap.add_argument("--from-dir", type=Path)
     ap.add_argument("--map", type=Path, help="CSV: item_id,имя_файла")
     ap.add_argument("--url-template")
@@ -244,13 +256,21 @@ def main() -> int:
     ap.add_argument("--wiki", action="store_true", help="скачать оригинальные иконки со страниц вики Dark Souls")
     ap.add_argument("--wiki-titles", type=Path, help="CSV: item_id,Название страницы вики")
     ap.add_argument("--only", nargs="*", default=[], help="ограничиться этими id предметов")
-    ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    ap.add_argument("--out", type=Path, default=None, help="по умолчанию Assets/Icons/{игра}")
     ap.add_argument("--size", type=int, default=128)
     ap.add_argument("--delay", type=float, default=0.3, help="пауза между запросами, сек")
     ap.add_argument("--overwrite", action="store_true")
     ap.add_argument("--list-missing", action="store_true")
     args = ap.parse_args()
 
+    global GAME, ITEMS, WIKI_BASE, WIKI_FOLDER
+    GAME = args.game
+    ITEMS = ROOT / "Data" / GAME / "items.json"
+    if not ITEMS.exists():
+        print(f"Нет данных для игры '{GAME}': {ITEMS}")
+        return 1
+    WIKI_BASE, WIKI_FOLDER = WIKIS[GAME]
+    args.out = args.out or ICONS_ROOT / GAME
     args.out.mkdir(parents=True, exist_ok=True)
     if args.write_icon_urls:
         write_icon_urls(args.write_icon_urls)

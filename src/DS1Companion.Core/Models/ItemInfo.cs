@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace DS1Companion.Core.Models;
 
-/// <summary>Запись базы знаний из Data/items_ds1.json.</summary>
+/// <summary>Запись базы знаний из Data/{игра}/items.json.</summary>
 public sealed record ItemInfo
 {
     public required string Id { get; init; }
@@ -24,6 +24,10 @@ public sealed record ItemInfo
 
     /// <summary>Явно заданная векторная иконка; иначе выводится из категории/типа.</summary>
     public IconGlyph? Glyph { get; init; }
+
+    /// <summary>Подпапка иконок игры (ds1, ds2…): Assets/Icons/{IconFolder}/{id}.png. Заполняется при загрузке.</summary>
+    [JsonIgnore]
+    public string? IconFolder { get; set; }
 
     [JsonIgnore]
     public IconGlyph EffectiveGlyph => Glyph ?? (Category, GameKind) switch
@@ -47,7 +51,7 @@ public sealed record ItemInfo
         Category = kind == ItemKind.Goods ? ItemCategory.Consumable : ItemCategory.Equipment,
         Rarity = Rarity.Common,
         RarityReason = "Нет в базе знаний",
-        SummaryRu = "Этого предмета пока нет в items_ds1.json. Его можно добавить вручную — см. README.",
+        SummaryRu = "Этого предмета пока нет в базе знаний (Data/{игра}/items.json). Его можно добавить вручную — см. README.",
         KeepStatus = KeepStatus.Situational,
         GameKind = kind,
         GameId = gameId,

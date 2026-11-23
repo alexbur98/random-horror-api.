@@ -218,7 +218,8 @@ public class SoftCapAndUpgradeTests
     [Fact]
     public void Resistance_AboveBase_IsWarned()
     {
-        var hints = SoftCapAdvisor.Analyze(new CharacterStats { Vitality = 40, Resistance = 20, Attunement = 19 });
+        var stats = CharacterStats.From(new Dictionary<string, int> { ["vitality"] = 40, ["resistance"] = 20, ["attunement"] = 19 });
+        var hints = SoftCapAdvisor.Analyze(TestData.Knowledge.Game, stats);
         Assert.Equal(StatAdvice.Warning, hints.Single(h => h.Key == "resistance").Advice);
         Assert.Equal(StatAdvice.Efficient, hints.Single(h => h.Key == "vitality").Advice);
         Assert.Contains("5", hints.Single(h => h.Key == "attunement").HintRu); // 19 ученость = 5 слотов
@@ -229,7 +230,8 @@ public class SoftCapAndUpgradeTests
     [InlineData(10, 1)]
     [InlineData(19, 5)]
     [InlineData(50, 10)]
-    public void AttunementSlots(int att, int slots) => Assert.Equal(slots, SoftCapAdvisor.AttunementSlotsAt(att));
+    public void AttunementSlots(int att, int slots) =>
+        Assert.Equal(slots, SoftCapAdvisor.SlotsAt(TestData.Knowledge.Game.Stats.Single(s => s.Key == "attunement"), att));
 
     [Fact]
     public void Claymore5_NextStep_NeedsLargeShardAndEmber()

@@ -1,0 +1,358 @@
+{
+  "_comment": "Dark Souls II: обычная заточка до +10, уникальное и босс-оружие до +5. Буквы скейлинга и количество материалов для +1…+5 уникального оружия — ориентировочные.",
+  "paths": [
+    {
+      "id": "regular",
+      "name_ru": "Обычная заточка",
+      "smith_ru": "кузнец Ленигрим (Маджула) или Макдафф (Потерянная Бастилия)",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "titanite_shard",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "titanite_shard",
+          "quantity": 3
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 1
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 6,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 3
+        },
+        {
+          "to_level": 7,
+          "material_item_id": "titanite_chunk",
+          "quantity": 1
+        },
+        {
+          "to_level": 8,
+          "material_item_id": "titanite_chunk",
+          "quantity": 2
+        },
+        {
+          "to_level": 9,
+          "material_item_id": "titanite_chunk",
+          "quantity": 3
+        },
+        {
+          "to_level": 10,
+          "material_item_id": "titanite_slab",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "unique",
+      "name_ru": "Уникальное оружие",
+      "smith_ru": "кузнец Ленигрим или Макдафф",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 2
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name_ru": "Оружие из души босса",
+      "smith_ru": "кузнец Ленигрим или Макдафф",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "petrified_dragon_bone",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "petrified_dragon_bone",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "petrified_dragon_bone",
+          "quantity": 2
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "petrified_dragon_bone",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "petrified_dragon_bone",
+          "quantity": 3
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "item_id": "broadsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "longsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "shortsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "heide_knight_sword",
+      "game_id": 0,
+      "path_id": "unique",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "drangleic_sword",
+      "game_id": 0,
+      "path_id": "unique",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "claymore",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "bastard_sword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "zweihander",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "mastodon_greatsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "uchigatana",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "rapier",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "E",
+      "scaling_dex": "B",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "mace",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "great_club",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "halberd",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "winged_spear",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "bandit_axe",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "moonlight_greatsword",
+      "game_id": 0,
+      "path_id": "unique",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "B",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Магический урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "sun_sword",
+      "game_id": 0,
+      "path_id": "unique",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "C",
+      "scaling_hint_ru": "Урон и сила чудес растут от Веры"
+    },
+    {
+      "item_id": "smelter_sword",
+      "game_id": 0,
+      "path_id": "boss",
+      "scaling_str": "C",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "pyromancy_flame",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Пиромантия усиливается улучшением самого пламени"
+    },
+    {
+      "item_id": "sorcerers_staff",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "C",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Магический урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "clerics_chime",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "C",
+      "scaling_hint_ru": "Урон и сила чудес растут от Веры"
+    },
+    {
+      "item_id": "short_bow",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "-",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    }
+  ]
+}

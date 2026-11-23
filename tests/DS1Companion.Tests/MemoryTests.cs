@@ -68,11 +68,11 @@ public class AobScannerTests
     public void ParseOffset(string s, long expected) => Assert.Equal(expected, OffsetsConfig.ParseOffset(s));
 }
 
-public class DsrMemoryReaderTests
+public class GameMemoryReaderTests
 {
     private const long Heap = 0x2_0000_0000;
 
-    /// <summary>Строит фейковый процесс DSR, согласованный с реальным Data/offsets.json.</summary>
+    /// <summary>Строит фейковый процесс DSR, согласованный с реальным Data/ds1/offsets.json.</summary>
     private static (FakeMemory Mem, OffsetsConfig Cfg) BuildProcess()
     {
         var cfg = OffsetsConfig.Load(Path.Combine(TestData.DataDir, "offsets.json"));
@@ -140,7 +140,7 @@ public class DsrMemoryReaderTests
     public void ReadsFullSnapshot_FromFakeProcess()
     {
         var (mem, cfg) = BuildProcess();
-        using var reader = new DsrMemoryReader(cfg, () => mem);
+        using var reader = new GameMemoryReader(TestData.Knowledge.Game, cfg, () => mem);
         var s = reader.Read();
 
         Assert.True(s.IsConnected);
@@ -149,8 +149,9 @@ public class DsrMemoryReaderTests
         Assert.Equal(42, s.Deaths);
         Assert.Equal(12345, s.Souls);
         Assert.Equal(30, s.Level);
-        Assert.Equal(25, s.Stats!.Vitality);
-        Assert.Equal(11, s.Stats.Resistance);
+        Assert.Equal(25, s.Stats!["vitality"]);
+        Assert.Equal(11, s.Stats["resistance"]);
+        Assert.Equal(GameKey.DarkSouls1, s.Game);
         Assert.Equal(5, s.Weapon!.UpgradeLevel);
         Assert.Equal(0.125, s.Weapon.DurabilityRatio);
         Assert.Equal((15, 1), (s.Area, s.Block));
@@ -168,10 +169,11 @@ public class DsrMemoryReaderTests
         long pgd = Heap + 0x8000;
         mem.WriteInt32(pgd + 0x90, 5000);   // уровень > 713 — неверное смещение
         mem.WriteInt32(pgd + 0x40, -3);     // живучесть < 1
-        using var reader = new DsrMemoryReader(cfg, () => mem);
+        using var reader = new GameMemoryReader(TestData.Knowledge.Game, cfg, () => mem);
         var s = reader.Read();
         Assert.Null(s.Level);
-        Assert.Null(s.Stats);
+        Assert.False(s.Stats!.Values.ContainsKey("vitality")); // только неверное поле отбрасывается
+        Assert.Equal(22, s.Stats["strength"]);
         Assert.Equal(12345, s.Souls);
     }
 
@@ -179,7 +181,7 @@ public class DsrMemoryReaderTests
     public void NoProcess_ReturnsDisconnected_AndRetriesLater()
     {
         var attempts = 0;
-        using var reader = new DsrMemoryReader(new OffsetsConfig(), () => { attempts++; return null; });
+        using var reader = new GameMemoryReader(TestData.Knowledge.Game, new OffsetsConfig(), () => { attempts++; return null; });
         Assert.False(reader.Read().IsConnected);
         Assert.False(reader.Read().IsConnected); // в пределах 2 секунд повторно не открываем процесс
         Assert.Equal(1, attempts);
@@ -189,7 +191,7 @@ public class DsrMemoryReaderTests
     public void ProcessExit_Disconnects()
     {
         var (mem, cfg) = BuildProcess();
-        using var reader = new DsrMemoryReader(cfg, () => mem);
+        using var reader = new GameMemoryReader(TestData.Knowledge.Game, cfg, () => mem);
         Assert.True(reader.Read().IsConnected);
         mem.IsAlive = false;
         Assert.False(reader.Read().IsConnected);

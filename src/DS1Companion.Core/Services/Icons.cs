@@ -38,9 +38,17 @@ public sealed class IconResolver
         yield return Sanitize(item.Id) + ".png";
     }
 
+    /// <summary>Каталоги поиска для предмета: сначала подпапка его игры, потом общий каталог.</summary>
+    public static IEnumerable<string> CandidateDirs(string root, ItemInfo item)
+    {
+        if (!string.IsNullOrWhiteSpace(item.IconFolder)) yield return Path.Combine(root, Sanitize(item.IconFolder!));
+        yield return root;
+    }
+
     public IconSource Resolve(ItemInfo item, out bool needsDownload)
     {
-        foreach (var dir in _searchDirs)
+        foreach (var root in _searchDirs)
+        foreach (var dir in CandidateDirs(root, item))
             foreach (var name in CandidateFileNames(item))
             {
                 var path = Path.Combine(dir, name);
@@ -116,9 +124,10 @@ public sealed class CachingIconProvider : IIconProvider, IDisposable
             var bytes = await response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
             if (bytes.Length is 0 or > (int)MaxIconBytes || !bytes.AsSpan().StartsWith(PngMagic)) return;
 
-            Directory.CreateDirectory(_cacheDir);
+            var dir = IconResolver.CandidateDirs(_cacheDir, item).First();
+            Directory.CreateDirectory(dir);
             var name = IconResolver.CandidateFileNames(item).First();
-            var target = Path.Combine(_cacheDir, name);
+            var target = Path.Combine(dir, name);
             var temp = target + ".part";
             await File.WriteAllBytesAsync(temp, bytes).ConfigureAwait(false);
             File.Move(temp, target, overwrite: true);

@@ -333,6 +333,16 @@
         </Style.Triggers>
     </Style>
 
+    <!-- Переключатель игры в шапке: стандартный ComboBox, приглушённый под тёмную тему. -->
+    <Style x:Key="GameComboBox" TargetType="ComboBox">
+        <Setter Property="Height" Value="28" />
+        <Setter Property="MinWidth" Value="150" />
+        <Setter Property="MaxWidth" Value="240" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
     <Style x:Key="DarkComboBox" TargetType="ComboBox">
         <Setter Property="Foreground" Value="Black" />
         <Setter Property="MinWidth" Value="170" />

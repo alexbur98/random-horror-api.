@@ -3,5 +3,5 @@ obj/
 .vs/
 *.user
 TestResults/
-src/DS1Companion.UI/Assets/Icons/*.png
+src/DS1Companion.UI/Assets/Icons/**/*.png
 !src/DS1Companion.UI/Assets/Icons/.gitkeep

@@ -34,11 +34,12 @@ public static class DisplayText
         _ => "",
     };
 
-    public static string KeepTagRu(KeepStatus k) => k switch
+    /// <summary>Тег карточки. Формулировка «можно продать» зависит от игры (в DS1 — Фрампту).</summary>
+    public static string KeepTagRu(KeepStatus k, GameDefinition? game = null) => k switch
     {
         KeepStatus.DoNotDiscard => "НЕ ВЫБРАСЫВАТЬ",
         KeepStatus.UsefulInCombat => "ПОЛЕЗНО В БОЮ",
-        KeepStatus.SellToFrampt => "МОЖНО ПРОДАТЬ ФРАМПТУ",
+        KeepStatus.SellToFrampt => game?.SellTagRu ?? "МОЖНО ПРОДАТЬ",
         KeepStatus.Situational => "ПО СИТУАЦИИ",
         _ => "",
     };

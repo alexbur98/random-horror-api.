@@ -1,0 +1,102 @@
+{
+  "key": "DarkSouls2",
+  "title_ru": "Dark Souls II: Scholar of the First Sin",
+  "short_title": "DS2",
+  "process_names": [
+    "DarkSoulsII"
+  ],
+  "currency_ru": "Души",
+  "currency_genitive_ru": "душ",
+  "has_levels": true,
+  "level_curve": "memory",
+  "max_level": 838,
+  "has_bloodstain": true,
+  "bloodstain_title_ru": "Кровавое пятно",
+  "bloodstain_text_ru": "{0} {1} ждут в кровавом пятне. Вернитесь к месту гибели и не умирайте по пути.",
+  "has_hollowing": true,
+  "hollowing_title_ru": "Опустошение",
+  "hollowing_text_ru": "Смертей без восстановления облика: {0}. Максимальное здоровье снижено (до −50%). Используйте Чучело человека или наденьте Кольцо связывания.",
+  "has_weapon_upgrades": true,
+  "has_durability": true,
+  "repair_hint_ru": "отдохните у костра — он чинит снаряжение, или используйте Порошок для починки",
+  "sell_tag_ru": "МОЖНО НЕ ХРАНИТЬ",
+  "default_tip_ru": "Отдых у костра восстанавливает Эстус и чинит снаряжение. Обычные враги перестают появляться после множества убийств.",
+  "stats": [
+    {
+      "key": "vigor",
+      "name_ru": "Жизненная сила",
+      "cap": 20,
+      "hint_ru": "Vigor — здоровье. Самый выгодный рост до 20, потом умеренный до 50."
+    },
+    {
+      "key": "endurance",
+      "name_ru": "Выносливость",
+      "cap": 20,
+      "hint_ru": "Endurance — запас выносливости. Быстро растёт до 20."
+    },
+    {
+      "key": "vitality",
+      "name_ru": "Стойкость",
+      "hint_ru": "Vitality — грузоподъёмность. Качайте, если не хватает веса для брони."
+    },
+    {
+      "key": "attunement",
+      "name_ru": "Настройка",
+      "hint_ru": "Attunement — ячейки заклинаний и Ловкость персонажа (AGL). Без магии можно почти не качать."
+    },
+    {
+      "key": "strength",
+      "name_ru": "Сила",
+      "cap": 40,
+      "hint_ru": "Урон тяжёлого оружия. Выше 40 растёт слабо."
+    },
+    {
+      "key": "dexterity",
+      "name_ru": "Ловкость",
+      "cap": 40,
+      "hint_ru": "Урон быстрого оружия. Выше 40 растёт слабо."
+    },
+    {
+      "key": "adaptability",
+      "name_ru": "Адаптивность",
+      "hint_ru": "Adaptability — вместе с Настройкой повышает AGL: перекаты надёжнее. Часто советуют довести AGL до 105."
+    },
+    {
+      "key": "intelligence",
+      "name_ru": "Интеллект",
+      "cap": 40,
+      "hint_ru": "Сила колдовства и тёмной магии."
+    },
+    {
+      "key": "faith",
+      "name_ru": "Вера",
+      "cap": 40,
+      "hint_ru": "Сила чудес и тёмной магии."
+    }
+  ],
+  "demo": {
+    "character_name": "Носитель проклятия",
+    "deaths": 52,
+    "souls": 3200,
+    "level": 30,
+    "location_id": "majula",
+    "weapon_item_id": "longsword",
+    "weapon_level": 3,
+    "weapon_max_durability": 60,
+    "healing_item_id": "estus_flask",
+    "healing_count": 3,
+    "legendary_item_id": "moonlight_greatsword",
+    "key_item_id": "soldier_key",
+    "stats": {
+      "vigor": 14,
+      "endurance": 12,
+      "vitality": 10,
+      "attunement": 5,
+      "strength": 16,
+      "dexterity": 14,
+      "adaptability": 8,
+      "intelligence": 4,
+      "faith": 6
+    }
+  }
+}

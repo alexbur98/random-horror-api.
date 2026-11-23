@@ -23,7 +23,8 @@ public sealed partial class ItemCardViewModel : ObservableObject
     public string CategoryLabel => DisplayText.CategoryLabelRu(Item.Category);
     public string RarityReason => Item.RarityReason;
     public string Summary => Item.SummaryRu;
-    public string KeepTag => DisplayText.KeepTagRu(Item.KeepStatus);
+    public string KeepTag => DisplayText.KeepTagRu(Item.KeepStatus, Game);
+    public GameDefinition? Game { get; init; }
     public bool IsLegendary => Item.Rarity == Rarity.Legendary;
     public bool IsHighRarity => Item.Rarity >= Rarity.VeryRare;
     public string QuantityText => Quantity > 1 ? $"× {Quantity}" : "";

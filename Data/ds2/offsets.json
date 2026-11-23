@@ -1,0 +1,162 @@
+{
+  "_comment": "Read-only карта памяти DarkSoulsII.exe (Scholar of the First Sin, x64). ВНИМАНИЕ: шаблоны и смещения — стартовые, по открытым данным сообщества, НЕ проверены (verified=false). Калибруются на ПК с запущенной игрой; пересборка не нужна. Формат цепочки как в Data/ds1/offsets.json.",
+  "process_name": "DarkSoulsII",
+  "game_version": "SotFS 1.03 (Steam)",
+  "poll_interval_ms": 250,
+  "bases": {
+    "base_a": {
+      "aob": "48 8B 05 ?? ?? ?? ?? 48 8B 58 38 48 85 DB 74 ?? F6",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "GameManagerImp: игрок, статы, инвентарь."
+    }
+  },
+  "fields": {
+    "character_name": {
+      "base": "base_a",
+      "offsets": [
+        "0xA8",
+        "0xC0",
+        "0x24"
+      ],
+      "type": "Utf16",
+      "length": 16
+    },
+    "souls": {
+      "base": "base_a",
+      "offsets": [
+        "0xA8",
+        "0xC0",
+        "0x1D4"
+      ],
+      "type": "Int32"
+    },
+    "level": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0xD0"
+      ],
+      "type": "Int32"
+    },
+    "souls_for_next_level": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x1D8"
+      ],
+      "type": "Int32"
+    },
+    "deaths": {
+      "base": "base_a",
+      "offsets": [
+        "0xA8",
+        "0xC0",
+        "0x1C8"
+      ],
+      "type": "Int32"
+    },
+    "hollow_level": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x1AC"
+      ],
+      "type": "Byte"
+    },
+    "vigor": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x8"
+      ],
+      "type": "Int32"
+    },
+    "endurance": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0xA"
+      ],
+      "type": "Byte"
+    },
+    "vitality": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0xC"
+      ],
+      "type": "Byte"
+    },
+    "attunement": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0xE"
+      ],
+      "type": "Byte"
+    },
+    "strength": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x10"
+      ],
+      "type": "Byte"
+    },
+    "dexterity": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x12"
+      ],
+      "type": "Byte"
+    },
+    "intelligence": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x14"
+      ],
+      "type": "Byte"
+    },
+    "faith": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x16"
+      ],
+      "type": "Byte"
+    },
+    "adaptability": {
+      "base": "base_a",
+      "offsets": [
+        "0xD0",
+        "0x490",
+        "0x18"
+      ],
+      "type": "Byte"
+    },
+    "bloodstain_souls": {
+      "base": "base_a",
+      "offsets": [
+        "0xA8",
+        "0xC0",
+        "0x1E0"
+      ],
+      "type": "Int32"
+    }
+  }
+}

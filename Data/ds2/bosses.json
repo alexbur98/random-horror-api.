@@ -1,0 +1,226 @@
+[
+  {
+    "id": "last_giant",
+    "name_ru": "Последний гигант",
+    "name_en": "The Last Giant",
+    "location_id": "forest_of_fallen_giants",
+    "optional": false,
+    "tip_ru": "Держитесь у его ног и бейте по ним."
+  },
+  {
+    "id": "pursuer",
+    "name_ru": "Преследователь",
+    "name_en": "The Pursuer",
+    "location_id": "forest_of_fallen_giants",
+    "optional": false,
+    "tip_ru": "Перекатывайтесь в сторону от его рывка. Баллисты на арене наносят огромный урон."
+  },
+  {
+    "id": "dragonrider",
+    "name_ru": "Всадник дракона",
+    "name_en": "Dragonrider",
+    "location_id": "heides_tower",
+    "optional": false,
+    "tip_ru": "Его можно сбить с платформы — заманите к краю."
+  },
+  {
+    "id": "old_dragonslayer",
+    "name_ru": "Старый драконоборец",
+    "name_en": "Old Dragonslayer",
+    "location_id": "heides_tower",
+    "optional": true,
+    "tip_ru": "Быстрые колющие атаки — перекатывайтесь вперёд."
+  },
+  {
+    "id": "flexile_sentry",
+    "name_ru": "Гибкий страж",
+    "name_en": "Flexile Sentry",
+    "location_id": "no_mans_wharf",
+    "optional": false,
+    "tip_ru": "Бейте ту сторону, которая не атакует."
+  },
+  {
+    "id": "ruin_sentinels",
+    "name_ru": "Стражи руин",
+    "name_en": "Ruin Sentinels",
+    "location_id": "lost_bastille",
+    "optional": false,
+    "tip_ru": "Убейте первого до того, как спрыгнут остальные."
+  },
+  {
+    "id": "lost_sinner",
+    "name_ru": "Потерянная грешница",
+    "name_en": "The Lost Sinner",
+    "location_id": "sinners_rise",
+    "optional": false,
+    "tip_ru": "Зажгите лампы, иначе бой почти в темноте."
+  },
+  {
+    "id": "belfry_gargoyles",
+    "name_ru": "Горгульи колокольни",
+    "name_en": "Belfry Gargoyles",
+    "location_id": "belfry_luna",
+    "optional": true,
+    "tip_ru": "Их много — бейте быстро, пока не набежали все."
+  },
+  {
+    "id": "executioners_chariot",
+    "name_ru": "Колесница палача",
+    "name_en": "Executioner's Chariot",
+    "location_id": "huntsmans_copse",
+    "optional": false,
+    "tip_ru": "Прячьтесь в нишах, затем опустите решётку рычагом."
+  },
+  {
+    "id": "skeleton_lords",
+    "name_ru": "Скелеты-владыки",
+    "name_en": "Skeleton Lords",
+    "location_id": "huntsmans_copse",
+    "optional": false,
+    "tip_ru": "Убивайте владык по одному — каждый призывает своих слуг."
+  },
+  {
+    "id": "covetous_demon",
+    "name_ru": "Алчный демон",
+    "name_en": "Covetous Demon",
+    "location_id": "earthen_peak",
+    "optional": true,
+    "tip_ru": "Медленный — бейте сзади. Опасен его укус."
+  },
+  {
+    "id": "mytha",
+    "name_ru": "Мита, Губительная королева",
+    "name_en": "Mytha, the Baneful Queen",
+    "location_id": "earthen_peak",
+    "optional": false,
+    "tip_ru": "Сожгите мельницу, чтобы убрать ядовитую воду."
+  },
+  {
+    "id": "smelter_demon",
+    "name_ru": "Демон-плавильщик",
+    "name_en": "Smelter Demon",
+    "location_id": "iron_keep",
+    "optional": true,
+    "tip_ru": "Когда загорится, его атаки жгут — держите дистанцию."
+  },
+  {
+    "id": "old_iron_king",
+    "name_ru": "Старый Железный король",
+    "name_en": "Old Iron King",
+    "location_id": "iron_keep",
+    "optional": false,
+    "tip_ru": "Не стойте у края арены — лава убивает мгновенно."
+  },
+  {
+    "id": "najka",
+    "name_ru": "Скорпионесса Найка",
+    "name_en": "Scorpioness Najka",
+    "location_id": "shaded_woods",
+    "optional": true,
+    "tip_ru": "Бейте сбоку, избегайте хвоста."
+  },
+  {
+    "id": "royal_rat_authority",
+    "name_ru": "Владыка королевских крыс",
+    "name_en": "Royal Rat Authority",
+    "location_id": "doors_of_pharros",
+    "optional": true,
+    "tip_ru": "Сначала убейте мелких крыс, иначе токсин накопится."
+  },
+  {
+    "id": "the_rotten",
+    "name_ru": "Гнилой",
+    "name_en": "The Rotten",
+    "location_id": "black_gulch",
+    "optional": false,
+    "tip_ru": "Медленный, но сильный — бейте по ногам после атаки."
+  },
+  {
+    "id": "dukes_dear_freja",
+    "name_ru": "Дорогая Фрея герцога",
+    "name_en": "The Duke's Dear Freja",
+    "location_id": "brightstone_cove",
+    "optional": false,
+    "tip_ru": "Бейте голову, когда она опускается."
+  },
+  {
+    "id": "looking_glass_knight",
+    "name_ru": "Зеркальный рыцарь",
+    "name_en": "Looking Glass Knight",
+    "location_id": "drangleic_castle",
+    "optional": false,
+    "tip_ru": "Из зеркала появляются призраки — убивайте их быстро."
+  },
+  {
+    "id": "demon_of_song",
+    "name_ru": "Демон песни",
+    "name_en": "Demon of Song",
+    "location_id": "shrine_of_amana",
+    "optional": false,
+    "tip_ru": "Бейте лицо, когда оно открывается."
+  },
+  {
+    "id": "velstadt",
+    "name_ru": "Велстадт, Королевский страж",
+    "name_en": "Velstadt, the Royal Aegis",
+    "location_id": "undead_crypt",
+    "optional": false,
+    "tip_ru": "Тёмная магия во второй фазе — держите дистанцию."
+  },
+  {
+    "id": "guardian_dragon",
+    "name_ru": "Дракон-страж",
+    "name_en": "Guardian Dragon",
+    "location_id": "dragon_aerie",
+    "optional": false,
+    "tip_ru": "Огонь бьёт широко — уходите под крыло."
+  },
+  {
+    "id": "giant_lord",
+    "name_ru": "Владыка гигантов",
+    "name_en": "Giant Lord",
+    "location_id": "memory_of_jeigh",
+    "optional": false,
+    "tip_ru": "Держитесь у ног, избегайте топота."
+  },
+  {
+    "id": "throne_watcher_defender",
+    "name_ru": "Страж и защитник трона",
+    "name_en": "Throne Watcher and Defender",
+    "location_id": "throne_of_want",
+    "optional": false,
+    "tip_ru": "Убейте обоих почти одновременно, иначе выживший поднимет второго."
+  },
+  {
+    "id": "nashandra",
+    "name_ru": "Нашандра",
+    "name_en": "Nashandra",
+    "location_id": "throne_of_want",
+    "optional": false,
+    "tip_ru": "Уничтожайте статуи-кукол, иначе накопится проклятие."
+  },
+  {
+    "id": "sinh",
+    "name_ru": "Синх, Спящий дракон",
+    "name_en": "Sinh, the Slumbering Dragon",
+    "location_id": "shulva",
+    "optional": false,
+    "tip_ru": "DLC. Яд и огонь — держите лечение от яда."
+  },
+  {
+    "id": "fume_knight",
+    "name_ru": "Рыцарь дыма",
+    "name_en": "Fume Knight",
+    "location_id": "brume_tower",
+    "optional": false,
+    "tip_ru": "DLC. Очень опасен — учите связки, не жадничайте."
+  },
+  {
+    "id": "burnt_ivory_king",
+    "name_ru": "Сожжённый Король Слоновой Кости",
+    "name_en": "Burnt Ivory King",
+    "location_id": "frozen_eleum_loyce",
+    "optional": false,
+    "tip_ru": "DLC. Освободите рыцарей-союзников перед боем."
+  }
+]

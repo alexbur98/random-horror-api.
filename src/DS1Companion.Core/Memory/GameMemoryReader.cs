@@ -4,26 +4,30 @@ using DS1Companion.Core.Models;
 namespace DS1Companion.Core.Memory;
 
 /// <summary>
-/// Строго read-only чтение памяти DarkSoulsRemastered.exe (x64).
-/// Базовые адреса находятся AOB-сканированием, данные — по цепочкам указателей из Data/offsets.json.
-/// Если какое-то поле не читается (другая версия игры, главное меню) — оно просто будет null.
+/// Строго read-only чтение памяти игры (x64). Базовые адреса находятся AOB-сканированием,
+/// данные — по цепочкам указателей из Data/{игра}/offsets.json. Если какое-то поле не читается
+/// (другая версия игры, главное меню) — оно просто будет null.
 /// </summary>
-public sealed class DsrMemoryReader : IGameStateReader
+public sealed class GameMemoryReader : IGameStateReader
 {
     private static readonly TimeSpan AttachRetry = TimeSpan.FromSeconds(2);
 
     private readonly OffsetsConfig _config;
+    private readonly GameDefinition _game;
     private readonly Func<IProcessMemory?> _attach;
     private readonly Dictionary<string, long> _bases = new();
     private IProcessMemory? _memory;
     private DateTime _nextAttach = DateTime.MinValue;
 
-    public string Name => "DSR";
+    public string Name => _game.ShortTitle;
+    public GameDefinition Game => _game;
+    public bool IsAttached => _memory is { IsAlive: true };
     public IReadOnlyDictionary<string, long> ResolvedBases => _bases;
     public event Action<string>? Log;
 
-    public DsrMemoryReader(OffsetsConfig config, Func<IProcessMemory?>? attach = null)
+    public GameMemoryReader(GameDefinition game, OffsetsConfig config, Func<IProcessMemory?>? attach = null)
     {
+        _game = game;
         _config = config;
         _attach = attach ?? (() => WindowsProcessMemory.TryOpen(config.ProcessName));
     }
@@ -115,20 +119,11 @@ public sealed class DsrMemoryReader : IGameStateReader
     internal GameSnapshot ReadSnapshot(IProcessMemory m)
     {
         CharacterStats? stats = null;
-        if (Stat(m, "vitality") is { } vit)
-        {
-            stats = new CharacterStats
-            {
-                Vitality = vit,
-                Attunement = Stat(m, "attunement") ?? 0,
-                Endurance = Stat(m, "endurance") ?? 0,
-                Strength = Stat(m, "strength") ?? 0,
-                Dexterity = Stat(m, "dexterity") ?? 0,
-                Resistance = Stat(m, "resistance") ?? 0,
-                Intelligence = Stat(m, "intelligence") ?? 0,
-                Faith = Stat(m, "faith") ?? 0,
-            };
-        }
+        var statValues = _game.Stats
+            .Select(d => (d.Key, Value: Stat(m, d.Key)))
+            .Where(x => x.Value is not null)
+            .ToDictionary(x => x.Key, x => x.Value!.Value);
+        if (statValues.Count > 0) stats = new CharacterStats { Values = statValues };
 
         EquippedWeapon? weapon = null;
         if (Sane(m, "weapon_id", 0, 9_999_999) is { } wid)
@@ -148,12 +143,15 @@ public sealed class DsrMemoryReader : IGameStateReader
         return new GameSnapshot
         {
             IsConnected = true,
+            Game = _game.Key,
+            SoulsForNextLevel = Sane(m, "souls_for_next_level", 1, 999_999_999),
+            HollowLevel = Sane(m, "hollow_level", 0, 1000),
             CharacterName = name,
             Deaths = Sane(m, "deaths", 0, 10_000_000),
-            Area = Sane(m, "area", 10, 18),
+            Area = Sane(m, "area", 1, 99),
             Block = Sane(m, "block", 0, 9),
             Souls = Sane(m, "souls", 0, 999_999_999),
-            Level = Sane(m, "level", 1, 713),
+            Level = Sane(m, "level", 1, Math.Max(1, _game.MaxLevel)),
             Stats = stats,
             Weapon = weapon,
             BloodstainSouls = Sane(m, "bloodstain_souls", 0, 999_999_999),

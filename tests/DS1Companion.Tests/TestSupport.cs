@@ -1,4 +1,5 @@
 using DS1Companion.Core.Data;
+using DS1Companion.Core.Game;
 using DS1Companion.Core.Memory;
 using DS1Companion.Core.Models;
 using DS1Companion.Core.Persistence;
@@ -9,10 +10,14 @@ namespace DS1Companion.Tests;
 
 public static class TestData
 {
-    private static readonly Lazy<KnowledgeBase> Kb = new(() => KnowledgeBase.LoadFromDirectory(DataDir));
+    private static readonly Lazy<GameCatalog> CatalogLazy = new(() => GameCatalog.LoadFromDirectory(DataRoot));
 
-    public static string DataDir => Path.Combine(AppContext.BaseDirectory, "Data");
-    public static KnowledgeBase Knowledge => Kb.Value;
+    public static string DataRoot => Path.Combine(AppContext.BaseDirectory, "Data");
+    /// <summary>Каталог данных DS1 (основная игра большинства тестов).</summary>
+    public static string DataDir => Path.Combine(DataRoot, "ds1");
+    public static GameCatalog Catalog => CatalogLazy.Value;
+    public static KnowledgeBase Knowledge => Catalog.Get(GameKey.DarkSouls1);
+    public static KnowledgeBase Ds2 => Catalog.Get(GameKey.DarkSouls2);
 
     public static string SolutionDir
     {
@@ -104,25 +109,26 @@ public sealed class FakeMemory : IProcessMemory
 public static class VmFactory
 {
     public static (MainViewModel Vm, NullSoundService Sound, FakeClock Clock, AppSettings Settings, ProfileStore Profiles) Create(
-        TempDir dir, bool demo = true, Rarity minRarity = Rarity.Common)
+        TempDir dir, bool demo = true, Rarity minRarity = Rarity.Common, GameKey game = GameKey.DarkSouls1,
+        GameCatalog? catalog = null, Func<IGameStateReader>? live = null)
     {
         var paths = new AppPaths(dir.Path);
         paths.EnsureCreated();
-        var settings = new AppSettings { StartInDemo = demo, PopupMinRarity = minRarity };
+        var settings = new AppSettings { StartInDemo = demo, PopupMinRarity = minRarity, SelectedGame = game };
         var sound = new NullSoundService();
         var clock = new FakeClock();
         var profiles = new ProfileStore(paths);
         var store = new SettingsStore(paths);
         var vm = new MainViewModel(new MainViewModelDependencies
         {
-            Knowledge = TestData.Knowledge,
+            Catalog = catalog ?? TestData.Catalog,
             Sound = sound,
             Icons = new FakeIconProvider(),
             Settings = settings,
             SaveSettings = store.Save,
             Profiles = profiles,
             Clock = clock,
-            CreateLiveReader = () => new DS1Companion.Core.Game.DisconnectedReader(),
+            CreateLiveReader = live ?? (() => new DisconnectedReader()),
         });
         return (vm, sound, clock, settings, profiles);
     }

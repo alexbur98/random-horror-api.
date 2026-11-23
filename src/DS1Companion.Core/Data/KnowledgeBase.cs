@@ -4,9 +4,11 @@ using DS1Companion.Core.Models;
 
 namespace DS1Companion.Core.Data;
 
-/// <summary>Вся статическая база знаний: предметы, оружие, локации, боссы.</summary>
+/// <summary>База знаний одной игры: описание игры, предметы, оружие, локации, боссы.</summary>
 public sealed class KnowledgeBase
 {
+    public GameDefinition Game { get; }
+
     public static readonly JsonSerializerOptions JsonOptions = CreateJsonOptions();
 
     private readonly Dictionary<string, ItemInfo> _itemsById;
@@ -22,8 +24,9 @@ public sealed class KnowledgeBase
     public WeaponUpgradeData Upgrades { get; }
 
     public KnowledgeBase(IEnumerable<ItemInfo> items, WeaponUpgradeData upgrades,
-        IEnumerable<LocationInfo> locations, IEnumerable<BossInfo> bosses)
+        IEnumerable<LocationInfo> locations, IEnumerable<BossInfo> bosses, GameDefinition? game = null)
     {
+        Game = game ?? new GameDefinition { Key = GameKey.DarkSouls1, TitleRu = "Dark Souls", ShortTitle = "DS1", LevelCurve = "ds1" };
         Items = items.ToList();
         Upgrades = upgrades;
         Locations = locations.ToList();
@@ -45,24 +48,38 @@ public sealed class KnowledgeBase
         _weaponsByItemId = upgrades.Weapons.ToDictionary(w => w.ItemId, StringComparer.OrdinalIgnoreCase);
     }
 
-    public static KnowledgeBase LoadFromDirectory(string dataDir)
+    /// <summary>Загружает игру из каталога Data/{игра}/ (game.json, items.json, weapons_upgrade.json, locations.json, bosses.json).</summary>
+    public static KnowledgeBase LoadFromDirectory(string gameDir)
     {
-        T Read<T>(string file)
+        T Read<T>(string file, Func<T>? fallback = null)
         {
-            var path = Path.Combine(dataDir, file);
+            var path = Path.Combine(gameDir, file);
+            if (!File.Exists(path) && fallback is not null) return fallback();
             using var stream = File.OpenRead(path);
             return JsonSerializer.Deserialize<T>(stream, JsonOptions)
                    ?? throw new InvalidDataException($"Пустой файл данных: {path}");
         }
 
+        var game = Read<GameDefinition>("game.json");
+        game.Folder = gameDir;
+        var items = Read<List<ItemInfo>>("items.json");
+        var iconFolder = Path.GetFileName(Path.TrimEndingDirectorySeparator(gameDir));
+        foreach (var item in items) item.IconFolder = iconFolder;
         return new KnowledgeBase(
-            Read<List<ItemInfo>>("items_ds1.json"),
-            Read<WeaponUpgradeData>("weapons_upgrade_ds1.json"),
-            Read<List<LocationInfo>>("locations_ds1.json"),
-            Read<List<BossInfo>>("bosses_ds1.json"));
+            items,
+            Read("weapons_upgrade.json", () => new WeaponUpgradeData()),
+            Read("locations.json", () => new List<LocationInfo>()),
+            Read("bosses.json", () => new List<BossInfo>()),
+            game);
     }
 
     public ItemInfo? FindItem(string id) => _itemsById.GetValueOrDefault(id);
+
+    public ItemInfo ResolveInventoryItem(ItemKind kind, int gameId, string? itemId)
+    {
+        if (itemId is not null) return FindItem(itemId) ?? ItemInfo.Unknown(kind, gameId);
+        return ResolveInventoryItem(kind, gameId);
+    }
 
     public ItemInfo ResolveInventoryItem(ItemKind kind, int gameId)
     {
@@ -76,7 +93,7 @@ public sealed class KnowledgeBase
     public LocationInfo? FindLocation(string id) => _locationsById.GetValueOrDefault(id);
 
     public LocationInfo? FindLocation(int area, int block) =>
-        Locations.Where(l => l.Area == area && l.Block == block)
+        Locations.Where(l => l.Area > 0 && l.Area == area && l.Block == block)
                  .OrderByDescending(l => l.IsPrimaryForMap)
                  .FirstOrDefault();
 

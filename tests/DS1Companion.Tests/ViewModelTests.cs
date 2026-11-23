@@ -22,7 +22,7 @@ public class MainViewModelTests
 
         Assert.True(vm.IsDemoMode);
         Assert.Equal(ConnectionState.Demo, vm.ConnectionState);
-        Assert.Equal("Демо", vm.ConnectionLabel);
+        Assert.Equal("Демо · DS1", vm.ConnectionLabel);
         Assert.Equal("Город Нежити", vm.LocationNameRu);
         Assert.Equal(37, vm.TotalDeaths);
         Assert.Equal(0, vm.SessionDeaths);
@@ -182,7 +182,7 @@ public class MainViewModelTests
         Assert.Equal(2, row.Attempts);
         Assert.True(row.Defeated);
 
-        var saved = profiles.Load(vm.Profile!.CharacterName).Boss("taurus_demon");
+        var saved = profiles.Load(GameKey.DarkSouls1, vm.Profile!.CharacterName).Boss("taurus_demon");
         Assert.Equal(2, saved.Attempts);
         Assert.Equal(1, saved.Defeats);
         Assert.Equal(120, saved.BestVictorySeconds);

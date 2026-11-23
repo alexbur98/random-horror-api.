@@ -20,8 +20,8 @@ public sealed class UpgradeAdvisor
 
     public WeaponAdvice? Advise(EquippedWeapon? weapon)
     {
-        if (weapon is null) return null;
-        var item = _kb.FindWeaponItem(weapon.RawId);
+        if (weapon is null || !_kb.Game.HasWeaponUpgrades) return null;
+        var item = (weapon.ItemId is { } id ? _kb.FindItem(id) : null) ?? _kb.FindWeaponItem(weapon.RawId);
         var level = weapon.UpgradeLevel;
         var infusion = WeaponIdCodec.InfusionNameRu(weapon.Infusion);
         var baseName = item?.NameRu ?? $"Оружие #{weapon.BaseId}";
@@ -30,7 +30,7 @@ public sealed class UpgradeAdvisor
 
         var info = item is null ? null : _kb.FindWeaponUpgrade(item.Id);
         if (info is null)
-            return new WeaponAdvice(name, level, "", "Нет данных о скейлинге — добавьте оружие в weapons_upgrade_ds1.json.", "", false);
+            return new WeaponAdvice(name, level, "", "Нет данных о скейлинге — добавьте оружие в weapons_upgrade.json.", "", false);
 
         var letters = $"СИЛ {info.ScalingStr} · ЛВК {info.ScalingDex} · ИНТ {info.ScalingInt} · ВЕР {info.ScalingFth}";
         var path = _kb.FindPath(info.PathId);

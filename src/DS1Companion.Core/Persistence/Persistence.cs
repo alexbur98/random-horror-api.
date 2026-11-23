@@ -68,6 +68,8 @@ public sealed class AppSettings
     public bool StartInDemo { get; set; }
     public Rarity PopupMinRarity { get; set; } = Rarity.Common;
     public double PopupSeconds { get; set; } = 10;
+    /// <summary>Игра для демо-режима и для экрана ожидания (живая игра определяется автоматически).</summary>
+    public GameKey SelectedGame { get; set; } = GameKey.DarkSouls1;
 
     public string? MonitorDeviceName { get; set; }
     public double? WindowLeft { get; set; }
@@ -113,6 +115,7 @@ public sealed class SessionRecord
 
 public sealed class CharacterProfile
 {
+    public GameKey Game { get; set; }
     public string CharacterName { get; set; } = "";
     public int LastKnownDeaths { get; set; }
     public double TotalPlaySeconds { get; set; }
@@ -139,21 +142,22 @@ public sealed class CharacterProfile
     }
 }
 
-/// <summary>Раздельные профили по имени персонажа: profiles/{имя}.json.</summary>
+/// <summary>Раздельные профили по игре и имени персонажа: profiles/{игра}/{имя}.json.</summary>
 public sealed class ProfileStore
 {
     private readonly AppPaths _paths;
     public ProfileStore(AppPaths paths) => _paths = paths;
 
-    public string FileFor(string characterName)
+    public string FileFor(GameKey game, string characterName)
     {
         var safe = IconResolver.Sanitize(string.IsNullOrWhiteSpace(characterName) ? "unnamed" : characterName);
-        return Path.Combine(_paths.ProfilesDir, (safe.Length == 0 ? "unnamed" : safe) + ".json");
+        return Path.Combine(_paths.ProfilesDir, game.ToString(), (safe.Length == 0 ? "unnamed" : safe) + ".json");
     }
 
-    public CharacterProfile Load(string characterName)
+    public CharacterProfile Load(GameKey game, string characterName)
     {
-        var p = JsonFile.LoadOrDefault(FileFor(characterName), () => new CharacterProfile());
+        var p = JsonFile.LoadOrDefault(FileFor(game, characterName), () => new CharacterProfile { Game = game });
+        p.Game = game;
         p.CharacterName = characterName;
         // System.Text.Json создаёт словари без нашего компаратора — восстанавливаем его.
         p.Bosses = new Dictionary<string, BossRecord>(p.Bosses, StringComparer.OrdinalIgnoreCase);
@@ -161,5 +165,5 @@ public sealed class ProfileStore
         return p;
     }
 
-    public void Save(CharacterProfile profile) => JsonFile.Save(FileFor(profile.CharacterName), profile);
+    public void Save(CharacterProfile profile) => JsonFile.Save(FileFor(profile.Game, profile.CharacterName), profile);
 }

@@ -29,7 +29,7 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <StackPanel>
                     <TextBlock Style="{StaticResource Body}" FontSize="12" Margin="0,0,0,10"
-                               Text="Пороги эффективности (soft caps): после них каждое очко даёт заметно меньше." />
+                               Text="{Binding StatsSheetHint}" />
                     <ItemsControl ItemsSource="{Binding StatRows}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="{x:Type vm:StatRowViewModel}">

@@ -6,48 +6,45 @@ public enum StatAdvice { Good, Efficient, Capped, Warning }
 
 public sealed record StatHint(string Key, string NameRu, int Value, StatAdvice Advice, string HintRu);
 
-/// <summary>Подсказки по порогам эффективности (soft caps) Dark Souls.</summary>
+/// <summary>Подсказки по порогам эффективности (soft caps). Пороги берутся из game.json.</summary>
 public static class SoftCapAdvisor
 {
-    private static readonly int[] AttunementSlots = { 10, 12, 14, 16, 19, 23, 28, 34, 41, 50 };
+    public static IReadOnlyList<StatHint> Analyze(GameDefinition game, CharacterStats stats) =>
+        game.Stats.Where(d => stats.Values.ContainsKey(d.Key))
+                  .Select(d => Analyze(d, stats.Values[d.Key]))
+                  .ToList();
 
-    public static int AttunementSlotsAt(int attunement) => AttunementSlots.Count(t => attunement >= t);
-
-    public static IReadOnlyList<StatHint> Analyze(CharacterStats s) => new[]
+    public static StatHint Analyze(StatDefinition d, int value) => d.Kind switch
     {
-        CapStat("vitality", "Живучесть", s.Vitality, 40, "Здоровье. Эффективно до 40, дальше прирост слабый."),
-        Attunement(s.Attunement),
-        CapStat("endurance", "Стойкость", s.Endurance, 40, "Выносливость и вес. Выносливость перестаёт расти после 40."),
-        CapStat("strength", "Сила", s.Strength, 40, "Урон тяжёлого оружия. Выше 40 почти не растёт."),
-        CapStat("dexterity", "Ловкость", s.Dexterity, 40, "Урон быстрого оружия. Выше 40 почти не растёт."),
-        new StatHint("resistance", "Сопротивление", s.Resistance,
-            s.Resistance > 12 ? StatAdvice.Warning : StatAdvice.Good,
-            s.Resistance > 12
-                ? "Не качайте! Сопротивление почти бесполезно — очки лучше вложить в Живучесть."
-                : "Не качайте: защиту лучше дают броня и кольца."),
-        CapStat("intelligence", "Интеллект", s.Intelligence, 40, "Сила колдовства. Порог 40, у некоторых катализаторов — 50."),
-        CapStat("faith", "Вера", s.Faith, 40, "Сила чудес. Порог 40, у некоторых талисманов — 50."),
+        StatKind.SpellSlots => Slots(d, value),
+        StatKind.Avoid => value > d.AvoidAbove
+            ? new StatHint(d.Key, d.NameRu, value, StatAdvice.Warning, d.AvoidHintRu)
+            : new StatHint(d.Key, d.NameRu, value, StatAdvice.Good, d.HintRu),
+        _ => Cap(d, value),
     };
 
-    private static StatHint CapStat(string key, string name, int value, int cap, string hint)
+    public static int SlotsAt(StatDefinition d, int value) => d.SlotThresholds.Count(t => value >= t);
+
+    private static StatHint Cap(StatDefinition d, int value)
     {
-        var advice = value >= cap + 10 ? StatAdvice.Capped : value >= cap ? StatAdvice.Efficient : StatAdvice.Good;
+        if (d.Cap <= 0) return new StatHint(d.Key, d.NameRu, value, StatAdvice.Good, d.HintRu);
+        var advice = value >= d.Cap + 10 ? StatAdvice.Capped : value >= d.Cap ? StatAdvice.Efficient : StatAdvice.Good;
         var suffix = advice switch
         {
             StatAdvice.Capped => $" Сейчас {value} — дальнейшая прокачка почти ничего не даёт.",
-            StatAdvice.Efficient => $" Порог {cap} достигнут.",
-            _ => $" До порога: {cap - value}.",
+            StatAdvice.Efficient => $" Порог {d.Cap} достигнут.",
+            _ => $" До порога: {d.Cap - value}.",
         };
-        return new StatHint(key, name, value, advice, hint + suffix);
+        return new StatHint(d.Key, d.NameRu, value, advice, (d.HintRu + suffix).Trim());
     }
 
-    private static StatHint Attunement(int value)
+    private static StatHint Slots(StatDefinition d, int value)
     {
-        var slots = AttunementSlotsAt(value);
-        var next = AttunementSlots.FirstOrDefault(t => t > value);
+        var slots = SlotsAt(d, value);
+        var next = d.SlotThresholds.FirstOrDefault(t => t > value);
         var hint = next == 0
-            ? $"Слотов заклинаний: {slots} (максимум)."
-            : $"Слотов заклинаний: {slots}. Следующий слот — на {next}. Без магии качать не нужно.";
-        return new StatHint("attunement", "Ученость", value, next == 0 ? StatAdvice.Capped : StatAdvice.Good, hint);
+            ? $"Ячеек заклинаний: {slots} (максимум)."
+            : $"Ячеек заклинаний: {slots}. Следующая — на {next}. {d.HintRu}".Trim();
+        return new StatHint(d.Key, d.NameRu, value, next == 0 ? StatAdvice.Capped : StatAdvice.Good, hint);
     }
 }

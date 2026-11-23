@@ -64,7 +64,7 @@ public class KnowledgeBaseDataTests
         {
             var item = Kb.FindItem(w.ItemId);
             Assert.NotNull(item);
-            Assert.Equal(item!.GameId, w.GameId);
+            if (item!.GameId is { } gid) Assert.Equal(gid, w.GameId);
             Assert.NotNull(Kb.FindPath(w.PathId));
         }
         foreach (var path in Kb.Upgrades.Paths)

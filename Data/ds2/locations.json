@@ -1,0 +1,331 @@
+[
+  {
+    "id": "things_betwixt",
+    "name_ru": "Междумирье",
+    "name_en": "Things Betwixt",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Начало игры. Не спешите: здесь можно спокойно выучить управление.",
+      "Три Хранительницы огня в доме рядом с костром помогут выбрать облик и класс."
+    ]
+  },
+  {
+    "id": "majula",
+    "name_ru": "Маджула",
+    "name_en": "Majula",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Изумрудная Вестница повышает уровень — без неё души некуда тратить.",
+      "Здесь сожгите Священный костяной прах в костре, чтобы усилить Эстус."
+    ]
+  },
+  {
+    "id": "forest_of_fallen_giants",
+    "name_ru": "Лес павших гигантов",
+    "name_en": "Forest of Fallen Giants",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Первая крупная локация. Тут много срезок — открывайте их, чтобы не бегать заново.",
+      "Внимательно с ловушкой у бочек: часть врагов подрывает порох."
+    ]
+  },
+  {
+    "id": "heides_tower",
+    "name_ru": "Огненная башня Хейда",
+    "name_en": "Heide's Tower of Flame",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Рыцари Старого Хейда бьют сильно, но медленно — бейте после их атаки.",
+      "Сюда ведёт короткий путь из Маджулы через тоннель."
+    ]
+  },
+  {
+    "id": "no_mans_wharf",
+    "name_ru": "Ничейная пристань",
+    "name_en": "No-man's Wharf",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Темно: зажгите факелом светильники, и половина засад станет видна.",
+      "Не бегите вперёд — враги прячутся по углам и в домах."
+    ]
+  },
+  {
+    "id": "lost_bastille",
+    "name_ru": "Потерянная Бастилия",
+    "name_en": "Lost Bastille",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кузнец Макдафф живёт здесь: принесите ему Тусклый уголь.",
+      "Ключи Бастилии открывают камеры с NPC и предметами."
+    ]
+  },
+  {
+    "id": "belfry_luna",
+    "name_ru": "Колокольня Луны",
+    "name_en": "Belfry Luna",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Необязательная зона ковенанта Колоколов. Здесь часто вторгаются другие игроки."
+    ]
+  },
+  {
+    "id": "sinners_rise",
+    "name_ru": "Взлёт грешника",
+    "name_en": "Sinners' Rise",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Зажгите две масляные лампы по бокам арены — бой с Потерянной грешницей станет проще."
+    ]
+  },
+  {
+    "id": "huntsmans_copse",
+    "name_ru": "Охотничья роща",
+    "name_en": "Huntsman's Copse",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Бандиты и культисты прячутся за деревьями и камнями — не бегите вслепую.",
+      "Скелеты-владыки призывают слуг: не давайте себя окружить."
+    ]
+  },
+  {
+    "id": "harvest_valley",
+    "name_ru": "Долина жатвы",
+    "name_en": "Harvest Valley",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ядовитые облака повсюду: возьмите Цветущий мох или носите защиту от яда."
+    ]
+  },
+  {
+    "id": "earthen_peak",
+    "name_ru": "Земляной пик",
+    "name_en": "Earthen Peak",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ядовитая вода на нижних уровнях — сожгите мельницу, чтобы ослабить босса."
+    ]
+  },
+  {
+    "id": "iron_keep",
+    "name_ru": "Железная цитадель",
+    "name_en": "Iron Keep",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Лава повсюду. Колонны с огнём — держитесь от них подальше.",
+      "Демон-плавильщик наносит огонь: защитные кольца на огонь очень помогут."
+    ]
+  },
+  {
+    "id": "shaded_woods",
+    "name_ru": "Затенённый лес",
+    "name_en": "Shaded Woods",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Туман прячет врагов — двигайтесь медленно и держите щит.",
+      "Тут много окаменевших статуй: Душистая ветвь былого открывает путь дальше."
+    ]
+  },
+  {
+    "id": "doors_of_pharros",
+    "name_ru": "Двери Фарроса",
+    "name_en": "Doors of Pharros",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Не используйте Камни Фарроса наугад: часть механизмов — ловушки."
+    ]
+  },
+  {
+    "id": "brightstone_cove",
+    "name_ru": "Бухта Тсельдора",
+    "name_en": "Brightstone Cove Tseldora",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Пауки и паутина: огонь и огненные бомбы работают отлично."
+    ]
+  },
+  {
+    "id": "grave_of_saints",
+    "name_ru": "Могила святых",
+    "name_en": "Grave of Saints",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Крысы вызывают отравление и токсин — держите лечение от яда."
+    ]
+  },
+  {
+    "id": "the_gutter",
+    "name_ru": "Сточная канава",
+    "name_en": "The Gutter",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Очень темно и высоко: зажигайте светильники, они же служат ориентирами.",
+      "Падения убивают чаще врагов — каждый шаг проверяйте."
+    ]
+  },
+  {
+    "id": "black_gulch",
+    "name_ru": "Чёрное ущелье",
+    "name_en": "Black Gulch",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Статуи в стенах плюют ядом — пробегайте мимо и прячьтесь за выступами."
+    ]
+  },
+  {
+    "id": "drangleic_castle",
+    "name_ru": "Замок Дранглика",
+    "name_en": "Drangleic Castle",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Двери открываются поглощением душ рядом с ними — убивайте рыцарей у дверей."
+    ]
+  },
+  {
+    "id": "shrine_of_amana",
+    "name_ru": "Святилище Аманы",
+    "name_en": "Shrine of Amana",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Поющие из воды бьют магией издалека: используйте лук или магию."
+    ]
+  },
+  {
+    "id": "undead_crypt",
+    "name_ru": "Склеп нежити",
+    "name_en": "Undead Crypt",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Темно и много скрытых врагов — двигайтесь осторожно и держите щит."
+    ]
+  },
+  {
+    "id": "aldias_keep",
+    "name_ru": "Замок Альдии",
+    "name_en": "Aldia's Keep",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Сюда нужно Королевское кольцо."
+    ]
+  },
+  {
+    "id": "dragon_aerie",
+    "name_ru": "Гнездо драконов",
+    "name_en": "Dragon Aerie",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кристальные ящерицы тут встречаются часто — источник Мерцающего титанита."
+    ]
+  },
+  {
+    "id": "dragon_shrine",
+    "name_ru": "Драконье святилище",
+    "name_en": "Dragon Shrine",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Рыцари-драконы сильны — не бегите к Древнему дракону, не изучив их."
+    ]
+  },
+  {
+    "id": "memory_of_jeigh",
+    "name_ru": "Воспоминание Джейга",
+    "name_en": "Memory of Jeigh",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Чтобы войти, нужно Сердце пепельного тумана."
+    ]
+  },
+  {
+    "id": "throne_of_want",
+    "name_ru": "Трон Желания",
+    "name_en": "Throne of Want",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Финальная область. Убедитесь, что закончили дела в мире."
+    ]
+  },
+  {
+    "id": "shulva",
+    "name_ru": "Шулва, святой город",
+    "name_en": "Shulva, Sanctum City",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Многие ловушки отключаются рычагами — смотрите по сторонам."
+    ]
+  },
+  {
+    "id": "brume_tower",
+    "name_ru": "Башня Брюм",
+    "name_en": "Brume Tower",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Статуи с проклятием: найдите и разбейте их, чтобы снять эффект."
+    ]
+  },
+  {
+    "id": "frozen_eleum_loyce",
+    "name_ru": "Ледяной Элеум Лойс",
+    "name_en": "Frozen Eleum Loyce",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Метель лишает видимости — продвигайтесь короткими перебежками."
+    ]
+  }
+]

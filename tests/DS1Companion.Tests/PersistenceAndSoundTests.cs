@@ -42,17 +42,18 @@ public class PersistenceTests
         paths.EnsureCreated();
         var store = new ProfileStore(paths);
 
-        var a = store.Load("Солер");
+        var a = store.Load(GameKey.DarkSouls1, "Солер");
         a.AddToCollection("balder_side_sword", DateTime.Now);
         BossStatsRecorder.RecordStart(a, "taurus_demon");
         store.Save(a);
-        store.Save(store.Load("Оскар"));
+        store.Save(store.Load(GameKey.DarkSouls1, "Оскар"));
 
-        var reloaded = store.Load("Солер");
+        var reloaded = store.Load(GameKey.DarkSouls1, "Солер");
         Assert.True(reloaded.RareCollection.ContainsKey("BALDER_SIDE_SWORD")); // регистронезависимо
         Assert.Equal(1, reloaded.Boss("taurus_demon").Attempts);
-        Assert.Empty(store.Load("Оскар").RareCollection);
-        Assert.Equal(2, Directory.GetFiles(paths.ProfilesDir).Length);
+        Assert.Empty(store.Load(GameKey.DarkSouls1, "Оскар").RareCollection);
+        Assert.Equal(2, Directory.GetFiles(Path.Combine(paths.ProfilesDir, "DarkSouls1")).Length);
+        Assert.Empty(store.Load(GameKey.DarkSouls2, "Солер").RareCollection); // другая игра — другой профиль
         Assert.False(a.AddToCollection("balder_side_sword", DateTime.Now)); // повторная находка
     }
 
@@ -61,7 +62,7 @@ public class PersistenceTests
     {
         using var dir = new TempDir();
         var paths = new AppPaths(dir.Path);
-        var file = new ProfileStore(paths).FileFor("../../../evil");
+        var file = new ProfileStore(paths).FileFor(GameKey.DarkSouls1, "../../../evil");
         Assert.StartsWith(Path.GetFullPath(paths.ProfilesDir), Path.GetFullPath(file));
     }
 

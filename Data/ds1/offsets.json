@@ -1,0 +1,199 @@
+{
+  "_comment": "Read-only карта памяти DarkSoulsRemastered.exe (Dark Souls: Remastered). ВНИМАНИЕ: значения — стартовые, собраны по открытым источникам сообщества и НЕ проверены на всех версиях игры (verified=false). Если поле читается неверно — исправьте смещение здесь, пересобирать приложение не нужно. Формат цепочки: addr = [base]; для каждого смещения кроме последнего addr = [addr + off]; итоговый адрес = addr + последнее смещение.",
+  "process_name": "DarkSoulsRemastered",
+  "game_version": "1.03.x (Steam)",
+  "poll_interval_ms": 250,
+  "bases": {
+    "game_data_man": {
+      "aob": "48 8B 05 ?? ?? ?? ?? 48 8B 50 10 48 89 54 24 60",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "GameDataMan: данные персонажа (PlayerGameData по +0x10) и счётчик смертей."
+    },
+    "world_chr_man": {
+      "aob": "48 8B 05 ?? ?? ?? ?? 48 8B 48 68 48 85 C9 0F 84 ?? ?? ?? ?? 48 39 5E 10",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "WorldChrMan: локальный игрок, текущая карта."
+    },
+    "frpg_net_man": {
+      "aob": "48 8B 05 ?? ?? ?? ?? 48 05 08 0A 00 00 48 89 44 24 50",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "FrpgNetManImp: кровавое пятно / флаги боя. Используется экспериментально."
+    }
+  },
+  "fields": {
+    "character_name": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0xA8"
+      ],
+      "type": "Utf16",
+      "length": 16
+    },
+    "deaths": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x98"
+      ],
+      "type": "Int32"
+    },
+    "vitality": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x40"
+      ],
+      "type": "Int32"
+    },
+    "attunement": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x48"
+      ],
+      "type": "Int32"
+    },
+    "endurance": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x50"
+      ],
+      "type": "Int32"
+    },
+    "strength": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x58"
+      ],
+      "type": "Int32"
+    },
+    "dexterity": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x60"
+      ],
+      "type": "Int32"
+    },
+    "intelligence": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x68"
+      ],
+      "type": "Int32"
+    },
+    "faith": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x70"
+      ],
+      "type": "Int32"
+    },
+    "resistance": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x88"
+      ],
+      "type": "Int32"
+    },
+    "level": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x90"
+      ],
+      "type": "Int32"
+    },
+    "souls": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x94"
+      ],
+      "type": "Int32"
+    },
+    "weapon_id": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x324"
+      ],
+      "type": "Int32"
+    },
+    "weapon_durability": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x3B8"
+      ],
+      "type": "Int32"
+    },
+    "weapon_max_durability": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x10",
+        "0x3BC"
+      ],
+      "type": "Int32"
+    },
+    "area": {
+      "base": "world_chr_man",
+      "offsets": [
+        "0x68",
+        "0xA23"
+      ],
+      "type": "Byte"
+    },
+    "block": {
+      "base": "world_chr_man",
+      "offsets": [
+        "0x68",
+        "0xA22"
+      ],
+      "type": "Byte"
+    },
+    "bloodstain_souls": {
+      "base": "frpg_net_man",
+      "offsets": [
+        "0xB0C"
+      ],
+      "type": "Int32"
+    },
+    "boss_fight_active": {
+      "base": "frpg_net_man",
+      "offsets": [
+        "0xC70"
+      ],
+      "type": "Byte"
+    }
+  },
+  "inventory": {
+    "base": "game_data_man",
+    "list_offsets": [
+      "0x10",
+      "0x418",
+      "0x0"
+    ],
+    "count_offsets": [
+      "0x10",
+      "0x410"
+    ],
+    "capacity": 2048,
+    "entry_size": 28,
+    "category_offset": 0,
+    "id_offset": 4,
+    "quantity_offset": 8,
+    "verified": false
+  }
+}

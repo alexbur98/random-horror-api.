@@ -44,6 +44,8 @@ public sealed class GameSessionTracker
 
     public GameSessionTracker(KnowledgeBase kb) => _kb = kb;
 
+    public KnowledgeBase Knowledge => _kb;
+
     public void Reset()
     {
         _last = null;
@@ -131,7 +133,7 @@ public sealed class GameSessionTracker
     {
         foreach (var gain in InventoryDiff.Compute(prev.Inventory, s.Inventory))
         {
-            var item = _kb.ResolveInventoryItem(gain.Kind, gain.GameId);
+            var item = _kb.ResolveInventoryItem(gain.Kind, gain.GameId, gain.ItemId);
             ItemsPickedThisSession++;
             ItemPickedUp?.Invoke(new ItemPickup(item, gain.Quantity, now));
         }

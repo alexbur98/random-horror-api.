@@ -4,6 +4,7 @@ using System.Windows.Threading;
 using DS1Companion.Core.Data;
 using DS1Companion.Core.Game;
 using DS1Companion.Core.Memory;
+using DS1Companion.Core.Models;
 using DS1Companion.Core.Persistence;
 using DS1Companion.Core.Presentation;
 using DS1Companion.Core.Services;
@@ -31,15 +32,15 @@ public partial class App : Application
 
         var baseDir = AppContext.BaseDirectory;
         var dataDir = Path.Combine(baseDir, "Data");
-        KnowledgeBase kb;
+        GameCatalog catalog;
         try
         {
-            kb = KnowledgeBase.LoadFromDirectory(dataDir);
+            catalog = GameCatalog.LoadFromDirectory(dataDir);
         }
         catch (Exception ex)
         {
             _log.Write($"Не удалось загрузить базу знаний: {ex}");
-            MessageBox.Show($"Не удалось загрузить базу знаний из {dataDir}:\n{ex.Message}", "DS1 Companion",
+            MessageBox.Show($"Не удалось загрузить базу знаний из {dataDir}:\n{ex.Message}", "Souls Companion",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             Shutdown(1);
             return;
@@ -53,29 +54,39 @@ public partial class App : Application
         _icons = new CachingIconProvider(new[] { localIcons, paths.IconCacheDir }.Distinct().ToList(), cacheDir,
             post: a => Dispatcher.BeginInvoke(a));
 
-        OffsetsConfig? offsets = null;
-        try
+        // У каждой игры свой offsets.json; живой ридер сам определяет, какая игра запущена.
+        var memoryLog = new FileLogger(paths.LogsDir, "memory.log");
+        var offsets = new List<(GameDefinition Game, OffsetsConfig Config)>();
+        foreach (var kb in catalog.Games)
         {
-            offsets = OffsetsConfig.Load(Path.Combine(dataDir, "offsets.json"));
-            foreach (var err in offsets.Validate()) _log.Write($"offsets.json: {err}");
-        }
-        catch (Exception ex)
-        {
-            _log.Write($"offsets.json не загружен: {ex.Message}");
+            var file = Path.Combine(kb.Game.Folder, "offsets.json");
+            if (!File.Exists(file)) continue;
+            try
+            {
+                var cfg = OffsetsConfig.Load(file);
+                foreach (var err in cfg.Validate()) _log.Write($"{kb.Game.ShortTitle} offsets.json: {err}");
+                offsets.Add((kb.Game, cfg));
+            }
+            catch (Exception ex)
+            {
+                _log.Write($"{kb.Game.ShortTitle} offsets.json не загружен: {ex.Message}");
+            }
         }
 
-        var memoryLog = new FileLogger(paths.LogsDir, "memory.log");
         IGameStateReader CreateLive()
         {
-            if (offsets is null) return new DisconnectedReader();
-            var reader = new DsrMemoryReader(offsets);
-            reader.Log += memoryLog.Write;
-            return reader;
+            if (offsets.Count == 0) return new DisconnectedReader();
+            return new MultiGameReader(offsets.Select(o =>
+            {
+                var reader = new GameMemoryReader(o.Game, o.Config);
+                reader.Log += msg => memoryLog.Write($"[{o.Game.ShortTitle}] {msg}");
+                return reader;
+            }));
         }
 
         _vm = new MainViewModel(new MainViewModelDependencies
         {
-            Knowledge = kb,
+            Catalog = catalog,
             Sound = new WpfSoundService(),
             Icons = _icons,
             Settings = settings,
@@ -87,7 +98,7 @@ public partial class App : Application
 
         var window = new MainWindow(_vm, settings);
         MainWindow = window;
-        _poller = new GamePollingService(_vm, Dispatcher, offsets?.PollIntervalMs ?? 250);
+        _poller = new GamePollingService(_vm, Dispatcher, offsets.Count > 0 ? offsets.Min(o => o.Config.PollIntervalMs) : 250);
         _poller.Start();
         window.Show();
     }

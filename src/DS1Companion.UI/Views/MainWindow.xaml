@@ -8,7 +8,7 @@
         xmlns:views="clr-namespace:DS1Companion.UI.Views"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
-        Title="DS1 Companion"
+        Title="Souls Companion"
         Width="760" Height="1200" MinWidth="600" MinHeight="720" MaxWidth="1080"
         WindowStyle="None" ResizeMode="CanResize"
         Background="{StaticResource ObsidianBrush}"
@@ -40,11 +40,19 @@
             <DockPanel Margin="14,0,6,0" LastChildFill="False">
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
                     <Path Data="{StaticResource Ui.Bonfire}" Fill="{StaticResource GoldBrush}" Width="16" Height="16" Stretch="Uniform" />
-                    <TextBlock Margin="10,0,0,0" Text="DS1 COMPANION" FontFamily="{StaticResource SerifFont}" FontSize="13"
+                    <TextBlock Margin="10,0,0,0" Text="SOULS COMPANION" FontFamily="{StaticResource SerifFont}" FontSize="13"
                                Foreground="{StaticResource GoldBrush}" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                    <ComboBox Style="{StaticResource GameComboBox}" ItemsSource="{Binding GameOptions}" SelectedItem="{Binding SelectedGame}"
+                              Margin="0,0,8,0" ToolTip="Игра (запущенная игра определяется автоматически)">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type vm:GameOption}">
+                                <TextBlock Text="{Binding Title}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                     <ToggleButton Style="{StaticResource PillToggle}" IsChecked="{Binding IsDemoMode, Mode=OneWay}"
                                   Command="{Binding ToggleDemoCommand}" Margin="0,0,10,0" ToolTip="Демо-режим без запущенной игры">
                         <StackPanel Orientation="Horizontal">
@@ -139,7 +147,9 @@
                 </Grid>
 
                 <!-- Локация -->
-                <TextBlock Style="{StaticResource Caption}" Text="ТЕКУЩАЯ ЛОКАЦИЯ" />
+                <TextBlock Style="{StaticResource Caption}">
+                    <Run Text="{Binding GameTitle, Mode=OneWay}" Foreground="{StaticResource GoldBrush}" /><Run Text="  ·  ТЕКУЩАЯ ЛОКАЦИЯ" />
+                </TextBlock>
                 <TextBlock Style="{StaticResource SerifTitle}" FontSize="34" Margin="0,6,0,0" Text="{Binding LocationNameRu}" />
                 <TextBlock Style="{StaticResource TextBase}" FontStyle="Italic" FontSize="14" Foreground="{StaticResource GoldDimBrush}"
                            Text="{Binding LocationNameEn}" Margin="0,2,0,24" />
@@ -175,12 +185,10 @@
                         <DockPanel>
                             <TextBlock DockPanel.Dock="Right" Style="{StaticResource TextBase}" FontFamily="{StaticResource NumberFont}"
                                        FontSize="15" Text="{Binding SoulsText}" />
-                            <TextBlock Style="{StaticResource Caption}" VerticalAlignment="Center">
-                                <Run Text="ДУШИ НА РУКАХ / НА СЛЕДУЮЩИЙ УРОВЕНЬ" />
-                                <Run Text=" · УР. " /><Run Text="{Binding Level, Mode=OneWay}" />
-                            </TextBlock>
+                            <TextBlock Style="{StaticResource Caption}" VerticalAlignment="Center" Text="{Binding CurrencyCaption}" />
                         </DockPanel>
-                        <Border Height="6" CornerRadius="3" Background="#1E222B" Margin="0,12,0,8" ClipToBounds="True">
+                        <Border Height="6" CornerRadius="3" Background="#1E222B" Margin="0,12,0,8" ClipToBounds="True"
+                                Visibility="{Binding ShowSoulsProgress, Converter={StaticResource BoolToVis}}">
                             <Border CornerRadius="3" Background="{StaticResource SoulsFillBrush}" HorizontalAlignment="Stretch" RenderTransformOrigin="0,0.5">
                                 <Border.RenderTransform>
                                     <ScaleTransform ScaleX="{Binding SoulsProgress}" />
@@ -198,8 +206,19 @@
                         <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Bloodstain}" Fill="{StaticResource BloodBrush}" Width="22" Height="22"
                               Stretch="Uniform" Margin="0,0,14,0" VerticalAlignment="Top" />
                         <StackPanel>
-                            <TextBlock Style="{StaticResource Caption}" Foreground="#E07A7C" Text="КРОВАВОЕ ПЯТНО" />
+                            <TextBlock Style="{StaticResource Caption}" Foreground="#E07A7C" Text="{Binding BloodstainTitle}" />
                             <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" Text="{Binding BloodstainText}" Margin="0,4,0,0" />
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+                <Border Margin="0,0,0,12" Padding="16,12" CornerRadius="6" Background="#1F8D8A82" BorderBrush="#668D8A82" BorderThickness="1"
+                        Visibility="{Binding ShowHollowing, Converter={StaticResource BoolToVis}}">
+                    <DockPanel>
+                        <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Skull}" Fill="{StaticResource TextMutedBrush}" Width="22" Height="22"
+                              Stretch="Uniform" Margin="0,0,14,0" VerticalAlignment="Top" />
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource Caption}" Foreground="{StaticResource TextMutedBrush}" Text="{Binding HollowingTitle}" />
+                            <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" Text="{Binding HollowingText}" Margin="0,4,0,0" />
                         </StackPanel>
                     </DockPanel>
                 </Border>
@@ -231,7 +250,9 @@
                     <Rectangle Grid.Column="2" Height="1" Fill="{StaticResource LineBrush}" VerticalAlignment="Center" />
                 </Grid>
 
-                <Border Style="{StaticResource Panel}" Margin="0,0,0,12" DataContext="{Binding Weapon}">
+                <Border Style="{StaticResource Panel}" Margin="0,0,0,12"
+                        Visibility="{Binding HasWeaponPanel, Converter={StaticResource BoolToVis}}">
+                  <Border DataContext="{Binding Weapon}">
                     <StackPanel>
                         <TextBlock Style="{StaticResource Caption}" Text="ОРУЖИЕ В ОСНОВНОЙ РУКЕ" />
                         <TextBlock Style="{StaticResource SerifTitle}" Margin="0,6,0,0" Text="{Binding Title}" />
@@ -256,6 +277,7 @@
                             </DockPanel>
                         </StackPanel>
                     </StackPanel>
+                  </Border>
                 </Border>
 
                 <Border Style="{StaticResource Panel}" Margin="0,0,0,24">
