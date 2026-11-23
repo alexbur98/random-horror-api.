@@ -1,0 +1,38 @@
+<UserControl x:Class="DS1Companion.UI.Views.DemoPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DS1Companion.Core.Presentation;assembly=DS1Companion.Core"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:DemoPanelViewModel}">
+    <Border Background="#E60A0B0F" BorderBrush="{StaticResource GoldDimBrush}" BorderThickness="0,1,0,0" Padding="24,10,24,8">
+        <StackPanel>
+            <DockPanel>
+                <Button DockPanel.Dock="Right" Style="{StaticResource DemoButton}" Margin="0" Command="{Binding ToggleExpandedCommand}"
+                        Content="Свернуть / развернуть" />
+                <TextBlock Style="{StaticResource Caption}" Foreground="{StaticResource GoldBrush}" Text="ДЕМО-ПАНЕЛЬ" VerticalAlignment="Center" />
+            </DockPanel>
+            <WrapPanel Margin="0,10,0,0" Visibility="{Binding IsExpanded, Converter={StaticResource BoolToVis}}">
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickCommonCommand}" Content="Обычный" Foreground="#9CA3AF" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickUncommonCommand}" Content="Необычный" Foreground="#22C55E" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickRareCommand}" Content="Редкий" Foreground="#3B82F6" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickVeryRareCommand}" Content="Очень редкий" Foreground="#A855F7" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickLegendaryCommand}" Content="Балдерский прямой меч" Foreground="#F59E0B" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding PickKeyCommand}" Content="Ключ" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding AddSoulsCommand}" Content="+2 500 душ" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding LevelUpCommand}" Content="Уровень +1" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding DieCommand}" Content="Смерть" Foreground="#E07A7C" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RecoverCommand}" Content="Вернуть души" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding DamageWeaponCommand}" Content="Износ оружия" Foreground="#E3B341" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RepairWeaponCommand}" Content="Починить" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding UpgradeWeaponCommand}" Content="Заточка +1" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding NextLocationCommand}" Content="Сменить локацию" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding StartBossCommand}" Content="Бой с боссом" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding WinBossCommand}" Content="Победа" />
+                <Button Style="{StaticResource DemoButton}" Command="{Binding LoseBossCommand}" Content="Поражение" />
+            </WrapPanel>
+            <TextBlock Style="{StaticResource Body}" FontSize="11" Margin="0,2,0,0" Text="{Binding LastAction}" />
+        </StackPanel>
+    </Border>
+</UserControl>

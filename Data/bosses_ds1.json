@@ -1,0 +1,218 @@
+[
+  {
+    "id": "asylum_demon",
+    "name_ru": "Демон Убежища",
+    "name_en": "Asylum Demon",
+    "location_id": "undead_asylum",
+    "optional": false,
+    "tip_ru": "Бейте с балкона в падении, затем держитесь у него за спиной."
+  },
+  {
+    "id": "taurus_demon",
+    "name_ru": "Таурус-демон",
+    "name_en": "Taurus Demon",
+    "location_id": "undead_burg",
+    "optional": false,
+    "tip_ru": "Заберитесь на лестницу башни и бейте прыжком сверху."
+  },
+  {
+    "id": "bell_gargoyles",
+    "name_ru": "Горгульи колокола",
+    "name_en": "Bell Gargoyle",
+    "location_id": "undead_parish",
+    "optional": false,
+    "tip_ru": "Убейте первую до прилёта второй. Огненное дыхание можно обойти сбоку."
+  },
+  {
+    "id": "capra_demon",
+    "name_ru": "Демон-козёл",
+    "name_en": "Capra Demon",
+    "location_id": "lower_undead_burg",
+    "optional": false,
+    "tip_ru": "Сразу бегите на лестницу слева и убейте собак."
+  },
+  {
+    "id": "gaping_dragon",
+    "name_ru": "Пасть дракона",
+    "name_en": "Gaping Dragon",
+    "location_id": "depths",
+    "optional": false,
+    "tip_ru": "Держитесь сбоку у задних лап, бейте по хвосту."
+  },
+  {
+    "id": "moonlight_butterfly",
+    "name_ru": "Лунная бабочка",
+    "name_en": "Moonlight Butterfly",
+    "location_id": "darkroot_garden",
+    "optional": true,
+    "tip_ru": "Бейте, когда она садится на мост."
+  },
+  {
+    "id": "great_grey_wolf_sif",
+    "name_ru": "Великий серый волк Сиф",
+    "name_en": "Great Grey Wolf Sif",
+    "location_id": "darkroot_garden",
+    "optional": false,
+    "tip_ru": "Держитесь у его левой передней лапы — так меч бьёт мимо."
+  },
+  {
+    "id": "chaos_witch_quelaag",
+    "name_ru": "Хаос-ведьма Квилег",
+    "name_en": "Chaos Witch Quelaag",
+    "location_id": "quelaags_domain",
+    "optional": false,
+    "tip_ru": "Отходите при подготовке огненного взрыва."
+  },
+  {
+    "id": "stray_demon",
+    "name_ru": "Бродячий демон",
+    "name_en": "Stray Demon",
+    "location_id": "undead_asylum",
+    "optional": true,
+    "tip_ru": "Сильная магическая атака по площади — перекатывайтесь наружу."
+  },
+  {
+    "id": "iron_golem",
+    "name_ru": "Железный голем",
+    "name_en": "Iron Golem",
+    "location_id": "sens_fortress",
+    "optional": false,
+    "tip_ru": "Бейте по ногам — так он падает с края арены."
+  },
+  {
+    "id": "ornstein_smough",
+    "name_ru": "Орнштейн и Смоуг",
+    "name_en": "Ornstein & Smough",
+    "location_id": "anor_londo",
+    "optional": false,
+    "tip_ru": "Используйте колонны и не позволяйте им зажать вас с двух сторон."
+  },
+  {
+    "id": "crossbreed_priscilla",
+    "name_ru": "Полукровка Присцилла",
+    "name_en": "Crossbreed Priscilla",
+    "location_id": "painted_world",
+    "optional": true,
+    "tip_ru": "Становится невидимой — следите за следами на снегу."
+  },
+  {
+    "id": "dark_sun_gwyndolin",
+    "name_ru": "Тёмное солнце Гвиндолин",
+    "name_en": "Dark Sun Gwyndolin",
+    "location_id": "anor_londo",
+    "optional": true,
+    "tip_ru": "Двигайтесь зигзагом по коридору, прячась за колоннами."
+  },
+  {
+    "id": "pinwheel",
+    "name_ru": "Пинвил",
+    "name_en": "Pinwheel",
+    "location_id": "catacombs",
+    "optional": false,
+    "tip_ru": "Слабый босс — агрессивные атаки быстро решают бой."
+  },
+  {
+    "id": "gravelord_nito",
+    "name_ru": "Повелитель могил Нито",
+    "name_en": "Gravelord Nito",
+    "location_id": "tomb_of_giants",
+    "optional": false,
+    "tip_ru": "Божественное оружие и огонь особенно эффективны."
+  },
+  {
+    "id": "four_kings",
+    "name_ru": "Четыре короля",
+    "name_en": "The Four Kings",
+    "location_id": "new_londo_ruins",
+    "optional": false,
+    "tip_ru": "Нужен высокий урон: каждые ~50 секунд появляется новый король."
+  },
+  {
+    "id": "seath",
+    "name_ru": "Сиат Бесчешуйный",
+    "name_en": "Seath the Scaleless",
+    "location_id": "crystal_cave",
+    "optional": false,
+    "tip_ru": "Сначала разбейте Первородный кристалл позади него."
+  },
+  {
+    "id": "ceaseless_discharge",
+    "name_ru": "Неустанный Излив",
+    "name_en": "Ceaseless Discharge",
+    "location_id": "demon_ruins",
+    "optional": true,
+    "tip_ru": "Сразу бегите назад к туману — он полезет за вами на мост."
+  },
+  {
+    "id": "demon_firesage",
+    "name_ru": "Демон-огнеслов",
+    "name_en": "Demon Firesage",
+    "location_id": "demon_ruins",
+    "optional": true,
+    "tip_ru": "Держитесь у его ног и не стойте перед ним при взрыве."
+  },
+  {
+    "id": "centipede_demon",
+    "name_ru": "Демон-многоножка",
+    "name_en": "Centipede Demon",
+    "location_id": "demon_ruins",
+    "optional": false,
+    "tip_ru": "Отрубите одну из рук — получите Кольцо оранжевой обуглившейся."
+  },
+  {
+    "id": "bed_of_chaos",
+    "name_ru": "Ложе Хаоса",
+    "name_en": "Bed of Chaos",
+    "location_id": "lost_izalith",
+    "optional": false,
+    "tip_ru": "Разрушьте корни слева и справа, затем спрыгните к ядру."
+  },
+  {
+    "id": "hydra",
+    "name_ru": "Гидра",
+    "name_en": "Hydra",
+    "location_id": "darkroot_basin",
+    "optional": true,
+    "tip_ru": "Подойдите вплотную — водяные залпы бьют издалека."
+  },
+  {
+    "id": "gwyn",
+    "name_ru": "Гвин, Повелитель пепла",
+    "name_en": "Gwyn, Lord of Cinder",
+    "location_id": "kiln",
+    "optional": false,
+    "tip_ru": "Его атаки можно парировать — это самый надёжный способ."
+  },
+  {
+    "id": "sanctuary_guardian",
+    "name_ru": "Страж святилища",
+    "name_en": "Sanctuary Guardian",
+    "location_id": "sanctuary_garden",
+    "optional": false,
+    "tip_ru": "Отрежьте хвост и держитесь сбоку от молний."
+  },
+  {
+    "id": "knight_artorias",
+    "name_ru": "Рыцарь Арториас",
+    "name_en": "Knight Artorias",
+    "location_id": "royal_wood",
+    "optional": false,
+    "tip_ru": "Прерывайте его, когда он заряжается Бездной."
+  },
+  {
+    "id": "black_dragon_kalameet",
+    "name_ru": "Чёрный дракон Каламит",
+    "name_en": "Black Dragon Kalameet",
+    "location_id": "royal_wood",
+    "optional": true,
+    "tip_ru": "Сначала Гоу должен сбить его на землю."
+  },
+  {
+    "id": "manus",
+    "name_ru": "Манус, Отец Бездны",
+    "name_en": "Manus, Father of the Abyss",
+    "location_id": "chasm_of_the_abyss",
+    "optional": false,
+    "tip_ru": "Серебряный кулон отражает его тёмную магию."
+  }
+]

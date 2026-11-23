@@ -1,0 +1,324 @@
+[
+  {
+    "id": "undead_asylum",
+    "name_ru": "Убежище нежити",
+    "name_en": "Northern Undead Asylum",
+    "area": 18,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "При первой встрече с Демоном Убежища бегите в открывшуюся дверь слева — сначала заберите щит и оружие.",
+      "С балкона можно спрыгнуть на Демона и нанести мощный удар в падении."
+    ]
+  },
+  {
+    "id": "firelink_shrine",
+    "name_ru": "Храм огня",
+    "name_en": "Firelink Shrine",
+    "area": 10,
+    "block": 2,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Не нападайте на мирных NPC в Храме — можно потерять торговцев и сюжетные ветки.",
+      "Души Хранительниц огня отдавайте Хранительнице в Храме — это усиливает Эстус."
+    ]
+  },
+  {
+    "id": "undead_burg",
+    "name_ru": "Город Нежити",
+    "name_en": "Undead Burg",
+    "area": 10,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Красный дракон на мосту: перебегайте короткими рывками или уйдите на лестницу под мостом.",
+      "Огненные бомбы у торговца-нежити заметно упрощают бой с Таурус-демоном."
+    ]
+  },
+  {
+    "id": "undead_parish",
+    "name_ru": "Приход нежити",
+    "name_en": "Undead Parish",
+    "area": 10,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кузнец Андрэ из Асторы — внизу, за церковью. Рядом есть костёр.",
+      "Отрубите хвост первой Горгулье, пока не прилетела вторая — получите Топор хвоста горгульи."
+    ]
+  },
+  {
+    "id": "lower_undead_burg",
+    "name_ru": "Нижний город нежити",
+    "name_en": "Lower Undead Burg",
+    "area": 10,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Собаки-нежить очень быстрые — держите щит поднятым и не бегайте спиной к ним.",
+      "В бою с Демоном-козлом сначала разберитесь с собаками на лестнице слева."
+    ]
+  },
+  {
+    "id": "depths",
+    "name_ru": "Глубины",
+    "name_en": "The Depths",
+    "area": 10,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Слизни висят на потолке — смотрите вверх перед каждым проходом.",
+      "Против Пасти дракона держитесь сбоку у задних лап и избегайте рывка спереди."
+    ]
+  },
+  {
+    "id": "blighttown",
+    "name_ru": "Чумной город",
+    "name_en": "Blighttown",
+    "area": 14,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Возьмите Пурпурный мох: яд здесь повсюду.",
+      "Ржавое железное кольцо позволяет быстро ходить по болоту."
+    ]
+  },
+  {
+    "id": "quelaags_domain",
+    "name_ru": "Владения Квилег",
+    "name_en": "Quelaag's Domain",
+    "area": 14,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Огонь против Квилег почти бесполезен — используйте физический урон или магию.",
+      "После победы позвоните во второй колокол пробуждения."
+    ]
+  },
+  {
+    "id": "darkroot_garden",
+    "name_ru": "Тёмный сад",
+    "name_en": "Darkroot Garden",
+    "area": 12,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Некоторые «деревья» — затаившиеся враги. Подходите осторожно.",
+      "Дверь к могиле Арториаса открывает Знак Арториаса."
+    ]
+  },
+  {
+    "id": "darkroot_basin",
+    "name_ru": "Корневая низина",
+    "name_en": "Darkroot Basin",
+    "area": 12,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Разбейте Золотого кристального голема у озера — внутри заточена принцесса Сумерек.",
+      "Гидра стреляет водой издалека: сокращайте дистанцию по кромке берега."
+    ]
+  },
+  {
+    "id": "valley_of_drakes",
+    "name_ru": "Долина драконов",
+    "name_en": "Valley of Drakes",
+    "area": 16,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Мосты узкие: драконы-нежить сбрасывают ударом дыхания. Не задерживайтесь."
+    ]
+  },
+  {
+    "id": "new_londo_ruins",
+    "name_ru": "Руины Нового Лондо",
+    "name_en": "New Londo Ruins",
+    "area": 16,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Призраков можно бить только с проклятым оружием или после Мимолётного проклятия.",
+      "Перед Четырьмя королями нужен Завет Арториаса — без него Бездна убьёт вас мгновенно."
+    ]
+  },
+  {
+    "id": "sens_fortress",
+    "name_ru": "Крепость Сена",
+    "name_en": "Sen's Fortress",
+    "area": 15,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Маятники: проходите сразу после того, как лезвие ушло в сторону.",
+      "Железный голем уязвим к молнии — пригодится Смола золотой сосны."
+    ]
+  },
+  {
+    "id": "anor_londo",
+    "name_ru": "Анор Лондо",
+    "name_en": "Anor Londo",
+    "area": 15,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Не нападайте на принцессу Гвиневер — это изменит локацию и сюжет.",
+      "Против Орнштейна и Смоуга используйте колонны как укрытие."
+    ]
+  },
+  {
+    "id": "painted_world",
+    "name_ru": "Нарисованный мир Ариамиса",
+    "name_en": "Painted World of Ariamis",
+    "area": 11,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Необязательная зона: сюда ведёт Странная кукла.",
+      "Присцилла не нападает первой — бой с ней можно пропустить."
+    ]
+  },
+  {
+    "id": "catacombs",
+    "name_ru": "Катакомбы",
+    "name_en": "The Catacombs",
+    "area": 13,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Скелеты встают снова, пока жив Некромант — найдите и убейте его, или используйте Божественное оружие."
+    ]
+  },
+  {
+    "id": "tomb_of_giants",
+    "name_ru": "Гробница великанов",
+    "name_en": "Tomb of the Giants",
+    "area": 13,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Очень темно: держите источник света и не бегите к краю — кругом обрывы."
+    ]
+  },
+  {
+    "id": "great_hollow",
+    "name_ru": "Великая пустота",
+    "name_en": "The Great Hollow",
+    "area": 13,
+    "block": 2,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Спуск по ветвям: главная опасность — падение. Двигайтесь медленно."
+    ]
+  },
+  {
+    "id": "ash_lake",
+    "name_ru": "Пепельное озеро",
+    "name_en": "Ash Lake",
+    "area": 13,
+    "block": 2,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь можно вступить в ковенант Пути дракона."
+    ]
+  },
+  {
+    "id": "demon_ruins",
+    "name_ru": "Руины демонов",
+    "name_en": "Demon Ruins",
+    "area": 14,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Лава наносит огромный урон — без защитного кольца не стоит в неё заходить."
+    ]
+  },
+  {
+    "id": "lost_izalith",
+    "name_ru": "Потерянный Изалит",
+    "name_en": "Lost Izalith",
+    "area": 14,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ложе Хаоса: разрушьте два корня — слева и справа, затем прыгайте в центр."
+    ]
+  },
+  {
+    "id": "dukes_archives",
+    "name_ru": "Архивы герцога",
+    "name_en": "The Duke's Archives",
+    "area": 17,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Первый бой с Сиатом проиграть — это по сюжету, не тратьте ресурсы."
+    ]
+  },
+  {
+    "id": "crystal_cave",
+    "name_ru": "Кристальный грот",
+    "name_en": "Crystal Cave",
+    "area": 17,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Невидимые мосты: следите за следами снежинок или бросайте Призматический камень."
+    ]
+  },
+  {
+    "id": "kiln",
+    "name_ru": "Горнило Первого пламени",
+    "name_en": "Kiln of the First Flame",
+    "area": 18,
+    "block": 0,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Точка невозврата: после Гвина начнётся NG+. Закончите все дела до входа."
+    ]
+  },
+  {
+    "id": "sanctuary_garden",
+    "name_ru": "Сад святилища",
+    "name_en": "Sanctuary Garden",
+    "area": 12,
+    "block": 1,
+    "is_primary_for_map": true,
+    "tips_ru": [
+      "Вход в DLC. Хвост Стража святилища можно отрезать — получите оружие."
+    ]
+  },
+  {
+    "id": "royal_wood",
+    "name_ru": "Королевский лес",
+    "name_en": "Royal Wood",
+    "area": 12,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Арториаса лучше избегать перекатом, а не блоком: он ломает защиту."
+    ]
+  },
+  {
+    "id": "oolacile_township",
+    "name_ru": "Город Оолацил",
+    "name_en": "Oolacile Township",
+    "area": 12,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь много иллюзорных стен — бейте по подозрительным тупикам."
+    ]
+  },
+  {
+    "id": "chasm_of_the_abyss",
+    "name_ru": "Бездна",
+    "name_en": "Chasm of the Abyss",
+    "area": 12,
+    "block": 1,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Против магии Мануса защищает Серебряный кулон."
+    ]
+  }
+]

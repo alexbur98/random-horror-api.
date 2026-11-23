@@ -1,0 +1,457 @@
+{
+  "_comment": "Скейлинг указан для +0 обычного пути (буквы E–S). Значения ориентировочные — уточняйте по вики. Шаги: to_level — уровень, НА который улучшаем; ember_item_id — уголь, который один раз отдают кузнецу.",
+  "paths": [
+    {
+      "id": "regular",
+      "name_ru": "Обычная заточка",
+      "smith_ru": "Андрэ из Асторы (или любой кузнец)",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "titanite_shard",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "titanite_shard",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "titanite_shard",
+          "quantity": 3
+        },
+        {
+          "to_level": 6,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 1,
+          "ember_item_id": "large_ember"
+        },
+        {
+          "to_level": 7,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 1
+        },
+        {
+          "to_level": 8,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 9,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 2
+        },
+        {
+          "to_level": 10,
+          "material_item_id": "large_titanite_shard",
+          "quantity": 3
+        },
+        {
+          "to_level": 11,
+          "material_item_id": "titanite_chunk",
+          "quantity": 1,
+          "ember_item_id": "very_large_ember"
+        },
+        {
+          "to_level": 12,
+          "material_item_id": "titanite_chunk",
+          "quantity": 1
+        },
+        {
+          "to_level": 13,
+          "material_item_id": "titanite_chunk",
+          "quantity": 2
+        },
+        {
+          "to_level": 14,
+          "material_item_id": "titanite_chunk",
+          "quantity": 2
+        },
+        {
+          "to_level": 15,
+          "material_item_id": "titanite_slab",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "unique",
+      "name_ru": "Уникальное оружие",
+      "smith_ru": "Андрэ из Асторы или Гигант-кузнец",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 2
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "twinkling_titanite",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name_ru": "Оружие из души босса",
+      "smith_ru": "Андрэ из Асторы или Гигант-кузнец",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "demon_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "demon_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "demon_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "demon_titanite",
+          "quantity": 1
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "demon_titanite",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "dragon",
+      "name_ru": "Драконье оружие",
+      "smith_ru": "Андрэ из Асторы или Гигант-кузнец",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "dragon_scale",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "dragon_scale",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "dragon_scale",
+          "quantity": 2
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "dragon_scale",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "dragon_scale",
+          "quantity": 3
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "item_id": "dagger",
+      "game_id": 100000,
+      "path_id": "regular",
+      "scaling_str": "E",
+      "scaling_dex": "B",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "shortsword",
+      "game_id": 200000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "longsword",
+      "game_id": 201000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "broadsword",
+      "game_id": 202000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "balder_side_sword",
+      "game_id": 204000,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "sunlight_straight_sword",
+      "game_id": 206000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "broken_straight_sword",
+      "game_id": 203000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "drake_sword",
+      "game_id": 211000,
+      "path_id": "dragon",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Не растёт от характеристик — урон даёт только заточка"
+    },
+    {
+      "item_id": "claymore",
+      "game_id": 301000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "zweihander",
+      "game_id": 350000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "black_knight_sword",
+      "game_id": 310000,
+      "path_id": "unique",
+      "scaling_str": "C",
+      "scaling_dex": "E",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "moonlight_greatsword",
+      "game_id": 309000,
+      "path_id": "unique",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "B",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Магический урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "greatsword_of_artorias",
+      "game_id": 307000,
+      "path_id": "boss",
+      "scaling_str": "C",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "uchigatana",
+      "game_id": 500000,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "chaos_blade",
+      "game_id": 503000,
+      "path_id": "unique",
+      "scaling_str": "E",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "battle_axe",
+      "game_id": 701000,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "E",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "black_knight_greataxe",
+      "game_id": 753000,
+      "path_id": "unique",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "mace",
+      "game_id": 801000,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "club",
+      "game_id": 800000,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "reinforced_club",
+      "game_id": 810000,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "grant",
+      "game_id": 851000,
+      "path_id": "unique",
+      "scaling_str": "D",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "B",
+      "scaling_hint_ru": "Растёт от Силы и Веры"
+    },
+    {
+      "item_id": "dragon_tooth",
+      "game_id": 854000,
+      "path_id": "unique",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "smoughs_hammer",
+      "game_id": 856000,
+      "path_id": "boss",
+      "scaling_str": "D",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "winged_spear",
+      "game_id": 1001000,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "estoc",
+      "game_id": 600000,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "rapier",
+      "game_id": 601000,
+      "path_id": "regular",
+      "scaling_str": "E",
+      "scaling_dex": "B",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "quelaags_furysword",
+      "game_id": 406000,
+      "path_id": "boss",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Урон растёт от Человечности, а не от характеристик"
+    }
+  ]
+}
