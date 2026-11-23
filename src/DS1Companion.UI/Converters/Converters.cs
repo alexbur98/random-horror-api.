@@ -92,3 +92,14 @@ public sealed class RarityLabelConverter : IValueConverter
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => Binding.DoNothing;
 }
+
+/// <summary>Подсказка про чтение памяти видна только при ожидании игры и если она не пустая.</summary>
+public sealed class WaitingHintVisibilityConverter : IMultiValueConverter
+{
+    public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) =>
+        values.Length == 2 && values[0] is ConnectionState.Waiting && values[1] is string { Length: > 0 }
+            ? Visibility.Visible : Visibility.Collapsed;
+
+    public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}

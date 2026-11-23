@@ -98,6 +98,7 @@ public sealed partial class WeaponPanelViewModel : ObservableObject
     [ObservableProperty] private bool _hasNextStep;
     [ObservableProperty] private double _durabilityFraction = 1.0;
     [ObservableProperty] private string _durabilityText = "";
+    [ObservableProperty] private bool _hasDurability;
 
     public void Update(EquippedWeapon? weapon, WeaponAdvice? advice)
     {
@@ -107,6 +108,7 @@ public sealed partial class WeaponPanelViewModel : ObservableObject
             Title = "Оружие не экипировано";
             ScalingLetters = ScalingHint = NextStep = DurabilityText = "";
             HasNextStep = false;
+            HasDurability = false;
             DurabilityFraction = 1;
             return;
         }
@@ -116,6 +118,7 @@ public sealed partial class WeaponPanelViewModel : ObservableObject
         NextStep = advice.NextStep;
         HasNextStep = !string.IsNullOrEmpty(advice.NextStep);
         DurabilityFraction = weapon.DurabilityRatio;
+        HasDurability = weapon.MaxDurability > 0;
         DurabilityText = weapon.MaxDurability > 0 ? $"Прочность {weapon.Durability}/{weapon.MaxDurability}" : "";
     }
 }

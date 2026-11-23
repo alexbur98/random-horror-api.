@@ -1,0 +1,113 @@
+{
+  "_comment": "Read-only карта памяти eldenring.exe (x64). ВНИМАНИЕ: при работающем Easy Anti-Cheat процесс защищён и чтение невозможно. Шаблоны и смещения — стартовые, по открытым данным сообщества, НЕ проверены (verified=false).",
+  "process_name": "eldenring",
+  "game_version": "1.10+ (Steam)",
+  "poll_interval_ms": 300,
+  "bases": {
+    "game_data_man": {
+      "aob": "48 8B 05 ?? ?? ?? ?? 48 85 C0 74 05 48 8B 40 58 C3 C3",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "GameDataMan: PlayerGameData по +0x8."
+    }
+  },
+  "fields": {
+    "character_name": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x9C"
+      ],
+      "type": "Utf16",
+      "length": 16
+    },
+    "deaths": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x94"
+      ],
+      "type": "Int32"
+    },
+    "level": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x68"
+      ],
+      "type": "Int32"
+    },
+    "souls": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x6C"
+      ],
+      "type": "Int32"
+    },
+    "vigor": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x3C"
+      ],
+      "type": "Int32"
+    },
+    "mind": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x40"
+      ],
+      "type": "Int32"
+    },
+    "endurance": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x44"
+      ],
+      "type": "Int32"
+    },
+    "strength": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x48"
+      ],
+      "type": "Int32"
+    },
+    "dexterity": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x4C"
+      ],
+      "type": "Int32"
+    },
+    "intelligence": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x50"
+      ],
+      "type": "Int32"
+    },
+    "faith": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x54"
+      ],
+      "type": "Int32"
+    },
+    "arcane": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x58"
+      ],
+      "type": "Int32"
+    }
+  }
+}

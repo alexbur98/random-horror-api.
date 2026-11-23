@@ -1,0 +1,65 @@
+{
+  "_comment": "Read-only карта памяти sekiro.exe (x64). ВНИМАНИЕ: это заготовка — шаблоны и смещения НЕ проверены (verified=false) и почти наверняка потребуют калибровки на ПК.",
+  "process_name": "sekiro",
+  "game_version": "1.06 (Steam)",
+  "poll_interval_ms": 250,
+  "bases": {
+    "game_data_man": {
+      "aob": "48 8B 35 ?? ?? ?? ?? 44 0F 28 18",
+      "rip_offset": 3,
+      "instruction_length": 7,
+      "verified": false,
+      "note": "Заготовка, требует проверки."
+    }
+  },
+  "fields": {
+    "souls": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x7C"
+      ],
+      "type": "Int32"
+    },
+    "deaths": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x90"
+      ],
+      "type": "Int32"
+    },
+    "hollow_level": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x94"
+      ],
+      "type": "Int32"
+    },
+    "vitality": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x40"
+      ],
+      "type": "Int32"
+    },
+    "posture": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x44"
+      ],
+      "type": "Int32"
+    },
+    "attack_power": {
+      "base": "game_data_man",
+      "offsets": [
+        "0x8",
+        "0x48"
+      ],
+      "type": "Int32"
+    }
+  }
+}

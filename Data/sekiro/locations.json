@@ -1,0 +1,227 @@
+[
+  {
+    "id": "dilapidated_temple",
+    "name_ru": "Ветхий храм",
+    "name_en": "Dilapidated Temple",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Скульптор устанавливает протезные инструменты и улучшает их.",
+      "Здесь же Эмма — она поможет с Драконьей хворью."
+    ]
+  },
+  {
+    "id": "ashina_reservoir_start",
+    "name_ru": "Резервуар Асина",
+    "name_en": "Ashina Reservoir",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Начало игры. Учитесь парировать — без этого дальше будет очень трудно."
+    ]
+  },
+  {
+    "id": "ashina_outskirts",
+    "name_ru": "Окраины Асина",
+    "name_en": "Ashina Outskirts",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь много солдат: зачищайте скрытно, убивая со спины.",
+      "Сюрикены сбивают собак и прыгающих врагов."
+    ]
+  },
+  {
+    "id": "ashina_outskirts_gate",
+    "name_ru": "Ворота замка Асина",
+    "name_en": "Ashina Castle Gate",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Генерал на мосту — сильный противник: ослабьте стойкость серией ударов и парирований."
+    ]
+  },
+  {
+    "id": "hirata_estate",
+    "name_ru": "Поместье Хирата",
+    "name_en": "Hirata Estate",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Огонь и стелс: здесь много бандитов, прячьтесь в траве.",
+      "Тайный проход открывает доступ к важным предметам."
+    ]
+  },
+  {
+    "id": "ashina_castle",
+    "name_ru": "Замок Асина",
+    "name_en": "Ashina Castle",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Используйте крюк-кошку, чтобы обходить отряды сверху.",
+      "Огненный распылитель помогает против быка."
+    ]
+  },
+  {
+    "id": "ashina_castle_tower",
+    "name_ru": "Верхняя башня замка",
+    "name_en": "Ashina Castle Upper Tower",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Самураи с длинными мечами — парируйте их серии."
+    ]
+  },
+  {
+    "id": "abandoned_dungeon",
+    "name_ru": "Заброшенная темница",
+    "name_en": "Abandoned Dungeon",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Призраки бьют больно — используйте Божественное конфетти."
+    ]
+  },
+  {
+    "id": "senpou_temple",
+    "name_ru": "Храм Сэмпо на горе Конго",
+    "name_en": "Senpou Temple, Mt. Kongo",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Монахи и ядовитые ловушки — держите противоядие.",
+      "Здесь можно получить важный предмет для сюжета."
+    ]
+  },
+  {
+    "id": "inner_sanctum",
+    "name_ru": "Внутреннее святилище",
+    "name_en": "Inner Sanctum",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Тихое место. Поговорите с Божественным дитя."
+    ]
+  },
+  {
+    "id": "sunken_valley",
+    "name_ru": "Затонувшая долина",
+    "name_en": "Sunken Valley",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Стрелки на скалах опасны: подбирайтесь скрытно."
+    ]
+  },
+  {
+    "id": "gun_fort",
+    "name_ru": "Оружейный форт",
+    "name_en": "Gun Fort",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Мост и стрелки — держитесь за укрытиями."
+    ]
+  },
+  {
+    "id": "guardian_ape_burrow",
+    "name_ru": "Логово Обезьяны-стража",
+    "name_en": "Guardian Ape's Burrow",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Логово босса. Огонь и сюрикены помогают."
+    ]
+  },
+  {
+    "id": "ashina_depths",
+    "name_ru": "Глубины Асина",
+    "name_en": "Ashina Depths",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ядовитое болото: противоядие и аккуратные прыжки по брёвнам."
+    ]
+  },
+  {
+    "id": "poison_pool",
+    "name_ru": "Ядовитый пруд",
+    "name_en": "Poison Pool",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь призрачный воин: используйте конфетти и успокаивающее средство."
+    ]
+  },
+  {
+    "id": "hidden_forest",
+    "name_ru": "Скрытый лес",
+    "name_en": "Hidden Forest",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Густой туман: держитесь вдоль тропинки и избегайте призрачных монахов."
+    ]
+  },
+  {
+    "id": "mibu_village",
+    "name_ru": "Деревня Мибу",
+    "name_en": "Mibu Village",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Жители почти безобидны — но здесь же опасный дух в воде."
+    ]
+  },
+  {
+    "id": "fountainhead_palace",
+    "name_ru": "Дворец Истока",
+    "name_en": "Fountainhead Palace",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Последняя большая зона. Сильные враги, нужно умение нырять."
+    ]
+  },
+  {
+    "id": "sanctuary",
+    "name_ru": "Святилище",
+    "name_en": "Sanctuary",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Финальная часть дворца перед сюжетными боями."
+    ]
+  },
+  {
+    "id": "ashina_castle_ending",
+    "name_ru": "Замок Асина в огне",
+    "name_en": "Ashina Castle (invaded)",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Замок захвачен — враги другие, будьте внимательны."
+    ]
+  }
+]

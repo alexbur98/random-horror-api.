@@ -11,8 +11,8 @@
         Title="Souls Companion"
         Width="760" Height="1200" MinWidth="600" MinHeight="720" MaxWidth="1080"
         WindowStyle="None" ResizeMode="CanResize"
-        Background="{StaticResource ObsidianBrush}"
-        Foreground="{StaticResource TextBrush}"
+        Background="{DynamicResource ObsidianBrush}"
+        Foreground="{DynamicResource TextBrush}"
         FontFamily="{StaticResource SansFont}"
         UseLayoutRounding="True"
         Topmost="{Binding IsTopmost}">
@@ -28,20 +28,20 @@
         </Grid.RowDefinitions>
 
         <!-- ── Фон: обсидиан, зерно, тёплое свечение снизу, искры, виньетка ── -->
-        <Rectangle Grid.RowSpan="3" Fill="{StaticResource ObsidianBrush}" />
+        <Rectangle Grid.RowSpan="3" Fill="{DynamicResource ObsidianBrush}" />
         <Rectangle x:Name="NoiseLayer" Grid.RowSpan="3" Opacity="0.9" />
-        <Rectangle Grid.RowSpan="3" Fill="{StaticResource WarmGlowBrush}" />
-        <ctl:EmberField Grid.RowSpan="3" Count="34" IsCalm="{Binding IsCardVisible}" />
+        <Rectangle Grid.RowSpan="3" Fill="{DynamicResource WarmGlowBrush}" />
+        <ctl:EmberField Grid.RowSpan="3" IsCalm="{Binding IsCardVisible}" Theme="{Binding Theme}" />
         <Rectangle Grid.RowSpan="3" Fill="{StaticResource VignetteBrush}" IsHitTestVisible="False" />
 
         <!-- ── Кастомная шапка окна ── -->
-        <Border Grid.Row="0" Background="#CC07080A" BorderBrush="{StaticResource LineBrush}" BorderThickness="0,0,0,1"
+        <Border Grid.Row="0" Background="{DynamicResource TitleBarBrush}" BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1"
                 MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
             <DockPanel Margin="14,0,6,0" LastChildFill="False">
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Path Data="{StaticResource Ui.Bonfire}" Fill="{StaticResource GoldBrush}" Width="16" Height="16" Stretch="Uniform" />
-                    <TextBlock Margin="10,0,0,0" Text="SOULS COMPANION" FontFamily="{StaticResource SerifFont}" FontSize="13"
-                               Foreground="{StaticResource GoldBrush}" VerticalAlignment="Center" />
+                    <Path Data="{StaticResource Ui.Bonfire}" Fill="{DynamicResource GoldBrush}" Width="16" Height="16" Stretch="Uniform" />
+                    <TextBlock Margin="10,0,0,0" Text="SOULS COMPANION" FontFamily="{DynamicResource SerifFont}" FontSize="13"
+                               Foreground="{DynamicResource GoldBrush}" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
@@ -103,7 +103,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Grid Width="26" Height="26" VerticalAlignment="Center">
-                        <Path Data="{StaticResource Ui.Bonfire}" Fill="{StaticResource GoldDimBrush}" Stretch="Uniform" />
+                        <Path Data="{StaticResource Ui.Bonfire}" Fill="{DynamicResource GoldDimBrush}" Stretch="Uniform" />
                         <Ellipse Width="9" Height="9" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-2,-3,0">
                             <Ellipse.Style>
                                 <Style TargetType="Ellipse">
@@ -113,7 +113,7 @@
                                             <Setter Property="Fill" Value="{StaticResource OkBrush}" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding ConnectionState}" Value="Demo">
-                                            <Setter Property="Fill" Value="{StaticResource GoldBrush}" />
+                                            <Setter Property="Fill" Value="{DynamicResource GoldBrush}" />
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -124,13 +124,13 @@
                         <TextBlock FontSize="13" FontWeight="SemiBold" Text="{Binding ConnectionLabel}">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
-                                    <Setter Property="Foreground" Value="{StaticResource TextMutedBrush}" />
+                                    <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding ConnectionState}" Value="Connected">
                                             <Setter Property="Foreground" Value="{StaticResource OkBrush}" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding ConnectionState}" Value="Demo">
-                                            <Setter Property="Foreground" Value="{StaticResource GoldBrush}" />
+                                            <Setter Property="Foreground" Value="{DynamicResource GoldBrush}" />
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -138,20 +138,28 @@
                         </TextBlock>
                         <TextBlock Style="{StaticResource Body}" FontSize="12" Text="{Binding CharacterName}"
                                    Visibility="{Binding CharacterName, Converter={StaticResource NullToVis}}" />
+                        <TextBlock Style="{StaticResource Body}" FontSize="11" Text="{Binding WaitingHint}" Foreground="{DynamicResource TextMutedBrush}">
+                            <TextBlock.Visibility>
+                                <MultiBinding Converter="{StaticResource WaitingHintVis}">
+                                    <Binding Path="ConnectionState" />
+                                    <Binding Path="WaitingHint" />
+                                </MultiBinding>
+                            </TextBlock.Visibility>
+                        </TextBlock>
                     </StackPanel>
                     <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
                         <TextBlock Style="{StaticResource Caption}" Text="СЕССИЯ" HorizontalAlignment="Right" />
                         <TextBlock Style="{StaticResource TextBase}" FontFamily="Consolas" FontSize="18" Text="{Binding SessionTime}"
-                                   Foreground="{StaticResource TextBrush}" HorizontalAlignment="Right" />
+                                   Foreground="{DynamicResource TextBrush}" HorizontalAlignment="Right" />
                     </StackPanel>
                 </Grid>
 
                 <!-- Локация -->
                 <TextBlock Style="{StaticResource Caption}">
-                    <Run Text="{Binding GameTitle, Mode=OneWay}" Foreground="{StaticResource GoldBrush}" /><Run Text="  ·  ТЕКУЩАЯ ЛОКАЦИЯ" />
+                    <Run Text="{Binding GameTitle, Mode=OneWay}" Foreground="{DynamicResource GoldBrush}" /><Run Text="  ·  ТЕКУЩАЯ ЛОКАЦИЯ" />
                 </TextBlock>
                 <TextBlock Style="{StaticResource SerifTitle}" FontSize="34" Margin="0,6,0,0" Text="{Binding LocationNameRu}" />
-                <TextBlock Style="{StaticResource TextBase}" FontStyle="Italic" FontSize="14" Foreground="{StaticResource GoldDimBrush}"
+                <TextBlock Style="{StaticResource TextBase}" FontStyle="Italic" FontSize="14" Foreground="{DynamicResource GoldDimBrush}"
                            Text="{Binding LocationNameEn}" Margin="0,2,0,24" />
 
                 <!-- Смерти -->
@@ -163,7 +171,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Style="{StaticResource Panel}">
                         <DockPanel>
-                            <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Skull}" Fill="{StaticResource TextMutedBrush}"
+                            <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Skull}" Fill="{DynamicResource TextMutedBrush}"
                                   Width="34" Height="34" Stretch="Uniform" VerticalAlignment="Center" Margin="0,0,16,0" />
                             <StackPanel>
                                 <TextBlock Style="{StaticResource BigNumber}" Text="{Binding SessionDeaths}" />
@@ -173,7 +181,7 @@
                     </Border>
                     <Border Grid.Column="2" Style="{StaticResource Panel}">
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock Style="{StaticResource BigNumber}" Foreground="{StaticResource TextMutedBrush}" Text="{Binding TotalDeaths}" />
+                            <TextBlock Style="{StaticResource BigNumber}" Foreground="{DynamicResource TextMutedBrush}" Text="{Binding TotalDeaths}" />
                             <TextBlock Style="{StaticResource Caption}" Text="ВСЕГО У ПЕРСОНАЖА" />
                         </StackPanel>
                     </Border>
@@ -187,9 +195,9 @@
                                        FontSize="15" Text="{Binding SoulsText}" />
                             <TextBlock Style="{StaticResource Caption}" VerticalAlignment="Center" Text="{Binding CurrencyCaption}" />
                         </DockPanel>
-                        <Border Height="6" CornerRadius="3" Background="#1E222B" Margin="0,12,0,8" ClipToBounds="True"
+                        <Border Height="6" CornerRadius="3" Background="{DynamicResource TrackBrush}" Margin="0,12,0,8" ClipToBounds="True"
                                 Visibility="{Binding ShowSoulsProgress, Converter={StaticResource BoolToVis}}">
-                            <Border CornerRadius="3" Background="{StaticResource SoulsFillBrush}" HorizontalAlignment="Stretch" RenderTransformOrigin="0,0.5">
+                            <Border CornerRadius="3" Background="{DynamicResource SoulsFillBrush}" HorizontalAlignment="Stretch" RenderTransformOrigin="0,0.5">
                                 <Border.RenderTransform>
                                     <ScaleTransform ScaleX="{Binding SoulsProgress}" />
                                 </Border.RenderTransform>
@@ -207,18 +215,18 @@
                               Stretch="Uniform" Margin="0,0,14,0" VerticalAlignment="Top" />
                         <StackPanel>
                             <TextBlock Style="{StaticResource Caption}" Foreground="#E07A7C" Text="{Binding BloodstainTitle}" />
-                            <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" Text="{Binding BloodstainText}" Margin="0,4,0,0" />
+                            <TextBlock Style="{StaticResource Body}" Foreground="{DynamicResource TextBrush}" Text="{Binding BloodstainText}" Margin="0,4,0,0" />
                         </StackPanel>
                     </DockPanel>
                 </Border>
                 <Border Margin="0,0,0,12" Padding="16,12" CornerRadius="6" Background="#1F8D8A82" BorderBrush="#668D8A82" BorderThickness="1"
                         Visibility="{Binding ShowHollowing, Converter={StaticResource BoolToVis}}">
                     <DockPanel>
-                        <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Skull}" Fill="{StaticResource TextMutedBrush}" Width="22" Height="22"
+                        <Path DockPanel.Dock="Left" Data="{StaticResource Ui.Skull}" Fill="{DynamicResource TextMutedBrush}" Width="22" Height="22"
                               Stretch="Uniform" Margin="0,0,14,0" VerticalAlignment="Top" />
                         <StackPanel>
-                            <TextBlock Style="{StaticResource Caption}" Foreground="{StaticResource TextMutedBrush}" Text="{Binding HollowingTitle}" />
-                            <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" Text="{Binding HollowingText}" Margin="0,4,0,0" />
+                            <TextBlock Style="{StaticResource Caption}" Foreground="{DynamicResource TextMutedBrush}" Text="{Binding HollowingTitle}" />
+                            <TextBlock Style="{StaticResource Body}" Foreground="{DynamicResource TextBrush}" Text="{Binding HollowingText}" Margin="0,4,0,0" />
                         </StackPanel>
                     </DockPanel>
                 </Border>
@@ -229,7 +237,7 @@
                               Stretch="Uniform" Margin="0,0,14,0" VerticalAlignment="Top" />
                         <StackPanel>
                             <TextBlock Style="{StaticResource Caption}" Foreground="{StaticResource WarnBrush}" Text="ПРОЧНОСТЬ ОРУЖИЯ" />
-                            <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" Text="{Binding DurabilityWarningText}" Margin="0,4,0,0" />
+                            <TextBlock Style="{StaticResource Body}" Foreground="{DynamicResource TextBrush}" Text="{Binding DurabilityWarningText}" Margin="0,4,0,0" />
                         </StackPanel>
                     </DockPanel>
                 </Border>
@@ -241,13 +249,13 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Rectangle Height="1" Fill="{StaticResource LineBrush}" VerticalAlignment="Center" />
+                    <Rectangle Height="1" Fill="{DynamicResource LineBrush}" VerticalAlignment="Center" />
                     <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="14,0">
-                        <Path Data="{StaticResource Ui.Diamond}" Fill="{StaticResource GoldDimBrush}" Width="7" Height="7" Stretch="Uniform" VerticalAlignment="Center" />
-                        <TextBlock Style="{StaticResource Caption}" Text="У КОСТРА" Margin="10,0" Foreground="{StaticResource GoldBrush}" />
-                        <Path Data="{StaticResource Ui.Diamond}" Fill="{StaticResource GoldDimBrush}" Width="7" Height="7" Stretch="Uniform" VerticalAlignment="Center" />
+                        <Path Data="{StaticResource Ui.Diamond}" Fill="{DynamicResource GoldDimBrush}" Width="7" Height="7" Stretch="Uniform" VerticalAlignment="Center" />
+                        <TextBlock Style="{StaticResource Caption}" Text="У КОСТРА" Margin="10,0" Foreground="{DynamicResource GoldBrush}" />
+                        <Path Data="{StaticResource Ui.Diamond}" Fill="{DynamicResource GoldDimBrush}" Width="7" Height="7" Stretch="Uniform" VerticalAlignment="Center" />
                     </StackPanel>
-                    <Rectangle Grid.Column="2" Height="1" Fill="{StaticResource LineBrush}" VerticalAlignment="Center" />
+                    <Rectangle Grid.Column="2" Height="1" Fill="{DynamicResource LineBrush}" VerticalAlignment="Center" />
                 </Grid>
 
                 <Border Style="{StaticResource Panel}" Margin="0,0,0,12"
@@ -257,18 +265,18 @@
                         <TextBlock Style="{StaticResource Caption}" Text="ОРУЖИЕ В ОСНОВНОЙ РУКЕ" />
                         <TextBlock Style="{StaticResource SerifTitle}" Margin="0,6,0,0" Text="{Binding Title}" />
                         <StackPanel Visibility="{Binding HasWeapon, Converter={StaticResource BoolToVis}}">
-                            <TextBlock Style="{StaticResource TextBase}" FontFamily="Consolas" FontSize="12" Foreground="{StaticResource GoldDimBrush}"
+                            <TextBlock Style="{StaticResource TextBase}" FontFamily="Consolas" FontSize="12" Foreground="{DynamicResource GoldDimBrush}"
                                        Margin="0,6,0,0" Text="{Binding ScalingLetters}" />
-                            <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0" Foreground="{StaticResource TextBrush}" Text="{Binding ScalingHint}" />
+                            <TextBlock Style="{StaticResource Body}" Margin="0,8,0,0" Foreground="{DynamicResource TextBrush}" Text="{Binding ScalingHint}" />
                             <DockPanel Margin="0,10,0,0" Visibility="{Binding HasNextStep, Converter={StaticResource BoolToVis}}">
-                                <Path DockPanel.Dock="Left" Data="{StaticResource Glyph.Titanite}" Fill="{StaticResource GoldBrush}" Width="14" Height="14"
+                                <Path DockPanel.Dock="Left" Data="{StaticResource Glyph.Titanite}" Fill="{DynamicResource GoldBrush}" Width="14" Height="14"
                                       Stretch="Uniform" Margin="0,3,10,0" VerticalAlignment="Top" />
                                 <TextBlock Style="{StaticResource Body}" Text="{Binding NextStep}" />
                             </DockPanel>
-                            <DockPanel Margin="0,12,0,0">
+                            <DockPanel Margin="0,12,0,0" Visibility="{Binding HasDurability, Converter={StaticResource BoolToVis}}">
                                 <TextBlock DockPanel.Dock="Right" Style="{StaticResource Body}" FontSize="11" Text="{Binding DurabilityText}" Margin="12,0,0,0" />
-                                <Border Height="3" CornerRadius="2" Background="#1E222B" VerticalAlignment="Center" ClipToBounds="True">
-                                    <Border CornerRadius="2" Background="{StaticResource GoldDimBrush}" RenderTransformOrigin="0,0.5">
+                                <Border Height="3" CornerRadius="2" Background="{DynamicResource TrackBrush}" VerticalAlignment="Center" ClipToBounds="True">
+                                    <Border CornerRadius="2" Background="{DynamicResource GoldDimBrush}" RenderTransformOrigin="0,0.5">
                                         <Border.RenderTransform>
                                             <ScaleTransform ScaleX="{Binding DurabilityFraction}" />
                                         </Border.RenderTransform>
@@ -283,13 +291,13 @@
                 <Border Style="{StaticResource Panel}" Margin="0,0,0,24">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Path Data="{StaticResource Glyph.Scroll}" Fill="{StaticResource GoldDimBrush}" Width="13" Height="13" Stretch="Uniform" VerticalAlignment="Center" />
+                            <Path Data="{StaticResource Glyph.Scroll}" Fill="{DynamicResource GoldDimBrush}" Width="13" Height="13" Stretch="Uniform" VerticalAlignment="Center" />
                             <TextBlock Style="{StaticResource Caption}" Text="СОВЕТ МЫЛЬНОГО КАМНЯ" Margin="8,0,0,0" />
                         </StackPanel>
                         <ItemsControl ItemsSource="{Binding Tips}" Margin="0,8,0,0">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource TextBrush}" FontStyle="Italic"
+                                    <TextBlock Style="{StaticResource Body}" Foreground="{DynamicResource TextBrush}" FontStyle="Italic"
                                                Margin="0,4,0,0" Text="{Binding}" />
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
@@ -321,7 +329,7 @@
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center">
                                         <TextBlock Style="{StaticResource TextBase}" FontSize="15" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap">
                                             <Run Text="{Binding Name, Mode=OneWay}" />
-                                            <Run Text="{Binding QuantityText, Mode=OneWay}" Foreground="{StaticResource TextMutedBrush}" />
+                                            <Run Text="{Binding QuantityText, Mode=OneWay}" Foreground="{DynamicResource TextMutedBrush}" />
                                         </TextBlock>
                                         <TextBlock Style="{StaticResource Body}" FontSize="11" TextWrapping="NoWrap">
                                             <Run Text="{Binding RarityLabel, Mode=OneWay}" Foreground="{Binding RarityColor, Converter={StaticResource HexToBrush}}" />
@@ -345,13 +353,13 @@
                     </Grid.ColumnDefinitions>
                     <Button Style="{StaticResource GhostButton}" Command="{Binding OpenStatsCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Path Data="{StaticResource Ui.Person}" Fill="{StaticResource GoldDimBrush}" Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center" />
+                            <Path Data="{StaticResource Ui.Person}" Fill="{DynamicResource GoldDimBrush}" Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center" />
                             <TextBlock Text="Персонаж и статы" Margin="10,0,0,0" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Style="{StaticResource GhostButton}" Command="{Binding OpenBossesCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Path Data="{StaticResource Ui.Crown}" Fill="{StaticResource GoldDimBrush}" Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center" />
+                            <Path Data="{StaticResource Ui.Crown}" Fill="{DynamicResource GoldDimBrush}" Width="14" Height="14" Stretch="Uniform" VerticalAlignment="Center" />
                             <TextBlock Text="Статистика по боссам" Margin="10,0,0,0" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>

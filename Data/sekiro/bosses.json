@@ -1,0 +1,186 @@
+[
+  {
+    "id": "gyoubu",
+    "name_ru": "Гёбу Онива",
+    "name_en": "Gyoubu Masataka Oniwa",
+    "location_id": "ashina_outskirts",
+    "optional": false,
+    "tip_ru": "Используйте крюк-кошку, чтобы подтянуться к нему."
+  },
+  {
+    "id": "chained_ogre",
+    "name_ru": "Скованный огр",
+    "name_en": "Chained Ogre",
+    "location_id": "ashina_outskirts",
+    "optional": true,
+    "tip_ru": "Боится огня. Бейте после его захвата."
+  },
+  {
+    "id": "general_naomori",
+    "name_ru": "Генерал Наомори Каварада",
+    "name_en": "General Naomori Kawarada",
+    "location_id": "ashina_outskirts",
+    "optional": true,
+    "tip_ru": "Можно убить скрытно со спины."
+  },
+  {
+    "id": "demon_of_hatred",
+    "name_ru": "Демон ненависти",
+    "name_en": "Demon of Hatred",
+    "location_id": "ashina_outskirts",
+    "optional": true,
+    "tip_ru": "Долгий бой — бейте по ногам и не стойте в огне."
+  },
+  {
+    "id": "lady_butterfly",
+    "name_ru": "Госпожа Бабочка",
+    "name_en": "Lady Butterfly",
+    "location_id": "hirata_estate",
+    "optional": false,
+    "tip_ru": "Сюрикены сбивают её в прыжке."
+  },
+  {
+    "id": "juzou",
+    "name_ru": "Пьяница Дзюдзо",
+    "name_en": "Juzou the Drunkard",
+    "location_id": "hirata_estate",
+    "optional": true,
+    "tip_ru": "Сначала уберите его подручных."
+  },
+  {
+    "id": "genichiro",
+    "name_ru": "Гэнъитиро Асина",
+    "name_en": "Genichiro Ashina",
+    "location_id": "ashina_castle",
+    "optional": false,
+    "tip_ru": "Парируйте серии; на «молнии» прыгайте и отражайте её в воздухе."
+  },
+  {
+    "id": "blazing_bull",
+    "name_ru": "Пылающий бык",
+    "name_en": "Blazing Bull",
+    "location_id": "ashina_castle",
+    "optional": true,
+    "tip_ru": "Держитесь сбоку, используйте фейерверк."
+  },
+  {
+    "id": "great_shinobi_owl",
+    "name_ru": "Великий шиноби Филин",
+    "name_en": "Great Shinobi Owl",
+    "location_id": "ashina_castle",
+    "optional": false,
+    "tip_ru": "Он часто отпрыгивает и бросает сюрикены — сокращайте дистанцию."
+  },
+  {
+    "id": "emma",
+    "name_ru": "Эмма, кроткий клинок",
+    "name_en": "Emma, the Gentle Blade",
+    "location_id": "ashina_castle_ending",
+    "optional": false,
+    "tip_ru": "Отлично парирует — давите стойкость."
+  },
+  {
+    "id": "isshin_ashina",
+    "name_ru": "Иссин Асина",
+    "name_en": "Isshin Ashina",
+    "location_id": "ashina_castle_ending",
+    "optional": false,
+    "tip_ru": "Сюжетный бой одной из концовок."
+  },
+  {
+    "id": "folding_screen_monkeys",
+    "name_ru": "Обезьяны ширмы",
+    "name_en": "Folding Screen Monkeys",
+    "location_id": "senpou_temple",
+    "optional": false,
+    "tip_ru": "Головоломка: найдите каждую обезьяну, а не бейте всех подряд."
+  },
+  {
+    "id": "long_arm_centipede",
+    "name_ru": "Длиннорукая многоножка Сэнъун",
+    "name_en": "Long-arm Centipede Sen'un",
+    "location_id": "senpou_temple",
+    "optional": true,
+    "tip_ru": "Парируйте его атаки — он быстро теряет стойкость."
+  },
+  {
+    "id": "guardian_ape",
+    "name_ru": "Обезьяна-страж",
+    "name_en": "Guardian Ape",
+    "location_id": "sunken_valley",
+    "optional": false,
+    "tip_ru": "Огонь пугает его. Во второй фазе будьте готовы к сюрпризу."
+  },
+  {
+    "id": "snake_eyes_shirafuji",
+    "name_ru": "Змеиный глаз Сирафудзи",
+    "name_en": "Snake Eyes Shirafuji",
+    "location_id": "gun_fort",
+    "optional": true,
+    "tip_ru": "Держитесь вплотную — издалека она стреляет."
+  },
+  {
+    "id": "headless_ape",
+    "name_ru": "Безголовая обезьяна",
+    "name_en": "Headless Ape",
+    "location_id": "ashina_depths",
+    "optional": false,
+    "tip_ru": "Используйте конфетти и успокаивающее средство."
+  },
+  {
+    "id": "corrupted_monk",
+    "name_ru": "Порченый монах",
+    "name_en": "Corrupted Monk",
+    "location_id": "ashina_castle",
+    "optional": false,
+    "tip_ru": "Используйте конфетти: монах — призрак."
+  },
+  {
+    "id": "shichimen_warrior",
+    "name_ru": "Воин Ситимэн",
+    "name_en": "Shichimen Warrior",
+    "location_id": "poison_pool",
+    "optional": true,
+    "tip_ru": "Призрак: конфетти и успокаивающее средство обязательны."
+  },
+  {
+    "id": "orin",
+    "name_ru": "О'Рин из воды",
+    "name_en": "O'Rin of the Water",
+    "location_id": "mibu_village",
+    "optional": true,
+    "tip_ru": "Призрак: нанесите конфетти перед боем."
+  },
+  {
+    "id": "owl_father",
+    "name_ru": "Филин (отец)",
+    "name_en": "Owl (Father)",
+    "location_id": "hirata_estate",
+    "optional": true,
+    "tip_ru": "Очень опасен: учите связки и уходите от яда."
+  },
+  {
+    "id": "true_corrupted_monk",
+    "name_ru": "Истинный порченый монах",
+    "name_en": "True Corrupted Monk",
+    "location_id": "fountainhead_palace",
+    "optional": false,
+    "tip_ru": "Три фазы — не тратьте лечение в начале."
+  },
+  {
+    "id": "divine_dragon",
+    "name_ru": "Божественный дракон",
+    "name_en": "Divine Dragon",
+    "location_id": "sanctuary",
+    "optional": false,
+    "tip_ru": "Ловите молнию от деревьев и бейте дракона в голову."
+  },
+  {
+    "id": "isshin_sword_saint",
+    "name_ru": "Иссин, Святой меча",
+    "name_en": "Isshin, the Sword Saint",
+    "location_id": "ashina_castle_ending",
+    "optional": false,
+    "tip_ru": "Финальный бой: четыре фазы, учите каждую."
+  }
+]

@@ -1,0 +1,251 @@
+[
+  {
+    "id": "cemetery_of_ash",
+    "name_ru": "Кладбище пепла",
+    "name_en": "Cemetery of Ash",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Начало игры. Первый босс, Судья Гундир, — испытание: не спешите и учите его атаки."
+    ]
+  },
+  {
+    "id": "firelink_shrine",
+    "name_ru": "Храм огня",
+    "name_en": "Firelink Shrine",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кузнец Андрэ улучшает оружие и перераспределяет Эстус.",
+      "Служительница продаёт расходники — проверяйте её после новых находок пепла."
+    ]
+  },
+  {
+    "id": "high_wall",
+    "name_ru": "Высокая стена Лотрика",
+    "name_en": "High Wall of Lothric",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Не спешите на крышу с драконом — он сжигает всех на мосту.",
+      "Здесь много срезок: открывайте двери и лифты."
+    ]
+  },
+  {
+    "id": "undead_settlement",
+    "name_ru": "Поселение нежити",
+    "name_en": "Undead Settlement",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Огонь работает отлично против местных жителей.",
+      "Здесь находится Корявое дерево-босс — бейте белые наросты на нём."
+    ]
+  },
+  {
+    "id": "road_of_sacrifices",
+    "name_ru": "Дорога жертв",
+    "name_en": "Road of Sacrifices",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Болото замедляет — не дерётесь в воде, если есть выбор."
+    ]
+  },
+  {
+    "id": "cathedral_of_the_deep",
+    "name_ru": "Собор Глубин",
+    "name_en": "Cathedral of the Deep",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Крупных священников лучше выманивать по одному.",
+      "Внутри собора много секретов — проверяйте боковые лестницы."
+    ]
+  },
+  {
+    "id": "farron_keep",
+    "name_ru": "Крепость Фаррона",
+    "name_en": "Farron Keep",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ядовитое болото: потушите три огня-свечи, чтобы открыть путь к боссу.",
+      "Носите кольцо против яда или держите лечение."
+    ]
+  },
+  {
+    "id": "catacombs_of_carthus",
+    "name_ru": "Катакомбы Картуса",
+    "name_en": "Catacombs of Carthus",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Скелеты встают снова, пока их не добить или пока жив их хозяин.",
+      "Осторожно с катящимися черепами-ловушками."
+    ]
+  },
+  {
+    "id": "smouldering_lake",
+    "name_ru": "Тлеющее озеро",
+    "name_en": "Smouldering Lake",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Баллиста обстреливает берег — двигайтесь короткими перебежками."
+    ]
+  },
+  {
+    "id": "irithyll",
+    "name_ru": "Иритилл Холодной долины",
+    "name_en": "Irithyll of the Boreal Valley",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Серебряные рыцари сильны: изучите их атаки, прежде чем спешить."
+    ]
+  },
+  {
+    "id": "irithyll_dungeon",
+    "name_ru": "Подземелье Иритилла",
+    "name_en": "Irithyll Dungeon",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Тюремщики снижают максимальное здоровье — убивайте их первыми."
+    ]
+  },
+  {
+    "id": "profaned_capital",
+    "name_ru": "Осквернённая столица",
+    "name_en": "Profaned Capital",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Перед боем с Йормом заберите Буреносец — он лежит на арене."
+    ]
+  },
+  {
+    "id": "anor_londo",
+    "name_ru": "Анор Лондо",
+    "name_en": "Anor Londo",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь живёт Олдрик, Пожиратель богов. Огонь и тьма против него неплохи."
+    ]
+  },
+  {
+    "id": "lothric_castle",
+    "name_ru": "Замок Лотрика",
+    "name_en": "Lothric Castle",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Рыцари Лотрика сильны и держат щит — не спешите и бейте после их атаки."
+    ]
+  },
+  {
+    "id": "consumed_kings_garden",
+    "name_ru": "Сад пожранного короля",
+    "name_en": "Consumed King's Garden",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Ядовитое болото: держите лечение от яда."
+    ]
+  },
+  {
+    "id": "grand_archives",
+    "name_ru": "Великий архив",
+    "name_en": "Grand Archives",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Воск на головах — опасный статус: смывайте его у умывальников.",
+      "Учёные и их руки из стен — смотрите по сторонам."
+    ]
+  },
+  {
+    "id": "untended_graves",
+    "name_ru": "Заброшенные могилы",
+    "name_en": "Untended Graves",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Необязательная зона с сильным боссом. Здесь темно — держите факел."
+    ]
+  },
+  {
+    "id": "archdragon_peak",
+    "name_ru": "Вершина древнего дракона",
+    "name_en": "Archdragon Peak",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Необязательная зона. Позвоните в колокол на вершине, чтобы встретить сильнейшего босса."
+    ]
+  },
+  {
+    "id": "kiln_first_flame",
+    "name_ru": "Горнило Первого пламени",
+    "name_en": "Kiln of the First Flame",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Финальная область. Подготовьтесь: бой состоит из нескольких фаз."
+    ]
+  },
+  {
+    "id": "painted_world_ariandel",
+    "name_ru": "Нарисованный мир Арианделя",
+    "name_en": "Painted World of Ariandel",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Глубокий снег замедляет — двигайтесь по тропинкам."
+    ]
+  },
+  {
+    "id": "dreg_heap",
+    "name_ru": "Груда отбросов",
+    "name_en": "The Dreg Heap",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Ангелы с неба атакуют светом — уничтожьте их тела на земле."
+    ]
+  },
+  {
+    "id": "ringed_city",
+    "name_ru": "Город за стеной",
+    "name_en": "The Ringed City",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Очень сильные враги и много ловушек. Отличные награды."
+    ]
+  }
+]

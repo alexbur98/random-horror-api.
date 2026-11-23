@@ -6,12 +6,12 @@
              xmlns:vm="clr-namespace:DS1Companion.Core.Presentation;assembly=DS1Companion.Core"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance Type=vm:DemoPanelViewModel}">
-    <Border Background="#E60A0B0F" BorderBrush="{StaticResource GoldDimBrush}" BorderThickness="0,1,0,0" Padding="24,10,24,8">
+    <Border Background="#E60A0B0F" BorderBrush="{DynamicResource GoldDimBrush}" BorderThickness="0,1,0,0" Padding="24,10,24,8">
         <StackPanel>
             <DockPanel>
                 <Button DockPanel.Dock="Right" Style="{StaticResource DemoButton}" Margin="0" Command="{Binding ToggleExpandedCommand}"
                         Content="Свернуть / развернуть" />
-                <TextBlock Style="{StaticResource Caption}" Foreground="{StaticResource GoldBrush}" Text="ДЕМО-ПАНЕЛЬ" VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource Caption}" Foreground="{DynamicResource GoldBrush}" Text="ДЕМО-ПАНЕЛЬ" VerticalAlignment="Center" />
             </DockPanel>
             <WrapPanel Margin="0,10,0,0" Visibility="{Binding IsExpanded, Converter={StaticResource BoolToVis}}">
                 <Button Style="{StaticResource DemoButton}" Command="{Binding PickCommonCommand}" Content="Обычный" Foreground="#9CA3AF" />
@@ -26,7 +26,7 @@
                 <Button Style="{StaticResource DemoButton}" Command="{Binding DieCommand}" Content="Смерть" Foreground="#E07A7C" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding RecoverCommand}" Content="{Binding RecoverLabel}"
                         Visibility="{Binding HasBloodstain, Converter={StaticResource BoolToVis}}" />
-                <Button Style="{StaticResource DemoButton}" Command="{Binding RestoreHumanityCommand}" Content="Чучело человека"
+                <Button Style="{StaticResource DemoButton}" Command="{Binding RestoreHumanityCommand}" Content="{Binding HollowingCureLabel}"
                         Visibility="{Binding HasHollowing, Converter={StaticResource BoolToVis}}" />
                 <Button Style="{StaticResource DemoButton}" Command="{Binding DamageWeaponCommand}" Content="Износ оружия" Foreground="#E3B341"
                         Visibility="{Binding HasDurability, Converter={StaticResource BoolToVis}}" />

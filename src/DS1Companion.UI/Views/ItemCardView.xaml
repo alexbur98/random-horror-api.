@@ -17,7 +17,7 @@
 
     <Grid>
         <!-- Мягкое свечение по цвету редкости -->
-        <Border CornerRadius="8" Background="{StaticResource PanelBrush}">
+        <Border CornerRadius="8" Background="{DynamicResource PanelBrush}">
             <Border.Effect>
                 <DropShadowEffect x:Name="Glow" ShadowDepth="0" BlurRadius="46" Opacity="0.55"
                                   Color="{Binding RarityColor, Converter={StaticResource HexToColor}}" />
@@ -68,7 +68,7 @@
                                 <GradientStop Offset="1" Color="{Binding RarityColor, Converter={StaticResource HexToColor}, ConverterParameter=0}" />
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Text="{Binding RarityLabel}" FontFamily="{StaticResource SerifFont}" FontSize="13" FontWeight="Bold"
+                        <TextBlock Text="{Binding RarityLabel}" FontFamily="{DynamicResource SerifFont}" FontSize="13" FontWeight="Bold"
                                    Foreground="#0B0C10" />
                     </Border>
                     <TextBlock Style="{StaticResource Caption}" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding CategoryLabel}" />
@@ -89,26 +89,26 @@
 
                     <TextBlock Style="{StaticResource SerifTitle}" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center"
                                Text="{Binding Name}" />
-                    <TextBlock Style="{StaticResource TextBase}" FontStyle="Italic" FontSize="13" Foreground="{StaticResource TextMutedBrush}"
+                    <TextBlock Style="{StaticResource TextBase}" FontStyle="Italic" FontSize="13" Foreground="{DynamicResource TextMutedBrush}"
                                HorizontalAlignment="Center" Margin="0,4,0,0">
                         <Run Text="{Binding NameEn, Mode=OneWay}" />
-                        <Run Text="{Binding QuantityText, Mode=OneWay}" Foreground="{StaticResource GoldBrush}" />
+                        <Run Text="{Binding QuantityText, Mode=OneWay}" Foreground="{DynamicResource GoldBrush}" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource Body}" FontSize="13" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,10,0,0"
                                Foreground="{Binding RarityColor, Converter={StaticResource HexToBrush}}" Text="{Binding RarityReason}" />
 
                     <Grid Margin="0,20,0,18" HorizontalAlignment="Center" Width="220">
-                        <Rectangle Height="1" Fill="{StaticResource LineBrush}" VerticalAlignment="Center" />
+                        <Rectangle Height="1" Fill="{DynamicResource LineBrush}" VerticalAlignment="Center" />
                         <Path Data="{StaticResource Ui.Diamond}" Width="8" Height="8" Stretch="Uniform" HorizontalAlignment="Center"
                               Fill="{Binding RarityColor, Converter={StaticResource HexToBrush}}" />
                     </Grid>
 
-                    <TextBlock Style="{StaticResource Body}" FontSize="16" LineHeight="25" Foreground="{StaticResource TextBrush}"
+                    <TextBlock Style="{StaticResource Body}" FontSize="16" LineHeight="25" Foreground="{DynamicResource TextBrush}"
                                TextAlignment="Center" Text="{Binding Summary}" />
 
                     <Border HorizontalAlignment="Center" Margin="0,22,0,0" Padding="16,6" CornerRadius="14" BorderThickness="1"
-                            BorderBrush="{StaticResource GoldBrush}" Background="#14C8A96A">
-                        <TextBlock Text="{Binding KeepTag}" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GoldBrush}" />
+                            BorderBrush="{DynamicResource GoldBrush}" Background="#14C8A96A">
+                        <TextBlock Text="{Binding KeepTag}" FontSize="12" FontWeight="Bold" Foreground="{DynamicResource GoldBrush}" />
                     </Border>
 
                     <TextBlock Style="{StaticResource Body}" FontSize="11" HorizontalAlignment="Center" Margin="0,18,0,0"

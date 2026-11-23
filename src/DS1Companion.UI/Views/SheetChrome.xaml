@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="SheetBorder" TargetType="Border">
-        <Setter Property="Background" Value="#F20E1015" />
-        <Setter Property="BorderBrush" Value="{StaticResource GoldDimBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SheetBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GoldDimBrush}" />
         <Setter Property="BorderThickness" Value="1,1,1,0" />
         <Setter Property="CornerRadius" Value="10,10,0,0" />
         <Setter Property="Padding" Value="28,18,28,24" />

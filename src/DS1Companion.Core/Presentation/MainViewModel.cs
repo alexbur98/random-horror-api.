@@ -86,6 +86,8 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     [ObservableProperty] private string _hollowingTitle = "";
     [ObservableProperty] private string _statsSheetHint = "";
     [ObservableProperty] private bool _hasWeaponPanel;
+    [ObservableProperty] private GameTheme _theme = new();
+    [ObservableProperty] private string _waitingHint = "";
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsCardVisible))]
@@ -174,6 +176,8 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         HollowingTitle = g.HollowingTitleRu.ToUpperInvariant();
         StatsSheetHint = g.StatsSheetHintRu;
         HasWeaponPanel = g.HasWeaponUpgrades;
+        Theme = g.Theme;
+        WaitingHint = g.MemoryNoteRu;
         ShowSoulsProgress = false;
         SoulsText = "—";
         SoulsHint = "";

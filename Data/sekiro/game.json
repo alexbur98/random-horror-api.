@@ -1,0 +1,80 @@
+{
+  "key": "Sekiro",
+  "title_ru": "Sekiro: Shadows Die Twice",
+  "short_title": "SEKIRO",
+  "process_names": [
+    "sekiro"
+  ],
+  "currency_ru": "Сэн",
+  "currency_genitive_ru": "сэн",
+  "has_levels": false,
+  "level_curve": "none",
+  "max_level": 1,
+  "has_bloodstain": false,
+  "has_hollowing": true,
+  "hollowing_title_ru": "Драконья хворь",
+  "hollowing_cure_ru": "Капля драконьей крови",
+  "hollowing_text_ru": "Смертей без лечения хвори: {0}. NPC заболевают Драконьей хворью, а шанс Незримой помощи падает. Лечите их Каплей драконьей крови.",
+  "has_weapon_upgrades": false,
+  "has_durability": false,
+  "sell_tag_ru": "МОЖНО НЕ ХРАНИТЬ",
+  "default_tip_ru": "При смерти теряется половина сэн и опыта. Храните сэн в кошельках — они не теряются.",
+  "stats_sheet_hint_ru": "В Sekiro нет уровней: здоровье и стойкость растут от Молитвенных ожерелий, сила атаки — от Воспоминаний.",
+  "stats": [
+    {
+      "key": "vitality",
+      "name_ru": "Здоровье",
+      "hint_ru": "Растёт от Молитвенных ожерелий (четыре Молитвенные бусины)."
+    },
+    {
+      "key": "posture",
+      "name_ru": "Стойкость",
+      "hint_ru": "Растёт вместе со здоровьем от ожерелий."
+    },
+    {
+      "key": "attack_power",
+      "name_ru": "Сила атаки",
+      "hint_ru": "Растёт от Воспоминаний, полученных с боссов."
+    }
+  ],
+  "theme": {
+    "name_ru": "Сакура и сталь",
+    "accent": "#C9474A",
+    "accent_dim": "#6E2D2F",
+    "accent_bright": "#F2A7A1",
+    "background": "#0B0909",
+    "panel_top": "#171112",
+    "panel_bottom": "#100C0D",
+    "line": "#2E2223",
+    "text": "#EFE6E1",
+    "text_muted": "#9A8C88",
+    "glow": "#B3262C",
+    "title_bar": "#CC0A0808",
+    "track": "#231A1B",
+    "sheet": "#F2130E0F",
+    "title_font": "Yu Mincho, MS Mincho, Georgia",
+    "particles": "Petals",
+    "particle_colors": [
+      "#F2B6C1",
+      "#E89AAA",
+      "#F7D4DA"
+    ],
+    "particle_count": 28
+  },
+  "demo": {
+    "character_name": "Волк",
+    "deaths": 12,
+    "souls": 1234,
+    "level": 1,
+    "location_id": "ashina_outskirts",
+    "healing_item_id": "healing_gourd",
+    "healing_count": 3,
+    "legendary_item_id": "mortal_blade",
+    "key_item_id": "hidden_temple_key",
+    "stats": {
+      "vitality": 1,
+      "posture": 1,
+      "attack_power": 2
+    }
+  }
+}

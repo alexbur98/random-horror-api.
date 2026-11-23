@@ -1,0 +1,124 @@
+{
+  "key": "DarkSouls3",
+  "title_ru": "Dark Souls III",
+  "short_title": "DS3",
+  "process_names": [
+    "DarkSoulsIII"
+  ],
+  "currency_ru": "Души",
+  "currency_genitive_ru": "душ",
+  "has_levels": true,
+  "level_curve": "souls3",
+  "max_level": 802,
+  "has_bloodstain": true,
+  "bloodstain_title_ru": "Кровавое пятно",
+  "bloodstain_text_ru": "{0} {1} ждут в кровавом пятне. Вернитесь к месту гибели и не умирайте по пути.",
+  "has_hollowing": false,
+  "has_weapon_upgrades": true,
+  "has_durability": true,
+  "repair_hint_ru": "отдохните у костра или используйте Порошок для починки",
+  "sell_tag_ru": "МОЖНО ПРОДАТЬ СЛУЖИТЕЛЬНИЦЕ",
+  "default_tip_ru": "Используйте Уголь перед сложным боссом: больше здоровья и можно призвать союзников.",
+  "stats": [
+    {
+      "key": "vigor",
+      "name_ru": "Жизненная сила",
+      "cap": 27,
+      "hint_ru": "Здоровье. Самый выгодный рост до 27, затем до 50."
+    },
+    {
+      "key": "attunement",
+      "name_ru": "Ученость",
+      "hint_ru": "Ячейки заклинаний и очки концентрации. Без магии не качайте."
+    },
+    {
+      "key": "endurance",
+      "name_ru": "Выносливость",
+      "cap": 40,
+      "hint_ru": "Запас выносливости. Порог 40."
+    },
+    {
+      "key": "vitality",
+      "name_ru": "Стойкость",
+      "hint_ru": "Грузоподъёмность и физическая защита. Качайте под нужную броню."
+    },
+    {
+      "key": "strength",
+      "name_ru": "Сила",
+      "cap": 40,
+      "hint_ru": "Урон тяжёлого оружия. Порог 40."
+    },
+    {
+      "key": "dexterity",
+      "name_ru": "Ловкость",
+      "cap": 40,
+      "hint_ru": "Урон быстрого оружия. Порог 40."
+    },
+    {
+      "key": "intelligence",
+      "name_ru": "Интеллект",
+      "cap": 40,
+      "hint_ru": "Сила колдовства и пиромантии."
+    },
+    {
+      "key": "faith",
+      "name_ru": "Вера",
+      "cap": 40,
+      "hint_ru": "Сила чудес и пиромантии."
+    },
+    {
+      "key": "luck",
+      "name_ru": "Удача",
+      "hint_ru": "Находка предметов и урон кровотечением/ядом. Нужна для пустотного оружия."
+    }
+  ],
+  "theme": {
+    "name_ru": "Пепел",
+    "accent": "#D9733A",
+    "accent_dim": "#7A4A2E",
+    "accent_bright": "#F2B48A",
+    "background": "#0B0A09",
+    "panel_top": "#161311",
+    "panel_bottom": "#0F0D0C",
+    "line": "#2B2522",
+    "text": "#E8E1D9",
+    "text_muted": "#948A80",
+    "glow": "#C2401C",
+    "title_bar": "#CC0A0908",
+    "track": "#221D1A",
+    "sheet": "#F2120F0D",
+    "title_font": "Optimus Princeps, Cinzel, Georgia",
+    "particles": "Ash",
+    "particle_colors": [
+      "#8C8580",
+      "#B3ACA6",
+      "#6E6762"
+    ],
+    "particle_count": 42
+  },
+  "demo": {
+    "character_name": "Негорящий",
+    "deaths": 41,
+    "souls": 5600,
+    "level": 35,
+    "location_id": "undead_settlement",
+    "weapon_item_id": "longsword",
+    "weapon_level": 4,
+    "weapon_max_durability": 200,
+    "healing_item_id": "estus_flask",
+    "healing_count": 5,
+    "legendary_item_id": "storm_ruler",
+    "key_item_id": "small_lothric_banner",
+    "stats": {
+      "vigor": 20,
+      "attunement": 10,
+      "endurance": 18,
+      "vitality": 15,
+      "strength": 18,
+      "dexterity": 16,
+      "intelligence": 10,
+      "faith": 9,
+      "luck": 7
+    }
+  }
+}

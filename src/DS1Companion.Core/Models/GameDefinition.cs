@@ -34,6 +34,48 @@ public sealed record StatDefinition
     public string AvoidHintRu { get; init; } = "";
 }
 
+/// <summary>Анимация фона.</summary>
+public enum ParticleStyle
+{
+    /// <summary>Тлеющие искры поднимаются вверх (DS1).</summary>
+    Embers,
+    /// <summary>Хлопья пепла медленно падают (DS3).</summary>
+    Ash,
+    /// <summary>Мягкие огоньки душ плывут вверх (DS2).</summary>
+    Souls,
+    /// <summary>Лепестки падают и кружатся (Sekiro).</summary>
+    Petals,
+    /// <summary>Золотые искры благодати (Elden Ring).</summary>
+    Grace,
+}
+
+/// <summary>Оформление игры: палитра, шрифт заголовков и анимация фона. Цвета — "#RRGGBB" или "#AARRGGBB".</summary>
+public sealed record GameTheme
+{
+    public string NameRu { get; init; } = "Пламя";
+    public string Accent { get; init; } = "#C8A96A";
+    public string AccentDim { get; init; } = "#7D6A45";
+    public string AccentBright { get; init; } = "#F1DDAA";
+    public string Background { get; init; } = "#08090C";
+    public string PanelTop { get; init; } = "#12151B";
+    public string PanelBottom { get; init; } = "#0C0E12";
+    public string Line { get; init; } = "#232733";
+    public string Text { get; init; } = "#E7E2D6";
+    public string TextMuted { get; init; } = "#8D8A82";
+    public string Glow { get; init; } = "#FF7A2E";
+    public string TitleBar { get; init; } = "#CC07080A";
+    public string Track { get; init; } = "#1E222B";
+    public string Sheet { get; init; } = "#F20E1015";
+    public string TitleFont { get; init; } = "Cinzel, Georgia, Times New Roman";
+    public ParticleStyle Particles { get; init; } = ParticleStyle.Embers;
+    public List<string> ParticleColors { get; init; } = new() { "#FF8A3D", "#FFB05C", "#E06A2A" };
+    public int ParticleCount { get; init; } = 34;
+
+    public IEnumerable<string> AllColors() =>
+        new[] { Accent, AccentDim, AccentBright, Background, PanelTop, PanelBottom, Line, Text, TextMuted, Glow, TitleBar, Track, Sheet }
+            .Concat(ParticleColors);
+}
+
 /// <summary>Стартовое состояние демо-режима для игры.</summary>
 public sealed record DemoProfile
 {
@@ -81,6 +123,8 @@ public sealed record GameDefinition
 
     public bool HasHollowing { get; init; }
     public string HollowingTitleRu { get; init; } = "";
+    /// <summary>Подпись кнопки демо, которая снимает эффект («Чучело человека», «Капля драконьей крови»).</summary>
+    public string HollowingCureRu { get; init; } = "Восстановить";
     /// <summary>{0} — число смертей без восстановления.</summary>
     public string HollowingTextRu { get; init; } = "";
 
@@ -94,6 +138,9 @@ public sealed record GameDefinition
     public string StatsSheetHintRu { get; init; } = "Пороги эффективности (soft caps): после них каждое очко даёт заметно меньше.";
 
     public List<StatDefinition> Stats { get; init; } = new();
+    public GameTheme Theme { get; init; } = new();
+    /// <summary>Пояснение про чтение памяти (например, античит), показывается в README и при ожидании игры.</summary>
+    public string MemoryNoteRu { get; init; } = "";
     public DemoProfile Demo { get; init; } = new();
 
     /// <summary>Каталог данных игры; заполняется при загрузке.</summary>

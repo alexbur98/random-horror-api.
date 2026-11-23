@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Souls Companion — компаньон для игр FromSoftware (DS1, DS2 готовы; DS3, Sekiro, Elden Ring в планах):
+Souls Companion — компаньон для игр FromSoftware (DS1, DS2, DS3, Sekiro, Elden Ring):
 C# / .NET 8, WPF, MVVM (CommunityToolkit.Mvvm). Тексты UI и данных — на русском. Имена проектов `DS1Companion.*`
 остались от первой версии — не переименовывать без нужды.
 
@@ -21,6 +21,9 @@ C# / .NET 8, WPF, MVVM (CommunityToolkit.Mvvm). Тексты UI и данных 
 - Поток данных: `IGameStateReader.Read()` (фон; живая игра — `MultiGameReader` с автоопределением) →
   `MainViewModel.OnSnapshot` (UI; при `snapshot.Game` другой игры — `SwitchGame`) → `GameSessionTracker.Process` →
   события → свойства VM. Время — только через `MainViewModel.Tick(delta)` и `IClock`.
+- Оформление: `GameDefinition.Theme` → `ThemeManager.Apply` подменяет кисти и шрифт в ресурсах приложения
+  (ключи в `ThemeManager.ThemedKeys`), `EmberField.Theme` — анимация фона. Всё, что должно перекрашиваться,
+  ссылается на эти ключи через `DynamicResource`, не `StaticResource`.
 - Предмет в инвентаре распознаётся по `InventoryEntry.ItemId` (демо, игры без `game_id`) или по `(GameKind, GameId)`.
 
 ## Правила

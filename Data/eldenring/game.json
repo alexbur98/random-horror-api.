@@ -1,0 +1,120 @@
+{
+  "key": "EldenRing",
+  "title_ru": "Elden Ring",
+  "short_title": "ER",
+  "process_names": [
+    "eldenring"
+  ],
+  "currency_ru": "Руны",
+  "currency_genitive_ru": "рун",
+  "has_levels": true,
+  "level_curve": "souls3",
+  "max_level": 713,
+  "has_bloodstain": true,
+  "bloodstain_title_ru": "Потерянные руны",
+  "bloodstain_text_ru": "{0} {1} лежат там, где вы погибли. Вернитесь и подберите их — после следующей смерти они пропадут.",
+  "has_hollowing": false,
+  "has_weapon_upgrades": true,
+  "has_durability": false,
+  "sell_tag_ru": "МОЖНО ПРОДАТЬ",
+  "default_tip_ru": "Места благодати восстанавливают фляги, но враги возрождаются. Используйте руны у благодати, чтобы не потерять их.",
+  "memory_note_ru": "Elden Ring защищён античитом Easy Anti-Cheat: пока он работает, компаньон не может читать память игры. Используйте демо-режим и шторки справочника.",
+  "stats": [
+    {
+      "key": "vigor",
+      "name_ru": "Живучесть",
+      "cap": 40,
+      "hint_ru": "Здоровье. Самый выгодный рост до 40, затем до 60."
+    },
+    {
+      "key": "mind",
+      "name_ru": "Разум",
+      "cap": 50,
+      "hint_ru": "Очки концентрации (ОК) для заклинаний и навыков."
+    },
+    {
+      "key": "endurance",
+      "name_ru": "Выносливость",
+      "cap": 50,
+      "hint_ru": "Выносливость и грузоподъёмность."
+    },
+    {
+      "key": "strength",
+      "name_ru": "Сила",
+      "cap": 55,
+      "hint_ru": "Урон тяжёлого оружия. Порог 55, затем 80."
+    },
+    {
+      "key": "dexterity",
+      "name_ru": "Ловкость",
+      "cap": 55,
+      "hint_ru": "Урон быстрого оружия. Порог 55, затем 80."
+    },
+    {
+      "key": "intelligence",
+      "name_ru": "Интеллект",
+      "cap": 60,
+      "hint_ru": "Сила колдовства. Порог 60, затем 80."
+    },
+    {
+      "key": "faith",
+      "name_ru": "Вера",
+      "cap": 60,
+      "hint_ru": "Сила молитв. Порог 60, затем 80."
+    },
+    {
+      "key": "arcane",
+      "name_ru": "Тайна",
+      "cap": 45,
+      "hint_ru": "Кровотечение, находка предметов и некоторые молитвы."
+    }
+  ],
+  "theme": {
+    "name_ru": "Золото Древа",
+    "accent": "#E0B85C",
+    "accent_dim": "#7E6A3A",
+    "accent_bright": "#FFE6A8",
+    "background": "#090A08",
+    "panel_top": "#141510",
+    "panel_bottom": "#0E0F0B",
+    "line": "#29291F",
+    "text": "#EDE8DA",
+    "text_muted": "#9A9480",
+    "glow": "#E3A52E",
+    "title_bar": "#CC090A07",
+    "track": "#20201A",
+    "sheet": "#F2111209",
+    "title_font": "Garamond, EB Garamond, Georgia",
+    "particles": "Grace",
+    "particle_colors": [
+      "#FFD57A",
+      "#FFE9B0",
+      "#E8B44C"
+    ],
+    "particle_count": 40
+  },
+  "demo": {
+    "character_name": "Погасший",
+    "deaths": 63,
+    "souls": 7500,
+    "level": 40,
+    "location_id": "limgrave",
+    "weapon_item_id": "longsword",
+    "weapon_level": 6,
+    "weapon_max_durability": 100,
+    "healing_item_id": "flask_crimson",
+    "healing_count": 6,
+    "legendary_item_id": "sword_night_flame",
+    "key_item_id": "dectus_medallion_left",
+    "stats": {
+      "vigor": 25,
+      "mind": 12,
+      "endurance": 16,
+      "strength": 18,
+      "dexterity": 16,
+      "intelligence": 9,
+      "faith": 10,
+      "arcane": 9
+    }
+  }
+}

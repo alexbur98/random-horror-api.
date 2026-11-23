@@ -17,11 +17,11 @@
                           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
                 </Button>
                 <StackPanel>
-                    <Border Width="40" Height="4" CornerRadius="2" Background="{StaticResource LineBrush}" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                    <Border Width="40" Height="4" CornerRadius="2" Background="{DynamicResource LineBrush}" HorizontalAlignment="Center" Margin="0,0,0,12" />
                     <TextBlock Style="{StaticResource Caption}" Text="ПЕРСОНАЖ И ХАРАКТЕРИСТИКИ" />
                     <TextBlock Style="{StaticResource SerifTitle}" Margin="0,4,0,0">
                         <Run Text="{Binding CharacterName, Mode=OneWay}" />
-                        <Run Text=" · уровень " Foreground="{StaticResource TextMutedBrush}" /><Run Text="{Binding Level, Mode=OneWay}" Foreground="{StaticResource TextMutedBrush}" />
+                        <Run Text=" · уровень " Foreground="{DynamicResource TextMutedBrush}" /><Run Text="{Binding Level, Mode=OneWay}" Foreground="{DynamicResource TextMutedBrush}" />
                     </TextBlock>
                 </StackPanel>
             </DockPanel>
@@ -33,7 +33,7 @@
                     <ItemsControl ItemsSource="{Binding StatRows}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="{x:Type vm:StatRowViewModel}">
-                                <Border BorderBrush="{StaticResource LineBrush}" BorderThickness="0,0,0,1" Padding="0,10">
+                                <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="0,10">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="150" />
@@ -49,7 +49,7 @@
                                                             <Setter Property="Foreground" Value="{StaticResource WarnBrush}" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding IsCapped}" Value="True">
-                                                            <Setter Property="Foreground" Value="{StaticResource GoldBrush}" />
+                                                            <Setter Property="Foreground" Value="{DynamicResource GoldBrush}" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>

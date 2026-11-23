@@ -13,11 +13,29 @@ public class AllGamesDataTests
     public static IEnumerable<object[]> Games() => TestData.Catalog.Games.Select(g => new object[] { g.Game.Key });
 
     [Fact]
-    public void Catalog_ContainsDs1AndDs2()
+    public void Catalog_ContainsAllFiveGames()
     {
-        Assert.NotNull(TestData.Catalog.Find(GameKey.DarkSouls1));
-        Assert.NotNull(TestData.Catalog.Find(GameKey.DarkSouls2));
+        foreach (var key in Enum.GetValues<GameKey>()) Assert.NotNull(TestData.Catalog.Find(key));
         Assert.Equal(GameKey.DarkSouls1, TestData.Catalog.Default.Game.Key);
+    }
+
+    [Theory, MemberData(nameof(Games))]
+    public void Theme_HasValidColors(GameKey key)
+    {
+        var theme = TestData.Catalog.Get(key).Game.Theme;
+        Assert.NotEmpty(theme.ParticleColors);
+        Assert.False(string.IsNullOrWhiteSpace(theme.TitleFont));
+        foreach (var c in theme.AllColors())
+            Assert.Matches("^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$", c);
+    }
+
+    [Fact]
+    public void EveryGame_LooksDifferent()
+    {
+        var themes = TestData.Catalog.Games.Select(g => g.Game.Theme).ToList();
+        Assert.Equal(themes.Count, themes.Select(t => t.Accent.ToUpperInvariant()).Distinct().Count());
+        Assert.Equal(themes.Count, themes.Select(t => t.Particles).Distinct().Count());
+        Assert.Equal(themes.Count, themes.Select(t => t.NameRu).Distinct().Count());
     }
 
     [Theory, MemberData(nameof(Games))]
@@ -204,6 +222,57 @@ public class MultiGameViewModelTests
         Assert.Equal(ConnectionState.Connected, vm.ConnectionState);
         Assert.Equal("DS2", vm.ConnectionLabel);
         Assert.Equal(GameKey.DarkSouls2, vm.Profile!.Game);
+        Assert.Equal(ParticleStyle.Souls, vm.Theme.Particles); // оформление тоже переключилось
+    }
+
+    [Fact]
+    public void Sekiro_HasDragonrot_AndNoLevels()
+    {
+        using var dir = new TempDir();
+        var (vm, _, _, _, _) = VmFactory.Create(dir, game: GameKey.Sekiro);
+        vm.Poll();
+        Assert.Equal(ParticleStyle.Petals, vm.Theme.Particles);
+        Assert.False(vm.ShowSoulsProgress);
+        Assert.False(vm.HasWeaponPanel);
+        Assert.Equal("Капля драконьей крови", vm.Demo!.HollowingCureLabel);
+        vm.Demo.DieCommand.Execute(null);
+        vm.Poll();
+        Assert.True(vm.ShowHollowing);
+        Assert.Equal("ДРАКОНЬЯ ХВОРЬ", vm.HollowingTitle);
+        Assert.False(vm.HasBloodstain);
+        Assert.Equal(3, vm.StatRows.Count);
+    }
+
+    [Fact]
+    public void EldenRing_LostRunes_NoDurability_SomberPath()
+    {
+        using var dir = new TempDir();
+        var (vm, _, _, _, _) = VmFactory.Create(dir, game: GameKey.EldenRing);
+        vm.Poll();
+        Assert.Equal(ParticleStyle.Grace, vm.Theme.Particles);
+        Assert.Contains("Easy Anti-Cheat", vm.WaitingHint);
+        Assert.Equal("РУНЫ НА РУКАХ / НА СЛЕДУЮЩИЙ УРОВЕНЬ", vm.CurrencyCaption);
+        Assert.False(vm.Weapon.HasDurability);
+        Assert.Contains("2 × Кузнечный камень [3]", vm.Weapon.NextStep); // длинный меч +6 → +7: камни [3] открывают +7…+9
+        vm.Demo!.DieCommand.Execute(null);
+        vm.Poll();
+        Assert.Equal("ПОТЕРЯННЫЕ РУНЫ", vm.BloodstainTitle);
+        Assert.Contains("рун", vm.BloodstainText);
+        Assert.False(vm.ShowDurabilityWarning);
+    }
+
+    [Fact]
+    public void Ds3_UsesSouls3Curve_AndAshTheme()
+    {
+        using var dir = new TempDir();
+        var (vm, _, _, _, _) = VmFactory.Create(dir, game: GameKey.DarkSouls3);
+        vm.Poll();
+        Assert.Equal(ParticleStyle.Ash, vm.Theme.Particles);
+        Assert.Contains($"{DisplayText.FormatSouls(LevelCurve.Souls3Cost(35))}", vm.SoulsText);
+        Assert.Contains("Андрэ", vm.Weapon.NextStep);
+        vm.Demo!.PickLegendaryCommand.Execute(null);
+        vm.Poll();
+        Assert.Equal("Буреносец", vm.CurrentCard!.Name);
     }
 
     [Fact]

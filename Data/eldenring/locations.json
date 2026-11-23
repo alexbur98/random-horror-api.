@@ -1,0 +1,315 @@
+[
+  {
+    "id": "stranded_graveyard",
+    "name_ru": "Кладбище затерянных",
+    "name_en": "Stranded Graveyard",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Начало игры. Пройдите обучение в пещере — там есть полезные советы и предметы."
+    ]
+  },
+  {
+    "id": "limgrave",
+    "name_ru": "Лимгрейв",
+    "name_en": "Limgrave",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Древо-страж у начала — очень сильный противник. Вернитесь к нему позже.",
+      "Ищите церкви: в них Священные слёзы."
+    ]
+  },
+  {
+    "id": "stormhill",
+    "name_ru": "Грозовой холм",
+    "name_en": "Stormhill",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь вас ждёт Маргит. Призовите помощь и прах духов."
+    ]
+  },
+  {
+    "id": "weeping_peninsula",
+    "name_ru": "Плачущий полуостров",
+    "name_en": "Weeping Peninsula",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Хорошее место, чтобы набраться сил перед замком."
+    ]
+  },
+  {
+    "id": "stormveil_castle",
+    "name_ru": "Замок Грозовой Завесы",
+    "name_en": "Stormveil Castle",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Главные ворота охраняются баллистами — ищите обходной путь.",
+      "Ржавый ключ открывает срезку."
+    ]
+  },
+  {
+    "id": "roundtable_hold",
+    "name_ru": "Крепость Круглого стола",
+    "name_en": "Roundtable Hold",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кузнец Хьюг, Родерика, Пальчица Эния и торговцы — центр подготовки."
+    ]
+  },
+  {
+    "id": "liurnia",
+    "name_ru": "Озёрная Лиурния",
+    "name_en": "Liurnia of the Lakes",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Огромная открытая зона: используйте Потока и ищите медальоны и ключи."
+    ]
+  },
+  {
+    "id": "raya_lucaria",
+    "name_ru": "Академия Райя Лукария",
+    "name_en": "Raya Lucaria Academy",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Нужен Ключ Академии из сияющего камня.",
+      "Маги бьют магией издалека — сокращайте дистанцию."
+    ]
+  },
+  {
+    "id": "caria_manor",
+    "name_ru": "Каррийский особняк",
+    "name_en": "Caria Manor",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Призрачные руки и рыцари — продвигайтесь осторожно."
+    ]
+  },
+  {
+    "id": "siofra_river",
+    "name_ru": "Река Сиофра",
+    "name_en": "Siofra River",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Подземный мир с призраками-стражами. Красивое и опасное место."
+    ]
+  },
+  {
+    "id": "caelid",
+    "name_ru": "Каэлид",
+    "name_en": "Caelid",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Алая гниль и огромные враги. Не задерживайтесь в красных болотах.",
+      "Метеоритный посох лежит здесь — отличный старт для мага."
+    ]
+  },
+  {
+    "id": "dragonbarrow",
+    "name_ru": "Драконий курган",
+    "name_en": "Dragonbarrow",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Драконы и сильные враги — зона для опытных персонажей."
+    ]
+  },
+  {
+    "id": "altus_plateau",
+    "name_ru": "Плато Альтус",
+    "name_en": "Altus Plateau",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Попадают сюда через подъёмник Декта или Ущелье Руин-Прохода."
+    ]
+  },
+  {
+    "id": "mt_gelmir",
+    "name_ru": "Гора Гельмир",
+    "name_en": "Mt. Gelmir",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Вулканическая местность: огонь и лава повсюду."
+    ]
+  },
+  {
+    "id": "volcano_manor",
+    "name_ru": "Вулканический особняк",
+    "name_en": "Volcano Manor",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Здесь можно присоединиться к убийцам, вторгающимся в миры."
+    ]
+  },
+  {
+    "id": "leyndell",
+    "name_ru": "Лейнделл, королевская столица",
+    "name_en": "Leyndell, Royal Capital",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Чтобы войти, нужны две Великие руны.",
+      "Огромная зона — открывайте места благодати."
+    ]
+  },
+  {
+    "id": "ainsel_river",
+    "name_ru": "Река Айнсель",
+    "name_en": "Ainsel River",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Подземная река с муравьями и важной сюжетной веткой."
+    ]
+  },
+  {
+    "id": "nokron",
+    "name_ru": "Нокрон, Вечный город",
+    "name_en": "Nokron, Eternal City",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Открывается после падения звезды. Много сокровищ."
+    ]
+  },
+  {
+    "id": "deeproot_depths",
+    "name_ru": "Глубины корней",
+    "name_en": "Deeproot Depths",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Тёмные лабиринты корней — ориентиры важнее скорости."
+    ]
+  },
+  {
+    "id": "lake_of_rot",
+    "name_ru": "Озеро гнили",
+    "name_en": "Lake of Rot",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Алая гниль повсюду. Держите средства от гнили."
+    ]
+  },
+  {
+    "id": "mountaintops",
+    "name_ru": "Вершины великанов",
+    "name_en": "Mountaintops of the Giants",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Холод и великаны. Нужен Медальон Ролда."
+    ]
+  },
+  {
+    "id": "consecrated_snowfield",
+    "name_ru": "Освящённое снежное поле",
+    "name_en": "Consecrated Snowfield",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Невидимые повозки и сильные враги в метели."
+    ]
+  },
+  {
+    "id": "haligtree",
+    "name_ru": "Святое древо Микеллы",
+    "name_en": "Miquella's Haligtree",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Тайная зона: нужны обе половины тайного медальона."
+    ]
+  },
+  {
+    "id": "elphael",
+    "name_ru": "Эльфаэль, Опора Древа",
+    "name_en": "Elphael, Brace of the Haligtree",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Гниль и сильнейший необязательный босс."
+    ]
+  },
+  {
+    "id": "farum_azula",
+    "name_ru": "Крошащийся Фарум Азула",
+    "name_en": "Crumbling Farum Azula",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Летающие платформы и драконы — не падайте."
+    ]
+  },
+  {
+    "id": "leyndell_ashen",
+    "name_ru": "Пепельная столица",
+    "name_en": "Leyndell, Ashen Capital",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Финальная часть пути. Убедитесь, что закончили дела в мире."
+    ]
+  },
+  {
+    "id": "mohgwyn_palace",
+    "name_ru": "Дворец Могвин",
+    "name_en": "Mohgwyn Palace",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "Кровавое место. Удобно для набора рун."
+    ]
+  },
+  {
+    "id": "land_of_shadow",
+    "name_ru": "Земля Теней",
+    "name_en": "Realm of Shadow",
+    "area": 0,
+    "block": 0,
+    "is_primary_for_map": false,
+    "tips_ru": [
+      "DLC. Свои фрагменты древа повышают силу только здесь."
+    ]
+  }
+]

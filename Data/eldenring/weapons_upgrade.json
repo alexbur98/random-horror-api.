@@ -1,0 +1,486 @@
+{
+  "_comment": "Elden Ring: обычное оружие до +25 (кузнечные камни по 2/4/6), особое до +10 (по одному мрачному камню). Буквы скейлинга — ориентировочные, для +0.",
+  "paths": [
+    {
+      "id": "regular",
+      "name_ru": "Обычное оружие",
+      "smith_ru": "кузнец Хьюг в Круглом столе или наковальня у места благодати",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "smithing_stone_1",
+          "quantity": 2
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "smithing_stone_1",
+          "quantity": 4
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "smithing_stone_1",
+          "quantity": 6
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "smithing_stone_2",
+          "quantity": 2
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "smithing_stone_2",
+          "quantity": 4
+        },
+        {
+          "to_level": 6,
+          "material_item_id": "smithing_stone_2",
+          "quantity": 6
+        },
+        {
+          "to_level": 7,
+          "material_item_id": "smithing_stone_3",
+          "quantity": 2
+        },
+        {
+          "to_level": 8,
+          "material_item_id": "smithing_stone_3",
+          "quantity": 4
+        },
+        {
+          "to_level": 9,
+          "material_item_id": "smithing_stone_3",
+          "quantity": 6
+        },
+        {
+          "to_level": 10,
+          "material_item_id": "smithing_stone_4",
+          "quantity": 2
+        },
+        {
+          "to_level": 11,
+          "material_item_id": "smithing_stone_4",
+          "quantity": 4
+        },
+        {
+          "to_level": 12,
+          "material_item_id": "smithing_stone_4",
+          "quantity": 6
+        },
+        {
+          "to_level": 13,
+          "material_item_id": "smithing_stone_5",
+          "quantity": 2
+        },
+        {
+          "to_level": 14,
+          "material_item_id": "smithing_stone_5",
+          "quantity": 4
+        },
+        {
+          "to_level": 15,
+          "material_item_id": "smithing_stone_5",
+          "quantity": 6
+        },
+        {
+          "to_level": 16,
+          "material_item_id": "smithing_stone_6",
+          "quantity": 2
+        },
+        {
+          "to_level": 17,
+          "material_item_id": "smithing_stone_6",
+          "quantity": 4
+        },
+        {
+          "to_level": 18,
+          "material_item_id": "smithing_stone_6",
+          "quantity": 6
+        },
+        {
+          "to_level": 19,
+          "material_item_id": "smithing_stone_7",
+          "quantity": 2
+        },
+        {
+          "to_level": 20,
+          "material_item_id": "smithing_stone_7",
+          "quantity": 4
+        },
+        {
+          "to_level": 21,
+          "material_item_id": "smithing_stone_7",
+          "quantity": 6
+        },
+        {
+          "to_level": 22,
+          "material_item_id": "smithing_stone_8",
+          "quantity": 2
+        },
+        {
+          "to_level": 23,
+          "material_item_id": "smithing_stone_8",
+          "quantity": 4
+        },
+        {
+          "to_level": 24,
+          "material_item_id": "smithing_stone_8",
+          "quantity": 6
+        },
+        {
+          "to_level": 25,
+          "material_item_id": "ancient_dragon_smithing_stone",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "somber",
+      "name_ru": "Особое оружие",
+      "smith_ru": "кузнец Хьюг в Круглом столе или наковальня у места благодати",
+      "steps": [
+        {
+          "to_level": 1,
+          "material_item_id": "somber_stone_1",
+          "quantity": 1
+        },
+        {
+          "to_level": 2,
+          "material_item_id": "somber_stone_2",
+          "quantity": 1
+        },
+        {
+          "to_level": 3,
+          "material_item_id": "somber_stone_3",
+          "quantity": 1
+        },
+        {
+          "to_level": 4,
+          "material_item_id": "somber_stone_4",
+          "quantity": 1
+        },
+        {
+          "to_level": 5,
+          "material_item_id": "somber_stone_5",
+          "quantity": 1
+        },
+        {
+          "to_level": 6,
+          "material_item_id": "somber_stone_6",
+          "quantity": 1
+        },
+        {
+          "to_level": 7,
+          "material_item_id": "somber_stone_7",
+          "quantity": 1
+        },
+        {
+          "to_level": 8,
+          "material_item_id": "somber_stone_8",
+          "quantity": 1
+        },
+        {
+          "to_level": 9,
+          "material_item_id": "somber_stone_9",
+          "quantity": 1
+        },
+        {
+          "to_level": 10,
+          "material_item_id": "somber_ancient_dragon",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "item_id": "longsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "lordsworn_greatsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "claymore",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "zweihander",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "greatsword",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "C",
+      "scaling_dex": "E",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "uchigatana",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "nagakiba",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "E",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "moonveil",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "D",
+      "scaling_int": "C",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Растёт от Ловкости и Интеллекта"
+    },
+    {
+      "item_id": "rivers_of_blood",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Кровотечение растёт от Тайны"
+    },
+    {
+      "item_id": "bloodhounds_fang",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "C",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "reduvia",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Кровотечение растёт от Тайны"
+    },
+    {
+      "item_id": "blasphemous_blade",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "D",
+      "scaling_hint_ru": "Урон растёт от Веры"
+    },
+    {
+      "item_id": "sword_night_flame",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "E",
+      "scaling_int": "C",
+      "scaling_fth": "C",
+      "scaling_hint_ru": "Растёт от Интеллекта и Веры"
+    },
+    {
+      "item_id": "dark_moon_greatsword",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "C",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "starscourge_greatsword",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "D",
+      "scaling_dex": "E",
+      "scaling_int": "E",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "grafted_blade",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "C",
+      "scaling_dex": "E",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "meteoric_ore_blade",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "D",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Растёт от Ловкости и Интеллекта"
+    },
+    {
+      "item_id": "hand_of_malenia",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "morning_star",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "great_stars",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "D",
+      "scaling_dex": "E",
+      "scaling_int": "-",
+      "scaling_fth": "D",
+      "scaling_hint_ru": "Урон растёт от Веры"
+    },
+    {
+      "item_id": "giant_crusher",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "B",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы"
+    },
+    {
+      "item_id": "winged_scythe",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "D",
+      "scaling_hint_ru": "Урон растёт от Веры"
+    },
+    {
+      "item_id": "godslayers_greatsword",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "E",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "D",
+      "scaling_hint_ru": "Урон растёт от Веры"
+    },
+    {
+      "item_id": "dagger",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "E",
+      "scaling_dex": "C",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "battle_axe",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Силы и Ловкости"
+    },
+    {
+      "item_id": "spear",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "D",
+      "scaling_dex": "D",
+      "scaling_int": "-",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Лучше всего растёт от Ловкости"
+    },
+    {
+      "item_id": "meteorite_staff",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "S",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "carian_regal_scepter",
+      "game_id": 0,
+      "path_id": "somber",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "B",
+      "scaling_fth": "-",
+      "scaling_hint_ru": "Урон растёт от Интеллекта"
+    },
+    {
+      "item_id": "finger_seal",
+      "game_id": 0,
+      "path_id": "regular",
+      "scaling_str": "-",
+      "scaling_dex": "-",
+      "scaling_int": "-",
+      "scaling_fth": "B",
+      "scaling_hint_ru": "Урон растёт от Веры"
+    }
+  ]
+}

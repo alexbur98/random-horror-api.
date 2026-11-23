@@ -21,6 +21,7 @@ public sealed partial class DemoPanelViewModel : ObservableObject
     public bool HasHollowing => _game.HasHollowing;
     public bool HasDurability => _game.HasDurability;
     public bool HasWeaponUpgrades => _game.HasWeaponUpgrades;
+    public string HollowingCureLabel => _game.HollowingCureRu;
     public string RecoverLabel => _game.HasBloodstain ? "Вернуть " + _game.CurrencyGenitiveRu : "";
 
     public DemoPanelViewModel(MockGameStateReader mock, string? legendaryName)
@@ -49,7 +50,7 @@ public sealed partial class DemoPanelViewModel : ObservableObject
         LastAction = _game.HasBloodstain ? $"Смерть — {_game.CurrencyRu.ToLowerInvariant()} остались на месте гибели" : "Смерть";
     }
     [RelayCommand] private void Recover() { _mock.RecoverBloodstain(); LastAction = "Потерянное возвращено"; }
-    [RelayCommand] private void RestoreHumanity() { _mock.RestoreHumanity(); LastAction = "Облик восстановлен — максимальное здоровье снова полное"; }
+    [RelayCommand] private void RestoreHumanity() { _mock.RestoreHumanity(); LastAction = $"{_game.HollowingCureRu}: эффект снят"; }
     [RelayCommand] private void DamageWeapon() { _mock.DamageWeapon(); LastAction = "Оружие повреждено на 25%"; }
     [RelayCommand] private void RepairWeapon() { _mock.RepairWeapon(); LastAction = "Оружие починено"; }
     [RelayCommand] private void UpgradeWeapon() { _mock.UpgradeWeapon(); LastAction = "Оружие улучшено на +1"; }

@@ -1,0 +1,226 @@
+[
+  {
+    "id": "tree_sentinel",
+    "name_ru": "Древо-страж",
+    "name_en": "Tree Sentinel",
+    "location_id": "limgrave",
+    "optional": true,
+    "tip_ru": "Сражайтесь верхом, атакуйте после его удара."
+  },
+  {
+    "id": "margit",
+    "name_ru": "Маргит, Падшее знамение",
+    "name_en": "Margit, the Fell Omen",
+    "location_id": "stormhill",
+    "optional": false,
+    "tip_ru": "Используйте Сковывающий нож Маргит и прах духов."
+  },
+  {
+    "id": "godrick",
+    "name_ru": "Годрик Привитой",
+    "name_en": "Godrick the Grafted",
+    "location_id": "stormveil_castle",
+    "optional": false,
+    "tip_ru": "Во второй фазе он дышит огнём — держитесь у него за спиной."
+  },
+  {
+    "id": "leonine_misbegotten",
+    "name_ru": "Львиный недоносок",
+    "name_en": "Leonine Misbegotten",
+    "location_id": "weeping_peninsula",
+    "optional": true,
+    "tip_ru": "Агрессивен — ждите конца серии и бейте."
+  },
+  {
+    "id": "red_wolf",
+    "name_ru": "Красный волк Радагона",
+    "name_en": "Red Wolf of Radagon",
+    "location_id": "raya_lucaria",
+    "optional": false,
+    "tip_ru": "Он отпрыгивает и стреляет — используйте укрытия."
+  },
+  {
+    "id": "rennala",
+    "name_ru": "Ренналла, Королева полной луны",
+    "name_en": "Rennala, Queen of the Full Moon",
+    "location_id": "raya_lucaria",
+    "optional": false,
+    "tip_ru": "В первой фазе бейте учеников с жёлтым светом."
+  },
+  {
+    "id": "royal_knight_loretta",
+    "name_ru": "Королевский рыцарь Лоретта",
+    "name_en": "Royal Knight Loretta",
+    "location_id": "caria_manor",
+    "optional": true,
+    "tip_ru": "Уходите от её магического лука в сторону."
+  },
+  {
+    "id": "starscourge_radahn",
+    "name_ru": "Радан, Звёздная кара",
+    "name_en": "Starscourge Radahn",
+    "location_id": "caelid",
+    "optional": false,
+    "tip_ru": "Призывайте NPC-союзников и сражайтесь верхом."
+  },
+  {
+    "id": "godskin_noble",
+    "name_ru": "Богокожий дворянин",
+    "name_en": "Godskin Noble",
+    "location_id": "volcano_manor",
+    "optional": true,
+    "tip_ru": "Медленный, но хитрый — бейте после перекатов."
+  },
+  {
+    "id": "rykard",
+    "name_ru": "Райкард, Владыка богохульства",
+    "name_en": "Rykard, Lord of Blasphemy",
+    "location_id": "volcano_manor",
+    "optional": false,
+    "tip_ru": "Используйте Змееловное копьё, найденное на арене."
+  },
+  {
+    "id": "morgott",
+    "name_ru": "Моргот, Король-предвестник",
+    "name_en": "Morgott, the Omen King",
+    "location_id": "leyndell",
+    "optional": false,
+    "tip_ru": "Медленные замахи с задержкой — не спешите с перекатом."
+  },
+  {
+    "id": "godfrey_golden_shade",
+    "name_ru": "Годфри, первый Повелитель",
+    "name_en": "Godfrey, First Elden Lord (Golden Shade)",
+    "location_id": "leyndell",
+    "optional": false,
+    "tip_ru": "Топает по земле — прыгайте над ударной волной."
+  },
+  {
+    "id": "valiant_gargoyles",
+    "name_ru": "Доблестные горгульи",
+    "name_en": "Valiant Gargoyles",
+    "location_id": "siofra_river",
+    "optional": true,
+    "tip_ru": "Сначала сосредоточьтесь на одной."
+  },
+  {
+    "id": "dragonkin_soldier",
+    "name_ru": "Драконий солдат Нокстеллы",
+    "name_en": "Dragonkin Soldier of Nokstella",
+    "location_id": "ainsel_river",
+    "optional": true,
+    "tip_ru": "Держитесь у ног."
+  },
+  {
+    "id": "mimic_tear_boss",
+    "name_ru": "Слеза-подражатель",
+    "name_en": "Mimic Tear",
+    "location_id": "nokron",
+    "optional": true,
+    "tip_ru": "Копирует ваше снаряжение — смените оружие перед боем."
+  },
+  {
+    "id": "astel",
+    "name_ru": "Астел, рождённый Пустотой",
+    "name_en": "Astel, Naturalborn of the Void",
+    "location_id": "ainsel_river",
+    "optional": true,
+    "tip_ru": "Телепортируется — следите за звуком."
+  },
+  {
+    "id": "lichdragon_fortissax",
+    "name_ru": "Личедракон Фортиссакс",
+    "name_en": "Lichdragon Fortissax",
+    "location_id": "deeproot_depths",
+    "optional": true,
+    "tip_ru": "Защита от молнии очень помогает."
+  },
+  {
+    "id": "fire_giant",
+    "name_ru": "Огненный великан",
+    "name_en": "Fire Giant",
+    "location_id": "mountaintops",
+    "optional": false,
+    "tip_ru": "Бейте по скованной ноге."
+  },
+  {
+    "id": "commander_niall",
+    "name_ru": "Командир Ниалл",
+    "name_en": "Commander Niall",
+    "location_id": "consecrated_snowfield",
+    "optional": true,
+    "tip_ru": "Сначала убейте призрачных рыцарей."
+  },
+  {
+    "id": "malenia",
+    "name_ru": "Малениа, Клинок Микеллы",
+    "name_en": "Malenia, Blade of Miquella",
+    "location_id": "elphael",
+    "optional": true,
+    "tip_ru": "«Танец водяной птицы» — уходите от первой серии назад, затем вбок."
+  },
+  {
+    "id": "loretta_haligtree",
+    "name_ru": "Лоретта, Рыцарь Святого древа",
+    "name_en": "Loretta, Knight of the Haligtree",
+    "location_id": "haligtree",
+    "optional": true,
+    "tip_ru": "Её магия бьёт издалека — держитесь близко."
+  },
+  {
+    "id": "godskin_duo",
+    "name_ru": "Богокожая пара",
+    "name_en": "Godskin Duo",
+    "location_id": "farum_azula",
+    "optional": false,
+    "tip_ru": "У них общая полоса здоровья: павший возвращается, пока она не опустеет. Не стойте между ними."
+  },
+  {
+    "id": "dragonlord_placidusax",
+    "name_ru": "Повелитель драконов Плацидусакс",
+    "name_en": "Dragonlord Placidusax",
+    "location_id": "farum_azula",
+    "optional": true,
+    "tip_ru": "Держитесь у задних лап."
+  },
+  {
+    "id": "maliketh",
+    "name_ru": "Маликет, Чёрный клинок",
+    "name_en": "Maliketh, the Black Blade",
+    "location_id": "farum_azula",
+    "optional": false,
+    "tip_ru": "Очень быстр — бейте сразу после его серии."
+  },
+  {
+    "id": "hoarah_loux",
+    "name_ru": "Хорах Лу, воин",
+    "name_en": "Hoarah Loux, Warrior",
+    "location_id": "leyndell_ashen",
+    "optional": false,
+    "tip_ru": "Его захват опасен — держите дистанцию во второй фазе."
+  },
+  {
+    "id": "radagon_elden_beast",
+    "name_ru": "Радагон и Зверь Элдена",
+    "name_en": "Radagon of the Golden Order / Elden Beast",
+    "location_id": "leyndell_ashen",
+    "optional": false,
+    "tip_ru": "Две фазы без перерыва. Против Зверя пригодится Поток."
+  },
+  {
+    "id": "mohg",
+    "name_ru": "Мог, Владыка крови",
+    "name_en": "Mohg, Lord of Blood",
+    "location_id": "mohgwyn_palace",
+    "optional": true,
+    "tip_ru": "После кровавого ритуала у него — держите здоровье высоким и лечитесь."
+  },
+  {
+    "id": "messmer",
+    "name_ru": "Мессмер Колосажатель",
+    "name_en": "Messmer the Impaler",
+    "location_id": "land_of_shadow",
+    "optional": false,
+    "tip_ru": "DLC. Огонь и копьё — учите связки, не жадничайте."
+  }
+]

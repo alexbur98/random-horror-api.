@@ -16,6 +16,7 @@
             <conv:HexToColorConverter x:Key="HexToColor" />
             <conv:FadeOutConverter x:Key="FadeOut" />
             <conv:RarityLabelConverter x:Key="RarityLabel" />
+            <conv:WaitingHintVisibilityConverter x:Key="WaitingHintVis" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

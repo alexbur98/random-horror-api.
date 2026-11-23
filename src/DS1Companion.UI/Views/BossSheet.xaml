@@ -17,7 +17,7 @@
                           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
                 </Button>
                 <StackPanel>
-                    <Border Width="40" Height="4" CornerRadius="2" Background="{StaticResource LineBrush}" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                    <Border Width="40" Height="4" CornerRadius="2" Background="{DynamicResource LineBrush}" HorizontalAlignment="Center" Margin="0,0,0,12" />
                     <TextBlock Style="{StaticResource Caption}" Text="СТАТИСТИКА ПО БОССАМ" />
                     <TextBlock Style="{StaticResource Body}" FontSize="12" Margin="0,4,0,0"
                                Text="Тихий фоновый учёт попыток и времени. Во время боя ничего не показывается." />
@@ -27,7 +27,7 @@
                 <ItemsControl ItemsSource="{Binding BossStats}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type vm:BossStatRowViewModel}">
-                            <Border BorderBrush="{StaticResource LineBrush}" BorderThickness="0,0,0,1" Padding="0,10">
+                            <Border BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1" Padding="0,10">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -40,7 +40,7 @@
                                                 <Setter Property="Fill" Value="{StaticResource TextFaintBrush}" />
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Defeated}" Value="True">
-                                                        <Setter Property="Fill" Value="{StaticResource GoldBrush}" />
+                                                        <Setter Property="Fill" Value="{DynamicResource GoldBrush}" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
@@ -50,10 +50,10 @@
                                         <TextBlock FontSize="15" Text="{Binding Name}">
                                             <TextBlock.Style>
                                                 <Style TargetType="TextBlock" BasedOn="{StaticResource TextBase}">
-                                                    <Setter Property="Foreground" Value="{StaticResource TextMutedBrush}" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding HasAttempts}" Value="True">
-                                                            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                                                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -63,7 +63,7 @@
                                     </StackPanel>
                                     <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
                                         <TextBlock Style="{StaticResource TextBase}" FontSize="13" HorizontalAlignment="Right">
-                                            <Run Text="Попыток: " Foreground="{StaticResource TextMutedBrush}" /><Run Text="{Binding Attempts, Mode=OneWay}" />
+                                            <Run Text="Попыток: " Foreground="{DynamicResource TextMutedBrush}" /><Run Text="{Binding Attempts, Mode=OneWay}" />
                                         </TextBlock>
                                         <TextBlock Style="{StaticResource Body}" FontSize="11" FontFamily="Consolas" HorizontalAlignment="Right" Text="{Binding TimeText}" />
                                     </StackPanel>

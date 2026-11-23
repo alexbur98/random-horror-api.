@@ -2,7 +2,9 @@
   "key": "DarkSouls1",
   "title_ru": "Dark Souls: Remastered",
   "short_title": "DS1",
-  "process_names": [ "DarkSoulsRemastered" ],
+  "process_names": [
+    "DarkSoulsRemastered"
+  ],
   "currency_ru": "Души",
   "currency_genitive_ru": "душ",
   "has_levels": true,
@@ -18,15 +20,93 @@
   "sell_tag_ru": "МОЖНО ПРОДАТЬ ФРАМПТУ",
   "default_tip_ru": "Отдыхайте у костров: это восполняет Эстус, но возрождает обычных врагов.",
   "stats": [
-    { "key": "vitality", "name_ru": "Живучесть", "cap": 40, "hint_ru": "Здоровье. Эффективно до 40, дальше прирост слабый." },
-    { "key": "attunement", "name_ru": "Ученость", "kind": "SpellSlots", "slot_thresholds": [ 10, 12, 14, 16, 19, 23, 28, 34, 41, 50 ], "hint_ru": "Без магии качать не нужно." },
-    { "key": "endurance", "name_ru": "Стойкость", "cap": 40, "hint_ru": "Выносливость и вес. Выносливость перестаёт расти после 40." },
-    { "key": "strength", "name_ru": "Сила", "cap": 40, "hint_ru": "Урон тяжёлого оружия. Выше 40 почти не растёт." },
-    { "key": "dexterity", "name_ru": "Ловкость", "cap": 40, "hint_ru": "Урон быстрого оружия. Выше 40 почти не растёт." },
-    { "key": "resistance", "name_ru": "Сопротивление", "kind": "Avoid", "avoid_above": 12, "hint_ru": "Не качайте: защиту лучше дают броня и кольца.", "avoid_hint_ru": "Не качайте! Сопротивление почти бесполезно — очки лучше вложить в Живучесть." },
-    { "key": "intelligence", "name_ru": "Интеллект", "cap": 40, "hint_ru": "Сила колдовства. Порог 40, у некоторых катализаторов — 50." },
-    { "key": "faith", "name_ru": "Вера", "cap": 40, "hint_ru": "Сила чудес. Порог 40, у некоторых талисманов — 50." }
+    {
+      "key": "vitality",
+      "name_ru": "Живучесть",
+      "cap": 40,
+      "hint_ru": "Здоровье. Эффективно до 40, дальше прирост слабый."
+    },
+    {
+      "key": "attunement",
+      "name_ru": "Ученость",
+      "kind": "SpellSlots",
+      "slot_thresholds": [
+        10,
+        12,
+        14,
+        16,
+        19,
+        23,
+        28,
+        34,
+        41,
+        50
+      ],
+      "hint_ru": "Без магии качать не нужно."
+    },
+    {
+      "key": "endurance",
+      "name_ru": "Стойкость",
+      "cap": 40,
+      "hint_ru": "Выносливость и вес. Выносливость перестаёт расти после 40."
+    },
+    {
+      "key": "strength",
+      "name_ru": "Сила",
+      "cap": 40,
+      "hint_ru": "Урон тяжёлого оружия. Выше 40 почти не растёт."
+    },
+    {
+      "key": "dexterity",
+      "name_ru": "Ловкость",
+      "cap": 40,
+      "hint_ru": "Урон быстрого оружия. Выше 40 почти не растёт."
+    },
+    {
+      "key": "resistance",
+      "name_ru": "Сопротивление",
+      "kind": "Avoid",
+      "avoid_above": 12,
+      "hint_ru": "Не качайте: защиту лучше дают броня и кольца.",
+      "avoid_hint_ru": "Не качайте! Сопротивление почти бесполезно — очки лучше вложить в Живучесть."
+    },
+    {
+      "key": "intelligence",
+      "name_ru": "Интеллект",
+      "cap": 40,
+      "hint_ru": "Сила колдовства. Порог 40, у некоторых катализаторов — 50."
+    },
+    {
+      "key": "faith",
+      "name_ru": "Вера",
+      "cap": 40,
+      "hint_ru": "Сила чудес. Порог 40, у некоторых талисманов — 50."
+    }
   ],
+  "theme": {
+    "name_ru": "Пламя Лордрана",
+    "accent": "#C8A96A",
+    "accent_dim": "#7D6A45",
+    "accent_bright": "#F1DDAA",
+    "background": "#08090C",
+    "panel_top": "#12151B",
+    "panel_bottom": "#0C0E12",
+    "line": "#232733",
+    "text": "#E7E2D6",
+    "text_muted": "#8D8A82",
+    "glow": "#FF7A2E",
+    "title_bar": "#CC07080A",
+    "track": "#1E222B",
+    "sheet": "#F20E1015",
+    "title_font": "Cinzel, Georgia, Times New Roman",
+    "particles": "Embers",
+    "particle_colors": [
+      "#FF8A3D",
+      "#FFB05C",
+      "#E06A2A"
+    ],
+    "particle_count": 34
+  },
   "demo": {
     "character_name": "Избранная нежить",
     "deaths": 37,
@@ -40,6 +120,15 @@
     "healing_count": 5,
     "legendary_item_id": "balder_side_sword",
     "key_item_id": "basement_key",
-    "stats": { "vitality": 18, "attunement": 10, "endurance": 22, "strength": 20, "dexterity": 14, "resistance": 11, "intelligence": 9, "faith": 9 }
+    "stats": {
+      "vitality": 18,
+      "attunement": 10,
+      "endurance": 22,
+      "strength": 20,
+      "dexterity": 14,
+      "resistance": 11,
+      "intelligence": 9,
+      "faith": 9
+    }
   }
 }

@@ -19,6 +19,11 @@ public partial class MainWindow : Window
         _settings = settings;
         InitializeComponent();
         DataContext = vm;
+        ThemeManager.Apply(Application.Current.Resources, vm.Theme);
+        vm.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(MainViewModel.Theme)) ThemeManager.Apply(Application.Current.Resources, vm.Theme);
+        };
         NoiseLayer.Fill = NoiseTexture.Create();
         SourceInitialized += (_, _) => WindowPlacement.Restore(this, _settings);
         KeyDown += OnKeyDown;

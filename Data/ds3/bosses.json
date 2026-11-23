@@ -1,0 +1,186 @@
+[
+  {
+    "id": "iudex_gundyr",
+    "name_ru": "Судья Гундир",
+    "name_en": "Iudex Gundyr",
+    "location_id": "cemetery_of_ash",
+    "optional": false,
+    "tip_ru": "Во второй фазе держитесь сбоку."
+  },
+  {
+    "id": "vordt",
+    "name_ru": "Вордт из Холодной долины",
+    "name_en": "Vordt of the Boreal Valley",
+    "location_id": "high_wall",
+    "optional": false,
+    "tip_ru": "Бейте задние лапы, избегайте ледяного дыхания."
+  },
+  {
+    "id": "curse_rotted_greatwood",
+    "name_ru": "Проклятое великое древо",
+    "name_en": "Curse-rotted Greatwood",
+    "location_id": "undead_settlement",
+    "optional": false,
+    "tip_ru": "Разбейте белые наросты."
+  },
+  {
+    "id": "crystal_sage",
+    "name_ru": "Кристальный мудрец",
+    "name_en": "Crystal Sage",
+    "location_id": "road_of_sacrifices",
+    "optional": false,
+    "tip_ru": "Сокращайте дистанцию — он слаб вблизи."
+  },
+  {
+    "id": "deacons_of_the_deep",
+    "name_ru": "Дьяконы Глубин",
+    "name_en": "Deacons of the Deep",
+    "location_id": "cathedral_of_the_deep",
+    "optional": false,
+    "tip_ru": "Ищите дьякона с красным ореолом и бейте его."
+  },
+  {
+    "id": "abyss_watchers",
+    "name_ru": "Хранители Бездны",
+    "name_en": "Abyss Watchers",
+    "location_id": "farron_keep",
+    "optional": false,
+    "tip_ru": "Пусть они дерутся друг с другом — бейте раненых."
+  },
+  {
+    "id": "high_lord_wolnir",
+    "name_ru": "Великий владыка Вольнир",
+    "name_en": "High Lord Wolnir",
+    "location_id": "catacombs_of_carthus",
+    "optional": false,
+    "tip_ru": "Разбейте три браслета на его руках."
+  },
+  {
+    "id": "old_demon_king",
+    "name_ru": "Старый король демонов",
+    "name_en": "Old Demon King",
+    "location_id": "smouldering_lake",
+    "optional": true,
+    "tip_ru": "Держитесь у его ног, избегайте огненных взрывов."
+  },
+  {
+    "id": "pontiff_sulyvahn",
+    "name_ru": "Понтифик Саливан",
+    "name_en": "Pontiff Sulyvahn",
+    "location_id": "irithyll",
+    "optional": false,
+    "tip_ru": "Во второй фазе он создаёт двойника — следите за обоими."
+  },
+  {
+    "id": "yhorm",
+    "name_ru": "Йорм Великан",
+    "name_en": "Yhorm the Giant",
+    "location_id": "profaned_capital",
+    "optional": false,
+    "tip_ru": "Заряжайте Буреносец и бейте волной."
+  },
+  {
+    "id": "aldrich",
+    "name_ru": "Олдрик, Пожиратель богов",
+    "name_en": "Aldrich, Devourer of Gods",
+    "location_id": "anor_londo",
+    "optional": false,
+    "tip_ru": "Держитесь близко к его телу и избегайте ливня стрел."
+  },
+  {
+    "id": "dancer",
+    "name_ru": "Танцовщица Холодной долины",
+    "name_en": "Dancer of the Boreal Valley",
+    "location_id": "high_wall",
+    "optional": true,
+    "tip_ru": "Медленные замахи с задержкой — не перекатывайтесь раньше времени."
+  },
+  {
+    "id": "dragonslayer_armour",
+    "name_ru": "Доспех драконоборца",
+    "name_en": "Dragonslayer Armour",
+    "location_id": "lothric_castle",
+    "optional": false,
+    "tip_ru": "Парировать его можно, но лучше бить сзади после атаки."
+  },
+  {
+    "id": "oceiros",
+    "name_ru": "Оцейрос, Пожранный король",
+    "name_en": "Oceiros, the Consumed King",
+    "location_id": "consumed_kings_garden",
+    "optional": true,
+    "tip_ru": "Атакуйте сбоку, избегайте рывков."
+  },
+  {
+    "id": "champion_gundyr",
+    "name_ru": "Чемпион Гундир",
+    "name_en": "Champion Gundyr",
+    "location_id": "untended_graves",
+    "optional": true,
+    "tip_ru": "Очень агрессивен — учите связки."
+  },
+  {
+    "id": "twin_princes",
+    "name_ru": "Принцы-близнецы",
+    "name_en": "Lothric, Younger Prince",
+    "location_id": "grand_archives",
+    "optional": false,
+    "tip_ru": "Сначала бейте Лотрика — без него Лориан слабее."
+  },
+  {
+    "id": "ancient_wyvern",
+    "name_ru": "Древняя виверна",
+    "name_en": "Ancient Wyvern",
+    "location_id": "archdragon_peak",
+    "optional": true,
+    "tip_ru": "Поднимитесь по зданиям и ударьте её в голову сверху."
+  },
+  {
+    "id": "nameless_king",
+    "name_ru": "Безымянный король",
+    "name_en": "Nameless King",
+    "location_id": "archdragon_peak",
+    "optional": true,
+    "tip_ru": "Сначала сбейте дракона, во второй фазе держитесь у короля."
+  },
+  {
+    "id": "soul_of_cinder",
+    "name_ru": "Душа пепла",
+    "name_en": "Soul of Cinder",
+    "location_id": "kiln_first_flame",
+    "optional": false,
+    "tip_ru": "Меняет стиль боя — следите за оружием в его руках."
+  },
+  {
+    "id": "sister_friede",
+    "name_ru": "Сестра Фриде",
+    "name_en": "Sister Friede",
+    "location_id": "painted_world_ariandel",
+    "optional": false,
+    "tip_ru": "DLC. Становится невидимой — ищите её по следам на снегу."
+  },
+  {
+    "id": "demon_prince",
+    "name_ru": "Принц-демон",
+    "name_en": "Demon Prince",
+    "location_id": "dreg_heap",
+    "optional": false,
+    "tip_ru": "DLC. Сначала убейте демона, который тяжелее ранен."
+  },
+  {
+    "id": "darkeater_midir",
+    "name_ru": "Мидир Пожиратель тьмы",
+    "name_en": "Darkeater Midir",
+    "location_id": "ringed_city",
+    "optional": true,
+    "tip_ru": "DLC. Держитесь у головы и уходите от лазера."
+  },
+  {
+    "id": "slave_knight_gael",
+    "name_ru": "Рыцарь-раб Гаэль",
+    "name_en": "Slave Knight Gael",
+    "location_id": "ringed_city",
+    "optional": false,
+    "tip_ru": "DLC. Финальный бой: держите дистанцию в третьей фазе."
+  }
+]

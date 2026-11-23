@@ -74,6 +74,31 @@
       "hint_ru": "Сила чудес и тёмной магии."
     }
   ],
+  "theme": {
+    "name_ru": "Сумерки Дранглика",
+    "accent": "#9FB8CF",
+    "accent_dim": "#56697D",
+    "accent_bright": "#DCE8F2",
+    "background": "#070A0E",
+    "panel_top": "#101722",
+    "panel_bottom": "#0A0F16",
+    "line": "#1E2a38",
+    "text": "#E2E8EE",
+    "text_muted": "#8592A0",
+    "glow": "#4F7FB0",
+    "title_bar": "#CC060A10",
+    "track": "#18212C",
+    "sheet": "#F20B1119",
+    "title_font": "Trajan Pro, Cinzel, Georgia",
+    "particles": "Souls",
+    "particle_colors": [
+      "#A9C8E8",
+      "#D6E6F5",
+      "#6E9CC8"
+    ],
+    "particle_count": 26
+  },
+  "hollowing_cure_ru": "Чучело человека",
   "demo": {
     "character_name": "Носитель проклятия",
     "deaths": 52,
