@@ -1,4 +1,4 @@
-# Souls Companion: установка зависимостей, сборка, иконки и запуск — одной командой.
+﻿# Souls Companion: установка зависимостей, сборка, иконки и запуск — одной командой.
 # Запуск из корня репозитория:  powershell -ExecutionPolicy Bypass -File .\Scripts\setup.ps1
 # Ключи: -SkipIcons (не скачивать иконки), -NoRun (не запускать приложение после сборки).
 param([switch]$SkipIcons, [switch]$NoRun)
