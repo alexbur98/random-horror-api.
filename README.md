@@ -47,7 +47,14 @@ Elden Ring защищён Easy Anti-Cheat: пока античит работа�
 
 ## Сборка и запуск
 
-Нужен [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) и Windows 10/11.
+Быстрый путь на Windows — один скрипт: ставит .NET 8 SDK и Python (через winget), собирает, прогоняет тесты,
+скачивает иконки всех игр и запускает приложение:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Scripts\setup.ps1
+```
+
+Вручную: нужен [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) и Windows 10/11.
 
 ```powershell
 dotnet build
